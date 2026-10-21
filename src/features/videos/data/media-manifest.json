@@ -1,0 +1,90 @@
+[
+  {
+    "id": "guesandina",
+    "src": "/media/videos/guesandina.mp4",
+    "poster": "/media/posters/guesandina.jpg",
+    "width": 1920,
+    "height": 1080,
+    "orientation": "horizontal",
+    "durationSeconds": 180.08,
+    "videoCodec": "h264",
+    "audioCodec": "aac"
+  },
+  {
+    "id": "miski-muu",
+    "src": "/media/videos/miski-muu.mp4",
+    "poster": "/media/posters/miski-muu.jpg",
+    "width": 1920,
+    "height": 1080,
+    "orientation": "horizontal",
+    "durationSeconds": 180,
+    "videoCodec": "h264",
+    "audioCodec": "aac"
+  },
+  {
+    "id": "qarwita",
+    "src": "/media/videos/qarwita.mp4",
+    "poster": "/media/posters/qarwita.jpg",
+    "width": 1920,
+    "height": 1080,
+    "orientation": "horizontal",
+    "durationSeconds": 182.041667,
+    "videoCodec": "h264",
+    "audioCodec": "aac"
+  },
+  {
+    "id": "wayna",
+    "src": "/media/videos/wayna.mp4",
+    "poster": "/media/posters/wayna.jpg",
+    "width": 1920,
+    "height": 1080,
+    "orientation": "horizontal",
+    "durationSeconds": 152.2,
+    "videoCodec": "h264",
+    "audioCodec": "aac"
+  },
+  {
+    "id": "alwacafe",
+    "src": "/media/videos/alwacafe.mp4",
+    "poster": "/media/posters/alwacafe.jpg",
+    "width": 368,
+    "height": 656,
+    "orientation": "vertical",
+    "durationSeconds": 84.485,
+    "videoCodec": "h264",
+    "audioCodec": "aac"
+  },
+  {
+    "id": "bio-bol",
+    "src": "/media/videos/bio-bol.mp4",
+    "poster": "/media/posters/bio-bol.jpg",
+    "width": 478,
+    "height": 850,
+    "orientation": "vertical",
+    "durationSeconds": 65.933333,
+    "videoCodec": "h264",
+    "audioCodec": "aac"
+  },
+  {
+    "id": "du-de-una",
+    "src": "/media/videos/du-de-una.mp4",
+    "poster": "/media/posters/du-de-una.jpg",
+    "width": 576,
+    "height": 1024,
+    "orientation": "vertical",
+    "durationSeconds": 27.366667,
+    "videoCodec": "h264",
+    "audioCodec": "aac"
+  },
+  {
+    "id": "sin-etiquetas",
+    "src": "/media/videos/sin-etiquetas.mp4",
+    "poster": "/media/posters/sin-etiquetas.jpg",
+    "width": 816,
+    "height": 464,
+    "orientation": "horizontal",
+    "durationSeconds": 106.166667,
+    "videoCodec": "h264",
+    "audioCodec": "aac"
+  }
+]
