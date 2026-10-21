@@ -1,0 +1,1 @@
+export { PartnersContent } from "./PartnersContent";

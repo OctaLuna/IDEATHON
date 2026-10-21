@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IDEATON 2026 — Desafío de Innovación Colegios UCB</title>
+    <meta
+      name="description"
+      content='Ideathon Colegios 2026 organizado por la Facultad de Ciencias Económicas y Financieras de la Universidad Católica Boliviana "San Pablo" (U.C.B.) Sede La Paz, junto a Fundación Jubileo, Manq&apos;a, Escuela de Emprendedores Samuel Doria Medina y BancoSol.'
+    />
+    <meta property="og:title" content="IDEATON 2026 — Desafío de Innovación Colegios UCB" />
+    <meta
+      property="og:description"
+      content='Ideathon Colegios 2026 organizado por la Facultad de Ciencias Económicas y Financieras de la Universidad Católica Boliviana "San Pablo" (U.C.B.) Sede La Paz, junto a Fundación Jubileo, Manq&apos;a, Escuela de Emprendedores Samuel Doria Medina y BancoSol.'
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" id="theme-color-meta" content="#F6F2E9" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800;12..96,900&family=Caveat+Brush&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Permanent+Marker&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Unbounded:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("ideaton_theme");
+          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var theme = saved ? saved : prefersDark ? "dark" : "light";
+          if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+            document.documentElement.style.colorScheme = "dark";
+            var meta = document.getElementById("theme-color-meta");
+            if (meta) meta.setAttribute("content", "#0A1128");
+          } else {
+            document.documentElement.classList.remove("dark");
+            document.documentElement.style.colorScheme = "light";
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body
+    class="bg-[var(--bg-page)] text-[var(--text-main)] antialiased selection:bg-[var(--accent-yellow)] selection:text-[var(--text-main)]"
+  >
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

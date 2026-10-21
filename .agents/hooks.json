@@ -1,0 +1,11 @@
+{
+  "project-quality-gate": {
+    "Stop": [
+      {
+        "type": "command",
+        "command": "node .agents/hooks/antigravity-stop.mjs",
+        "timeout": 180
+      }
+    ]
+  }
+}

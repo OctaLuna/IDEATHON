@@ -1,0 +1,3 @@
+#!/bin/sh
+npm run precommit || exit $?
+node .agents/hooks/check-staged-files.mjs || exit $?

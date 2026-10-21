@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PROJECT_DIR}/.agents/hooks/claude-stop.mjs\"",
+            "timeout": 180,
+            "statusMessage": "Running lint, tests, and build"
+          }
+        ]
+      }
+    ]
+  }
+}

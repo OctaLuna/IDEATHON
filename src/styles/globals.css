@@ -1,0 +1,367 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-page: #f6f2e9;
+    --bg-surface: #ffffff;
+    --bg-surface-2: #eef3ff;
+    --text-main: #111111;
+    --text-muted: #4b5563;
+    --border-ink: #111111;
+    --border-soft: rgba(17, 17, 17, 0.15);
+    --accent-yellow: #ffd23f;
+    --accent-orange: #ff6b35;
+    --accent-red: #dc2626;
+    --accent-blue: #1f3fd1;
+    --bg-accent-blue: #1f3fd1;
+    --sky-soft: #a9c7ff;
+    --accent-mint: #22c55e;
+    --text-on-yellow: #111111;
+    --text-on-mint: #111111;
+    --shadow-color: #111111;
+    --blob-opacity: 0.15;
+    --card-glow: rgba(31, 63, 209, 0.08);
+  }
+
+  :root.dark,
+  .dark {
+    --bg-page: #0a1128;
+    --bg-surface: #121c45;
+    --bg-surface-2: #1a2760;
+    --text-main: #f6f2e9;
+    --text-muted: #a9b4d6;
+    --border-ink: #f6f2e9;
+    --border-soft: #2b3a80;
+    --accent-yellow: #ffd23f;
+    --accent-orange: #ff6b35;
+    --accent-red: #ef4444;
+    --accent-blue: #4f6bff;
+    --bg-accent-blue: #182c73;
+    --sky-soft: #bfd7fe;
+    --accent-mint: #4ade80;
+    --text-on-yellow: #111111;
+    --text-on-mint: #111111;
+    --shadow-color: rgba(0, 0, 0, 0.7);
+    --blob-opacity: 0.22;
+    --card-glow: rgba(79, 107, 255, 0.15);
+  }
+
+  body {
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    font-family: "DM Sans", "Plus Jakarta Sans", system-ui, sans-serif;
+    overflow-x: hidden;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  header,
+  .card-theme-transition {
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease;
+  }
+}
+
+@theme {
+  --color-page: var(--bg-page);
+  --color-surface: var(--bg-surface);
+  --color-surface-2: var(--bg-surface-2);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  --color-border-ink: var(--border-ink);
+  --color-border-soft: var(--border-soft);
+  --color-accent-yellow: var(--accent-yellow);
+  --color-accent-orange: var(--accent-orange);
+  --color-accent-blue: var(--accent-blue);
+  --color-sky-soft: var(--sky-soft);
+  --color-accent-mint: var(--accent-mint);
+}
+
+/* Custom Font Utilities */
+.font-display {
+  font-family: "Bricolage Grotesque", "Unbounded", system-ui, sans-serif;
+}
+
+.font-marker {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.font-sans-body {
+  font-family: "DM Sans", "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+/* Superior legibility for small cards, tags, badges and counters */
+.font-mono,
+[class*="font-mono"] {
+  font-family:
+    "Plus Jakarta Sans",
+    system-ui,
+    -apple-system,
+    sans-serif !important;
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.03em;
+}
+
+.badge-label,
+.step-number-badge,
+.tag-pill {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+}
+
+/* High Contrast Streetwear & Collage Shadows using CSS variables */
+.sticker-shadow {
+  box-shadow: 4px 4px 0px var(--shadow-color);
+}
+
+.sticker-shadow-lg {
+  box-shadow: 6px 6px 0px var(--shadow-color);
+}
+
+.sticker-shadow-yellow {
+  box-shadow: 5px 5px 0px var(--accent-yellow);
+}
+
+.sticker-shadow-blue {
+  box-shadow: 5px 5px 0px var(--accent-blue);
+}
+
+.sticker-shadow-orange {
+  box-shadow: 5px 5px 0px var(--accent-orange);
+}
+
+/* Hard border ink utility */
+.border-ink-thick {
+  border-width: 3px;
+  border-color: var(--border-ink);
+}
+
+.border-ink-2 {
+  border-width: 2px;
+  border-color: var(--border-ink);
+}
+
+/* Graph grid paper texture */
+.bg-grid-pattern {
+  background-size: 28px 28px;
+  background-image:
+    linear-gradient(to right, rgba(17, 17, 17, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17, 17, 17, 0.05) 1px, transparent 1px);
+}
+
+.dark .bg-grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+/* CSS Keyframe Animations */
+@keyframes cssMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-css {
+  display: flex;
+  width: max-content;
+  animation: cssMarquee 26s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-css:hover {
+  animation-play-state: paused;
+}
+
+@keyframes gentleFloat1 {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-1deg);
+  }
+}
+
+@keyframes gentleFloat2 {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(4deg);
+  }
+}
+
+.float-sticker-1 {
+  animation: gentleFloat1 4.5s ease-in-out infinite;
+}
+
+.float-sticker-2 {
+  animation: gentleFloat2 5s ease-in-out infinite;
+}
+
+/* Rocket Flame Animation (glow pulse without moving SVG origin) */
+@keyframes flameFlicker {
+  0%,
+  100% {
+    opacity: 0.88;
+    filter: drop-shadow(0 0 2px rgba(255, 107, 53, 0.4));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgba(255, 210, 63, 0.8));
+  }
+}
+
+.animate-rocket-flame {
+  animation: flameFlicker 0.25s ease-in-out infinite alternate;
+}
+
+/* Twinkle animation for stars */
+@keyframes starTwinkle {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.85) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15) rotate(15deg);
+  }
+}
+
+.animate-twinkle-1 {
+  animation: starTwinkle 2.5s ease-in-out infinite;
+}
+
+.animate-twinkle-2 {
+  animation: starTwinkle 3.2s ease-in-out infinite 0.7s;
+}
+
+.animate-twinkle-3 {
+  animation: starTwinkle 2.8s ease-in-out infinite 1.4s;
+}
+
+/* Accordion Smooth Height Transition via Grid */
+.accordion-content-grid {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease-out;
+}
+
+.accordion-content-grid.open {
+  grid-template-rows: 1fr;
+}
+
+.accordion-inner-overflow {
+  overflow: hidden;
+}
+
+/* Card Shine Sweep Effect */
+@keyframes shineSweep {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  30%,
+  100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+.animate-card-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  animation: shineSweep 4.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Reading Progress Bar Fixed */
+.reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--accent-yellow);
+  z-index: 9999;
+  transform-origin: 0% 50%;
+  transform: scaleX(0);
+  pointer-events: none;
+}
+
+/* Landing site support animations (only transform and opacity) */
+@keyframes landingRingPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+}
+
+@keyframes sparkleTwinkle {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.7);
+  }
+}
+
+@keyframes beaconPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.15;
+  }
+}
+
+.animate-landing-ring {
+  animation: landingRingPulse 2s ease-in-out infinite;
+}
+
+.animate-sparkle-twinkle {
+  animation: sparkleTwinkle 1.8s ease-in-out infinite;
+}
+
+.animate-beacon-pulse {
+  animation: beaconPulse 1s steps(2, start) infinite;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

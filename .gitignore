@@ -1,0 +1,17 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+**/skills/impeccable/scripts/bin/
+.impeccable/config.local.json
+BORRAR/
+ideaton-ucb-2026-oct-19-2026-1-09-59-pm.zip
+.visual-baseline/
+.visual-current/
+.visual-diff/
+tests/visual/__baseline__/
+public/media/videos/

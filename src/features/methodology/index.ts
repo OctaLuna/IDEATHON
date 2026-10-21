@@ -1,0 +1,1 @@
+export { MethodologyContent } from "./MethodologyContent";

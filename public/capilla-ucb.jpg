@@ -1,0 +1,351 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <!-- Sky & Background Gradients -->
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7B8B97"/>
+      <stop offset="40%" stop-color="#9EABB3"/>
+      <stop offset="100%" stop-color="#C5CFD6"/>
+    </linearGradient>
+
+    <!-- Brick Campus Building Gradient -->
+    <linearGradient id="brickBuildingGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6E2624"/>
+      <stop offset="40%" stop-color="#8C332E"/>
+      <stop offset="100%" stop-color="#5E201E"/>
+    </linearGradient>
+
+    <!-- Round Wooden Chapel Cylinder Gradient -->
+    <linearGradient id="woodChapelCylinder" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4E2E1E"/>
+      <stop offset="15%" stop-color="#72442B"/>
+      <stop offset="40%" stop-color="#8F5635"/>
+      <stop offset="65%" stop-color="#A66842"/>
+      <stop offset="85%" stop-color="#7B492E"/>
+      <stop offset="100%" stop-color="#3D2115"/>
+    </linearGradient>
+
+    <!-- Warm Interior Golden Light -->
+    <radialGradient id="interiorWarmth" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF9C4" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#FFD54F" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#FF8F00" stop-opacity="0.6"/>
+    </radialGradient>
+
+    <!-- Concrete Portal Frame Gradient -->
+    <linearGradient id="concretePortal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8E8E93"/>
+      <stop offset="50%" stop-color="#707075"/>
+      <stop offset="100%" stop-color="#55555A"/>
+    </linearGradient>
+
+    <!-- Walkway Stone Gradient -->
+    <linearGradient id="walkwayGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#B8BCBE"/>
+      <stop offset="50%" stop-color="#9EA3A6"/>
+      <stop offset="100%" stop-color="#7E8386"/>
+    </linearGradient>
+
+    <!-- Lawn Grass Gradient -->
+    <linearGradient id="lawnGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#387028"/>
+      <stop offset="50%" stop-color="#2D5A1E"/>
+      <stop offset="100%" stop-color="#224216"/>
+    </linearGradient>
+
+    <!-- Warm Lamp Glow Filter -->
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="intenseGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- ================= 1. SKY BACKGROUND ================= -->
+  <rect x="0" y="0" width="1200" height="800" fill="url(#skyGrad)"/>
+
+  <!-- ================= 2. BACKGROUND CAMPUS BUILDING (BRICK) ================= -->
+  <g id="campus-building">
+    <!-- Red Brick Multi-story Block -->
+    <rect x="300" y="100" width="170" height="420" fill="url(#brickBuildingGrad)"/>
+    <polygon points="300,100 470,100 480,90 310,90" fill="#4A1816"/>
+    
+    <!-- Top Windows -->
+    <rect x="330" y="150" width="22" height="22" fill="#E2E8F0" stroke="#333" stroke-width="2"/>
+    <rect x="375" y="150" width="22" height="22" fill="#E2E8F0" stroke="#333" stroke-width="2"/>
+    <rect x="420" y="150" width="22" height="22" fill="#E2E8F0" stroke="#333" stroke-width="2"/>
+
+    <!-- Large Vertical Central Glass Stairwell / Atrium with white louvers -->
+    <rect x="345" y="210" width="60" height="280" fill="#203040" stroke="#101820" stroke-width="3"/>
+    <!-- Louvers / Stairs Inside Window -->
+    <line x1="345" y1="240" x2="405" y2="240" stroke="#F1F5F9" stroke-width="4"/>
+    <line x1="345" y1="280" x2="405" y2="280" stroke="#F1F5F9" stroke-width="4"/>
+    <line x1="345" y1="320" x2="405" y2="320" stroke="#F1F5F9" stroke-width="4"/>
+    <line x1="345" y1="360" x2="405" y2="360" stroke="#F1F5F9" stroke-width="4"/>
+    <line x1="345" y1="400" x2="405" y2="400" stroke="#F1F5F9" stroke-width="4"/>
+    <!-- Warm Light glowing from within stairwell -->
+    <circle cx="375" cy="360" r="14" fill="#FFEB3B" opacity="0.8" filter="url(#softGlow)"/>
+
+    <!-- Building Entrance Plinth & Steps -->
+    <polygon points="290,520 480,520 485,550 285,550" fill="#757575"/>
+    <polygon points="310,520 460,520 470,560 300,560" fill="#B71C1C"/>
+  </g>
+
+  <!-- ================= 3. TREES & VEGETATION (LEFT & BACKGROUND) ================= -->
+  <g id="trees">
+    <!-- Tall Pine & Deciduous Trees Behind Chapel -->
+    <path d="M 350,20 Q 380,-10 410,20 L 400,200 L 360,200 Z" fill="#1B381E"/>
+    <path d="M 440,40 Q 480,0 520,40 L 510,180 L 450,180 Z" fill="#234526"/>
+    
+    <!-- Dense Green Leaf Canopy Overhanging from Left -->
+    <ellipse cx="60" cy="120" rx="140" ry="160" fill="#1B3E1C"/>
+    <ellipse cx="160" cy="80" rx="160" ry="140" fill="#295529"/>
+    <ellipse cx="260" cy="180" rx="130" ry="150" fill="#1E4522"/>
+    <ellipse cx="180" cy="280" rx="140" ry="130" fill="#244B27"/>
+    <ellipse cx="80" cy="350" rx="110" ry="140" fill="#19381A"/>
+
+    <!-- Tree Trunks & Branches on the Left Edge -->
+    <path d="M -10,0 Q 80,220 50,600 L 20,600 Q 40,240 -30,0 Z" fill="#3D291D"/>
+    <path d="M 30,340 Q 120,440 90,620 L 70,620 Q 95,440 20,340 Z" fill="#2E1F16"/>
+    <path d="M 120,400 Q 180,480 160,610 L 145,610 Q 160,480 110,400 Z" fill="#3E2B1E"/>
+    <path d="M 180,420 Q 230,500 220,600 L 208,600 Q 215,500 170,420 Z" fill="#2C1D14"/>
+
+    <!-- Yellow / Blue University Signpost on Grass -->
+    <rect x="35" y="515" width="22" height="50" fill="#1E3A8A" stroke="#111" stroke-width="2"/>
+    <rect x="57" y="515" width="22" height="50" fill="#FACC15" stroke="#111" stroke-width="2"/>
+    <line x1="46" y1="565" x2="46" y2="640" stroke="#475569" stroke-width="4"/>
+
+    <!-- Garden Lamp Post on Path -->
+    <line x1="428" y1="450" x2="428" y2="570" stroke="#334155" stroke-width="3"/>
+    <ellipse cx="428" cy="450" rx="8" ry="4" fill="#64748B"/>
+    <circle cx="428" cy="454" r="6" fill="#FFF59D" filter="url(#softGlow)"/>
+
+    <!-- Shrubbery in Courtyard -->
+    <ellipse cx="370" cy="595" rx="16" ry="24" fill="#387028"/>
+    <ellipse cx="418" cy="590" rx="12" ry="20" fill="#2E5A1E"/>
+    <ellipse cx="452" cy="595" rx="14" ry="22" fill="#387028"/>
+  </g>
+
+  <!-- ================= 4. CAPILLA DE LA UCB (MAIN ARCHITECTURAL SUBJECT) ================= -->
+  <g id="chapel-building">
+    <!-- Curved Base Platform / Decking Border around Pavilion -->
+    <path d="M 460,510 C 470,650 560,740 760,770 C 960,770 1140,710 1170,550 L 1180,510 Z" fill="#3E2718" stroke="#221208" stroke-width="3"/>
+    <path d="M 450,520 C 465,660 550,750 750,780 C 940,780 1120,720 1160,560 L 1170,520 Z" fill="#5D3A24"/>
+
+    <!-- MAIN CYLINDRICAL TIMBER WALL -->
+    <!-- The structure is a curved circular rotunda -->
+    <path d="M 465,180 
+             C 500,100 800,45 1165,115 
+             L 1165,580 
+             C 800,650 500,620 465,550 Z" 
+          fill="url(#woodChapelCylinder)" stroke="#27150C" stroke-width="4"/>
+
+    <!-- Vertical Wood Slats / Timber Battens (Authentic facade rhythm) -->
+    <!-- We draw slats with alternating widths and rich wood hues -->
+    <g id="timber-slats" stroke="#2B150A" stroke-width="1.5">
+      <!-- Left side of curve -->
+      <path d="M 470,175 L 470,555" stroke="#52321D" stroke-width="6"/>
+      <path d="M 482,168 L 482,560" stroke="#784729" stroke-width="8"/>
+      <path d="M 495,160 L 495,565" stroke="#683D22" stroke-width="7"/>
+      <path d="M 508,154 L 508,570" stroke="#895332" stroke-width="9"/>
+      <path d="M 522,148 L 522,574" stroke="#724427" stroke-width="8"/>
+      <path d="M 536,142 L 536,578" stroke="#9A5D37" stroke-width="9"/>
+      <path d="M 550,136 L 550,582" stroke="#824E2E" stroke-width="8"/>
+      <path d="M 565,130 L 565,586" stroke="#A7683F" stroke-width="10"/>
+      <path d="M 580,125 L 580,590" stroke="#8E5431" stroke-width="8"/>
+
+      <!-- Right side of portal (Extending to right edge) -->
+      <path d="M 760,268 L 760,612" stroke="#965D39" stroke-width="10"/>
+      <path d="M 776,268 L 776,613" stroke="#7C4A2C" stroke-width="8"/>
+      <path d="M 790,260 L 790,614" stroke="#A56A44" stroke-width="9"/>
+      <path d="M 806,252 L 806,613" stroke="#8A5333" stroke-width="10"/>
+      <path d="M 822,244 L 822,612" stroke="#B1744D" stroke-width="9"/>
+      <path d="M 838,236 L 838,611" stroke="#764528" stroke-width="8"/>
+      <path d="M 854,228 L 854,610" stroke="#A3663F" stroke-width="10"/>
+      <path d="M 870,220 L 870,608" stroke="#8B5534" stroke-width="8"/>
+      <path d="M 886,212 L 886,606" stroke="#9C623C" stroke-width="9"/>
+      <path d="M 902,204 L 902,604" stroke="#6F4125" stroke-width="7"/>
+      <path d="M 918,196 L 918,602" stroke="#B07249" stroke-width="10"/>
+      <path d="M 934,188 L 934,599" stroke="#834F2F" stroke-width="8"/>
+      <path d="M 950,180 L 950,596" stroke="#A0643D" stroke-width="9"/>
+      <path d="M 966,172 L 966,593" stroke="#714226" stroke-width="8"/>
+      <path d="M 982,165 L 982,590" stroke="#945C37" stroke-width="9"/>
+      <path d="M 998,158 L 998,586" stroke="#653B21" stroke-width="8"/>
+      <path d="M 1014,151 L 1014,582" stroke="#8E5633" stroke-width="9"/>
+      <path d="M 1030,145 L 1030,578" stroke="#5D351D" stroke-width="8"/>
+      <path d="M 1046,139 L 1046,573" stroke="#834E2E" stroke-width="9"/>
+      <path d="M 1062,133 L 1062,568" stroke="#542F19" stroke-width="8"/>
+      <path d="M 1078,127 L 1078,563" stroke="#744426" stroke-width="9"/>
+      <path d="M 1094,122 L 1094,557" stroke="#4D2A16" stroke-width="8"/>
+      <path d="M 1110,118 L 1110,551" stroke="#683C21" stroke-width="9"/>
+      <path d="M 1126,114 L 1126,545" stroke="#402111" stroke-width="8"/>
+      <path d="M 1142,112 L 1142,538" stroke="#5A321A" stroke-width="9"/>
+      <path d="M 1158,112 L 1158,530" stroke="#361A0C" stroke-width="8"/>
+    </g>
+
+    <!-- WINDOW SLITS GLOWING FROM WITHIN (Characteristic vertical slit apertures) -->
+    <g id="window-slits">
+      <!-- Left side windows -->
+      <rect x="512" y="320" width="8" height="42" fill="#FFE082" stroke="#FFA000" stroke-width="1.5" filter="url(#softGlow)"/>
+      <rect x="540" y="370" width="10" height="58" fill="#FFF9C4" stroke="#FFB300" stroke-width="1.5" filter="url(#softGlow)"/>
+      <rect x="568" y="330" width="9" height="50" fill="#FFE082" stroke="#FFA000" stroke-width="1.5" filter="url(#softGlow)"/>
+
+      <!-- Right side windows -->
+      <rect x="806" y="270" width="10" height="48" fill="#FFE082" stroke="#FFA000" stroke-width="1.5" filter="url(#softGlow)"/>
+      <rect x="806" y="440" width="10" height="64" fill="#FFF9C4" stroke="#FFB300" stroke-width="1.5" filter="url(#softGlow)"/>
+      <rect x="836" y="380" width="10" height="74" fill="#FFE082" stroke="#FFA000" stroke-width="1.5" filter="url(#softGlow)"/>
+      <rect x="866" y="310" width="10" height="52" fill="#FFF9C4" stroke="#FFB300" stroke-width="1.5" filter="url(#softGlow)"/>
+      <rect x="866" y="490" width="10" height="80" fill="#FFE082" stroke="#FFA000" stroke-width="1.5" filter="url(#softGlow)"/>
+      <rect x="914" y="420" width="11" height="96" fill="#FFF9C4" stroke="#FFB300" stroke-width="1.5" filter="url(#softGlow)"/>
+      <rect x="946" y="360" width="10" height="60" fill="#FFE082" stroke="#FFA000" stroke-width="1.5" filter="url(#softGlow)"/>
+      <rect x="1010" y="420" width="10" height="85" fill="#FFE082" stroke="#FFA000" stroke-width="1.5" filter="url(#softGlow)"/>
+      <rect x="1070" y="390" width="10" height="70" fill="#FFE082" stroke="#FFA000" stroke-width="1.5" filter="url(#softGlow)"/>
+      <rect x="1100" y="430" width="9" height="55" fill="#FFD54F" stroke="#FF8F00" stroke-width="1.5" filter="url(#softGlow)"/>
+    </g>
+
+    <!-- EXTERIOR WALL SCONCES / LAMPS CASTING DOWNWARD GLOW -->
+    <g id="wall-sconces">
+      <!-- Lamp 1 (Left of Entrance) -->
+      <circle cx="522" cy="336" r="3" fill="#FFE082"/>
+      <polygon points="518,336 526,336 534,365 510,365" fill="#FFF59D" opacity="0.35" filter="url(#softGlow)"/>
+      <!-- Lamp 2 (Near Entrance Left) -->
+      <circle cx="582" cy="326" r="3" fill="#FFE082"/>
+      <polygon points="578,326 586,326 594,360 570,360" fill="#FFF59D" opacity="0.4" filter="url(#softGlow)"/>
+      <!-- Lamp 3 (Near Entrance Right) -->
+      <circle cx="776" cy="285" r="3" fill="#FFE082"/>
+      <polygon points="772,285 780,285 788,320 764,320" fill="#FFF59D" opacity="0.4" filter="url(#softGlow)"/>
+      <!-- Lamp 4 (Far Right) -->
+      <circle cx="918" cy="275" r="3" fill="#FFE082"/>
+      <polygon points="914,275 922,275 930,310 906,310" fill="#FFF59D" opacity="0.35" filter="url(#softGlow)"/>
+    </g>
+
+    <!-- CONCRETE ENTRANCE PORTAL & GLASS DOORWAY -->
+    <!-- Massive rectangular architectural portal frame in concrete -->
+    <g id="concrete-portal">
+      <!-- Portal Top Beam & Upper Lintel -->
+      <polygon points="590,75 755,60 755,275 590,285" fill="url(#concretePortal)" stroke="#38383D" stroke-width="3"/>
+      <!-- Recessed Concrete Lintel Panel (Where sign / emblem sits) -->
+      <polygon points="605,90 740,78 740,240 605,248" fill="#88888D" stroke="#505055" stroke-width="2"/>
+      <!-- Inner Shadow -->
+      <line x1="605" y1="248" x2="740" y2="240" stroke="#404045" stroke-width="3"/>
+
+      <!-- Left Concrete Vertical Pillar Column -->
+      <polygon points="590,285 620,282 620,720 585,715" fill="#75757A" stroke="#333" stroke-width="2"/>
+      <!-- Right Concrete Vertical Pillar Column -->
+      <polygon points="728,276 758,274 765,710 735,712" fill="#65656A" stroke="#333" stroke-width="2"/>
+
+      <!-- Inner Glass Portal Frame -->
+      <rect x="620" y="278" width="112" height="438" fill="url(#interiorWarmth)" stroke="#222" stroke-width="4"/>
+
+      <!-- CHAPEL INTERIOR VISIBLE THROUGH GLASS -->
+      <!-- Warm back wall with wooden ribs and interior windows -->
+      <line x1="645" y1="360" x2="645" y2="440" stroke="#FFF9C4" stroke-width="4" opacity="0.9" filter="url(#softGlow)"/>
+      <line x1="665" y1="420" x2="665" y2="490" stroke="#FFF9C4" stroke-width="5" opacity="0.9" filter="url(#softGlow)"/>
+      <line x1="695" y1="390" x2="695" y2="460" stroke="#FFF9C4" stroke-width="4" opacity="0.9" filter="url(#softGlow)"/>
+
+      <!-- Altar Table & Green Liturgical Cloth -->
+      <ellipse cx="676" cy="620" rx="38" ry="12" fill="#1B4D2E" stroke="#0D2E1A" stroke-width="2"/>
+      <ellipse cx="676" cy="615" rx="35" ry="8" fill="#2E7D32"/>
+      <!-- Altar Candles Glowing -->
+      <rect x="655" y="598" width="3" height="14" fill="#FFFFFF"/>
+      <circle cx="656" cy="596" r="3" fill="#FFD54F" filter="url(#softGlow)"/>
+      <rect x="696" y="598" width="3" height="14" fill="#FFFFFF"/>
+      <circle cx="697" cy="596" r="3" fill="#FFD54F" filter="url(#softGlow)"/>
+
+      <!-- Priest in White Alb (Sacerdote con alba blanca) Standing at Altar -->
+      <!-- Figure head & dark hair -->
+      <circle cx="726" cy="516" r="6" fill="#D7CCC8"/>
+      <path d="M 720,513 Q 726,508 732,513 Z" fill="#3E2723"/>
+      <!-- White alb robe -->
+      <path d="M 722,522 L 730,522 L 738,650 L 715,650 Z" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+      <!-- Hands folded / holding service book -->
+      <ellipse cx="725" cy="552" rx="4" ry="3" fill="#E2E8F0"/>
+
+      <!-- Glass Door Framing & Details -->
+      <line x1="676" y1="280" x2="676" y2="716" stroke="#2D3748" stroke-width="3"/>
+      
+      <!-- Door Push Bar (Cartel "Empuje") -->
+      <rect x="702" y="555" width="24" height="12" rx="2" fill="#1E3A8A" stroke="#FFFFFF" stroke-width="1"/>
+      <text x="714" y="563" font-family="sans-serif" font-size="6" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Empuje</text>
+
+      <!-- Glass Reflection Highlight Diagonal -->
+      <polygon points="622,350 670,300 660,715 622,715" fill="#FFFFFF" opacity="0.12"/>
+      <polygon points="680,285 730,330 730,712 680,715" fill="#FFFFFF" opacity="0.08"/>
+    </g>
+
+    <!-- Entrance Landing Rug / Doormat at Doorway -->
+    <polygon points="575,715 770,710 790,755 550,760" fill="#1E293B" stroke="#0F172A" stroke-width="2"/>
+  </g>
+
+  <!-- ================= 5. FOREGROUND GARDEN, LAWN & CURVED STONE WALKWAY ================= -->
+  <g id="foreground-landscape">
+    <!-- Green Lawn Grass extending from left across foreground -->
+    <path d="M 0,550 
+             Q 220,540 380,620 
+             Q 520,680 550,760 
+             L 550,800 L 0,800 Z" 
+          fill="url(#lawnGrad)"/>
+
+    <!-- Distinctive Curved Stone / Pebble Aggregate Pathway (Sweeping towards entrance) -->
+    <path d="M 545,630 
+             C 510,690 535,760 550,800 
+             L 1000,800 
+             C 930,760 850,710 780,680 
+             C 670,640 590,625 545,630 Z" 
+          fill="url(#walkwayGrad)" stroke="#4A5568" stroke-width="3"/>
+    
+    <!-- Stone Texture Dots & Pavers on Path -->
+    <g fill="#475569" opacity="0.4">
+      <circle cx="620" cy="740" r="3"/>
+      <circle cx="640" cy="720" r="2"/>
+      <circle cx="660" cy="755" r="3.5"/>
+      <circle cx="680" cy="735" r="2.5"/>
+      <circle cx="700" cy="765" r="3"/>
+      <circle cx="720" cy="745" r="2"/>
+      <circle cx="740" cy="775" r="3.5"/>
+      <circle cx="760" cy="735" r="3"/>
+      <circle cx="790" cy="760" r="2.5"/>
+      <circle cx="820" cy="740" r="3"/>
+      <circle cx="850" cy="770" r="3.5"/>
+      <circle cx="880" cy="750" r="2.5"/>
+      <circle cx="910" cy="780" r="3"/>
+    </g>
+
+    <!-- Curved Concrete Curb / Border Stones -->
+    <path d="M 545,630 C 510,690 535,760 550,800" stroke="#CBD5E1" stroke-width="6" fill="none"/>
+    <path d="M 545,630 C 510,690 535,760 550,800" stroke="#334155" stroke-width="2" fill="none"/>
+
+    <!-- Small Conifer / Cypress Evergreen Shrub in Lawn Foreground (As seen in photo) -->
+    <g id="foreground-cypress-shrub">
+      <ellipse cx="480" cy="800" rx="20" ry="10" fill="#14260F" opacity="0.7"/>
+      <!-- Layered green foliage of conifer tree -->
+      <polygon points="480,685 462,740 498,740" fill="#2E5A1E"/>
+      <polygon points="480,670 466,720 494,720" fill="#3D7828"/>
+      <polygon points="480,650 470,700 490,700" fill="#4C9632"/>
+      <polygon points="480,640 473,680 487,680" fill="#5BAE3C"/>
+      <polygon points="480,630 476,660 484,660" fill="#6EC248"/>
+    </g>
+  </g>
+
+  <!-- ================= 6. VINTAGE COLLAGE TAPE & BADGE OVERLAY ================= -->
+  <g id="photo-sticker-overlay">
+    <!-- Top Photo Label Badge in Neo-Brutalist Style -->
+    <g transform="translate(40, 40) rotate(-1.5)">
+      <rect x="0" y="0" width="360" height="44" rx="10" fill="#FFD23F" stroke="#111111" stroke-width="3"/>
+      <text x="180" y="28" font-family="'DM Sans', sans-serif" font-weight="900" font-size="16" fill="#111111" text-anchor="middle" letter-spacing="1">
+        CAPILLA UCB · SEDE LA PAZ
+      </text>
+    </g>
+
+    <!-- Bottom Architectural Stamp -->
+    <g transform="translate(860, 720) rotate(1)">
+      <rect x="0" y="0" width="300" height="42" rx="12" fill="#1F3FD1" stroke="#111111" stroke-width="3"/>
+      <text x="150" y="26" font-family="'DM Sans', sans-serif" font-weight="800" font-size="13" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">
+        SEDE OFICIAL DEL EVENTO
+      </text>
+    </g>
+  </g>
+</svg>
