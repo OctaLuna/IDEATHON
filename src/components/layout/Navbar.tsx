@@ -314,8 +314,8 @@ export const Navbar: React.FC = () => {
         </div>
 
         <div className="text-center text-xs text-[var(--text-muted)] font-mono py-4">
-          Organizado por Administración de Empresas · Universidad Católica Boliviana "San Pablo"
-          (U.C.B.)
+          Organizado por la Facultad de Ciencias Económicas y Financieras · Universidad Católica
+          Boliviana "San Pablo" (U.C.B.)
         </div>
       </div>
     </>

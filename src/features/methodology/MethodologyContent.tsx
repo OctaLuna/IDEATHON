@@ -1405,7 +1405,7 @@ export const MethodologyContent: React.FC = () => {
             </div>
 
             <div className="pt-4 border-t border-white/20 text-xs font-mono text-[var(--accent-yellow)]">
-              Coordinación académica: Administración de Empresas · UCB Sede La Paz
+              Coordinación académica: UCB Sede La Paz
             </div>
           </div>
         </div>

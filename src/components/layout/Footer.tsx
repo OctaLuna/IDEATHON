@@ -54,8 +54,7 @@ export const Footer: React.FC = () => {
             <div className="space-y-3 text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
               <p>
                 <strong className="text-[var(--text-main)] block">Organiza:</strong>
-                Facultad de Ciencias Económicas y Financieras · UCB Sede La Paz (Carrera de
-                Administración de Empresas).
+                Facultad de Ciencias Económicas y Financieras · UCB Sede La Paz.
               </p>
               <p>
                 <strong className="text-[var(--text-main)] block">En alianza con:</strong>

@@ -91,8 +91,14 @@ try {
 
   await page.goto(new URL("/videos?socio=samuel", baseUrl).href, { waitUntil: "networkidle" });
   assert.equal(await page.locator('button[aria-label^="Ver video"]').count(), 4);
+  await page.goto(new URL("/", baseUrl).href, { waitUntil: "networkidle" });
+  assert.equal(
+    await page.getByText(/Administración de Empresas/i).count(),
+    0,
+    "The public site should not associate the event with the degree program.",
+  );
   console.log(
-    "Local MP4 loading, lazy requests, landscape/portrait playback, filtering, and mobile width pass.",
+    "Local MP4 loading, lazy requests, landscape/portrait playback, filtering, organizer copy, and mobile width pass.",
   );
 } finally {
   await browser.close();

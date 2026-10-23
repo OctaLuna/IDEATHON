@@ -18,7 +18,6 @@ export const PROGRAM_DATA = {
   eventBrand: "IDEATHON",
   organizer:
     'Facultad de Ciencias Económicas y Financieras · Universidad Católica Boliviana "San Pablo" Sede La Paz',
-  career: "Administración de Empresas",
   eventDate: "Viernes 6 de noviembre de 2026",
   eventTime: "09:00 a 13:00",
   eventLocation: "Capilla de la UCB, Sede La Paz",

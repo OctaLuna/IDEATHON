@@ -1234,9 +1234,9 @@ export const HomeContent: React.FC = () => {
               UCB
             </div>
             <h3 className="font-display font-black text-xl text-[var(--text-main)]">
-              Administración de Empresas
+              UCB Sede La Paz
             </h3>
-            <p className="text-xs text-[var(--text-muted)]">Sede La Paz · Capilla UCB</p>
+            <p className="text-xs text-[var(--text-muted)]">Capilla UCB</p>
           </div>
         </div>
       </section>
