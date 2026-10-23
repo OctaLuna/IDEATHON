@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-23T18:47:13Z",
+  "title": "Design System: IDEATHON · UCB Sede La Paz",
+  "extensions": {
+    "colorMeta": {
+      "warm-paper": {
+        "role": "neutral",
+        "displayName": "Papel cálido",
+        "canonical": "oklch(96.2% 0.013 86.8)",
+        "tonalRamp": [
+          "#0d0b06",
+          "#24211b",
+          "#3d3a33",
+          "#58554d",
+          "#757169",
+          "#928f87",
+          "#b1aea5",
+          "#f2eee5"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Blanco superficie",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#222222",
+          "#3a3a3a",
+          "#555555",
+          "#717171",
+          "#8f8f8f",
+          "#aeaeae",
+          "#eeeeee"
+        ]
+      },
+      "pale-blue": {
+        "role": "neutral",
+        "displayName": "Azul niebla",
+        "canonical": "oklch(96.4% 0.017 267.8)",
+        "tonalRamp": [
+          "#080b12",
+          "#1e212a",
+          "#373a44",
+          "#51555f",
+          "#6d717c",
+          "#8b8f9a",
+          "#a9aeb9",
+          "#e9eefa"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "canonical": "oklch(17.8% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#222222",
+          "#3a3a3a",
+          "#555555",
+          "#717171",
+          "#8f8f8f",
+          "#aeaeae",
+          "#eeeeee"
+        ]
+      },
+      "muted-ink": {
+        "role": "neutral",
+        "displayName": "Tinta secundaria",
+        "canonical": "oklch(44.6% 0.026 256.8)",
+        "tonalRamp": [
+          "#050b16",
+          "#19222e",
+          "#323b48",
+          "#4c5664",
+          "#687281",
+          "#8590a0",
+          "#a4afbf",
+          "#e4f0ff"
+        ]
+      },
+      "cobalt": {
+        "role": "primary",
+        "displayName": "Cobalto activo",
+        "canonical": "oklch(45.6% 0.225 266.4)",
+        "tonalRamp": [
+          "#17006a",
+          "#10008b",
+          "#0f10ac",
+          "#1e3dcf",
+          "#355ff2",
+          "#4f80ff",
+          "#6ca2ff",
+          "#a8e5ff"
+        ]
+      },
+      "energy-yellow": {
+        "role": "secondary",
+        "displayName": "Amarillo energía",
+        "canonical": "oklch(87.9% 0.162 90.9)",
+        "tonalRamp": [
+          "#220000",
+          "#3e1400",
+          "#5a3000",
+          "#774d00",
+          "#956a00",
+          "#b48900",
+          "#d4a800",
+          "#ffea5c"
+        ]
+      },
+      "coral-orange": {
+        "role": "secondary",
+        "displayName": "Naranja coral",
+        "canonical": "oklch(70.5% 0.193 39.2)",
+        "tonalRamp": [
+          "#3d0000",
+          "#5f0000",
+          "#820000",
+          "#a50100",
+          "#c83600",
+          "#eb591f",
+          "#ff7a45",
+          "#ffbc88"
+        ]
+      },
+      "mint": {
+        "role": "tertiary",
+        "displayName": "Verde menta",
+        "canonical": "oklch(72.3% 0.192 149.6)",
+        "tonalRamp": [
+          "#001900",
+          "#003400",
+          "#005100",
+          "#006f00",
+          "#008e26",
+          "#00ad47",
+          "#32ce67",
+          "#82ffa6"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Titulares expresivos",
+        "purpose": "Hero, títulos de sección y encabezados de tarjetas."
+      },
+      "body": {
+        "displayName": "Lectura clara",
+        "purpose": "Explicaciones, requisitos y contenido extenso."
+      },
+      "label": {
+        "displayName": "Etiquetas compactas",
+        "purpose": "Badges, metadatos y cifras tabulares."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sticker",
+        "value": "4px 4px 0 var(--shadow-color)",
+        "purpose": "Controles y tarjetas táctiles."
+      },
+      {
+        "name": "sticker-large",
+        "value": "6px 6px 0 var(--shadow-color)",
+        "purpose": "Tarjetas principales del cronograma."
+      },
+      {
+        "name": "sticker-accent",
+        "value": "5px 5px 0 var(--accent-yellow)",
+        "purpose": "Énfasis selectivo con color."
+      }
+    ],
+    "motion": [
+      {
+        "name": "hover-lift",
+        "value": "transform: translateY(-2px)",
+        "purpose": "Respuesta breve de botones y tarjetas interactivas."
+      },
+      {
+        "name": "theme-transition",
+        "value": "0.3s ease",
+        "purpose": "Cambio de superficies y texto entre temas."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "CTA amarillo",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Acción principal del hero, con sombra y respuesta táctil.",
+      "html": "<button class=\"ds-btn-primary\" type=\"button\">Ver cronograma</button>",
+      "css": ".ds-btn-primary { background: var(--accent-yellow); color: var(--text-main); padding: 14px 24px; border: 2px solid var(--border-ink); border-radius: 1rem; box-shadow: 4px 4px 0 var(--shadow-color); font: 900 16px 'Bricolage Grotesque', 'Unbounded', sans-serif; cursor: pointer; transition: transform 160ms ease, filter 160ms ease; } .ds-btn-primary:hover { transform: translateY(-2px); filter: brightness(1.05); } .ds-btn-primary:focus-visible { outline: 3px solid var(--accent-blue); outline-offset: 3px; } .ds-btn-primary:active { transform: scale(.98); }"
+    },
+    {
+      "name": "CTA blanco",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Acción secundaria que conserva el borde y la profundidad del CTA principal.",
+      "html": "<button class=\"ds-btn-secondary\" type=\"button\">Conoce la metodología</button>",
+      "css": ".ds-btn-secondary { background: var(--bg-surface); color: var(--text-main); padding: 14px 24px; border: 2px solid var(--border-ink); border-radius: 1rem; box-shadow: 4px 4px 0 var(--shadow-color); font: 900 16px 'Bricolage Grotesque', 'Unbounded', sans-serif; cursor: pointer; transition: transform 160ms ease, background-color 160ms ease; } .ds-btn-secondary:hover { background: var(--bg-surface-2); transform: translateY(-2px); } .ds-btn-secondary:focus-visible { outline: 3px solid var(--accent-blue); outline-offset: 3px; } .ds-btn-secondary:active { transform: scale(.98); }"
+    },
+    {
+      "name": "Píldora de navegación activa",
+      "kind": "nav",
+      "refersTo": "navigation-active",
+      "description": "Señala la ruta activa dentro de la navegación compartida.",
+      "html": "<a class=\"ds-nav-active\" href=\"#metodologia\">Metodología</a>",
+      "css": ".ds-nav-active { display: inline-flex; align-items: center; padding: 6px 14px; border-radius: 9999px; background: var(--accent-blue); color: #fff; font: 700 14px 'Plus Jakarta Sans', sans-serif; text-decoration: none; transition: filter 150ms ease; } .ds-nav-active:hover { filter: brightness(1.08); } .ds-nav-active:focus-visible { outline: 3px solid var(--accent-yellow); outline-offset: 3px; }"
+    },
+    {
+      "name": "Campo de búsqueda",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "Búsqueda de reportes con icono, placeholder y foco azul.",
+      "html": "<label class=\"ds-search\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"7\"></circle><path d=\"m16 16 4 4\"></path></svg><input placeholder=\"Buscar por tema o palabra clave...\" /></label>",
+      "css": ".ds-search { display: flex; align-items: center; gap: 10px; max-width: 28rem; padding: 10px 14px; border: 2px solid var(--border-ink); border-radius: .75rem; background: var(--bg-surface); } .ds-search svg { width: 16px; height: 16px; flex: none; fill: none; stroke: var(--text-muted); stroke-width: 2; } .ds-search input { width: 100%; border: 0; outline: 0; background: transparent; color: var(--text-main); font: 400 14px 'DM Sans', sans-serif; } .ds-search:focus-within { outline: 2px solid var(--accent-blue); outline-offset: 2px; } .ds-search input::placeholder { color: var(--text-muted); opacity: 1; }"
+    },
+    {
+      "name": "Tarjeta de etapa metodológica",
+      "kind": "card",
+      "refersTo": "methodology-step-card",
+      "description": "Contenedor táctil para presentar cada etapa y su código.",
+      "html": "<article class=\"ds-step-card\"><span class=\"ds-step-code\">Paso 06</span><h3>Lean Canvas</h3><p>Estructura la propuesta en nueve bloques.</p></article>",
+      "css": ".ds-step-card { padding: 24px; border: 3px solid var(--border-ink); border-radius: 1.5rem; background: var(--bg-surface); color: var(--text-main); box-shadow: 6px 6px 0 var(--shadow-color); transition: transform 160ms ease; } .ds-step-card:hover { transform: translateY(-2px); } .ds-step-code { display: inline-block; padding: 4px 12px; border: 2px solid var(--border-ink); border-radius: 9999px; background: var(--accent-yellow); color: var(--text-on-yellow); font: 700 12px 'Plus Jakarta Sans', sans-serif; } .ds-step-card h3 { margin: 12px 0 8px; font: 900 24px 'Bricolage Grotesque', 'Unbounded', sans-serif; } .ds-step-card p { margin: 0; color: var(--text-muted); font: 400 14px/1.6 'DM Sans', sans-serif; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Taller de ideas en movimiento",
+    "overview": "La interfaz acompaña a estudiantes y colegios desde el primer contacto con IDEATHON hasta la preparación de su propuesta. Presenta la información institucional con claridad y la envuelve en un lenguaje gráfico activo: papel cálido con retícula tenue, titulares expresivos, trazos oscuros y bloques de color que señalan acciones y etapas.\n\nLa composición conserva la identidad ya establecida. Los elementos se sienten táctiles, como piezas impresas y stickers colocados sobre una mesa de trabajo. Las animaciones GSAP y CSS existentes forman parte de esa experiencia; deben conservar su ritmo y su alternativa para movimiento reducido.",
+    "keyCharacteristics": [
+      "Fondo cálido con retícula de papel y superficies blancas.",
+      "Cobalto, amarillo y naranja como acentos principales; verde menta para estados de avance.",
+      "Bordes oscuros definidos y sombras cortas desplazadas.",
+      "Tipografía de titulares con carácter y cuerpo de lectura claro.",
+      "Movimiento intencional con soporte para prefers-reduced-motion."
+    ],
+    "rules": [
+      {
+        "name": "The Action Color Rule",
+        "body": "El amarillo identifica la acción principal; el cobalto marca selección y navegación activa. Mantén esas funciones reconocibles.",
+        "section": "colors"
+      },
+      {
+        "name": "The Cutout Shadow Rule",
+        "body": "Usa la sombra desplazada para reforzar superficies táctiles. No la sustituyas por sombras suaves genéricas en botones y tarjetas existentes.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do conserva la paleta, las tipografías, los contornos y las sombras del sitio al actualizar contenido.",
+      "Do mantén las animaciones actuales de GSAP y CSS, incluyendo limpieza de contexto y respeto a prefers-reduced-motion.",
+      "Do usa cobalto para selección, amarillo para la acción principal y naranja para énfasis editorial corto.",
+      "Do conserva los layouts responsive y comprueba textos extensos en móvil."
+    ],
+    "donts": [
+      "Don't rediseñes la identidad visual en una tarea de contenido o metodología.",
+      "Don't elimines, ralentices o reemplaces las animaciones actuales sin una petición explícita.",
+      "Don't añadas sombras difusas o una paleta neutra ajena al sistema táctil existente.",
+      "Don't dependas solo del color o de la animación para comunicar estado o información."
+    ]
+  }
+}

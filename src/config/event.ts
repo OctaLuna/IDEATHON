@@ -83,7 +83,7 @@ export const PROGRAM_DATA = {
       badge: "Jornada",
       title: "Jornada Ideathon 2026 (09:00 – 13:00)",
       description:
-        "Encuentro presencial intensivo en la Capilla UCB: diagnóstico con datos, ideación, prototipado, Lean Canvas y pitch ante el jurado.",
+        "Encuentro presencial intensivo en la Capilla UCB: diagnóstico con datos, ideación (usuario, problemas e idea/solución), Lean Canvas, prototipado y exposición ante el jurado.",
       isDeadline: false,
     },
   ] as MilestoneItem[],
@@ -102,14 +102,14 @@ export const PROGRAM_DATA = {
     },
     {
       time: "10:00",
-      title: "Análisis y debate en equipo",
-      badge: "Ideación",
+      title: "Ideación: usuario, problemas e idea/solución",
+      badge: "Design Thinking",
       badgeColor: "#FF6B35",
     },
     {
       time: "10:45",
-      title: "Diseño del modelo con Lean Canvas",
-      badge: "Prototipado",
+      title: "Lean Canvas y prototipado de la solución",
+      badge: "Lean Canvas · Design Thinking",
       badgeColor: "#22C55E",
     },
     {

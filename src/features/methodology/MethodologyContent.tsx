@@ -22,6 +22,7 @@ import {
 import React, { useRef, useState } from "react";
 import {
   EVALUATION_CRITERIA,
+  IDEATION_STAGES,
   IDEATION_TECHNIQUES,
   LEAN_CANVAS_BLOCKS,
   METHODOLOGY_STEPS,
@@ -568,9 +569,9 @@ export const MethodologyContent: React.FC = () => {
       case 5:
         return Lightbulb;
       case 6:
-        return Box;
-      case 7:
         return Layers;
+      case 7:
+        return Box;
       case 8:
         return Mic;
       default:
@@ -875,9 +876,9 @@ export const MethodologyContent: React.FC = () => {
         </div>
 
         {/* ======================================================== */}
-        {/* SECCIÓN 1: FASE DE IDEACIÓN (DESIGN THINKING - 4 TÉCNICAS) */}
+        {/* SECCIÓN 1: FASE DE IDEACIÓN (DESIGN THINKING) */}
         {/* ======================================================== */}
-        <div className="mt-24 space-y-6">
+        <div id="ideation-section" className="mt-24 space-y-6">
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <div className="inline-block">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--accent-orange)]">
@@ -885,13 +886,36 @@ export const MethodologyContent: React.FC = () => {
               </span>
             </div>
             <h2 className="font-display font-black text-3xl sm:text-4xl text-[var(--text-main)]">
-              Técnicas de Ideación en Equipo
+              Ideación: usuario, problemas e idea/solución
             </h2>
             <p className="text-xs sm:text-sm text-[var(--text-muted)]">
-              Antes de juzgar qué es posible, genera un gran volumen de alternativas. Estas 4
-              técnicas guían la sesión:
+              La primera fase de Design Thinking comienza por comprender a las personas, definir sus
+              problemas y proponer soluciones.
             </p>
           </div>
+
+          <ol className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {IDEATION_STAGES.map((stage, index) => (
+              <li
+                key={stage.id}
+                className="p-5 rounded-2xl bg-[var(--bg-surface)] border-2 border-[var(--border-ink)] sticker-shadow"
+              >
+                <span className="text-xs font-mono font-bold text-[var(--accent-orange)]">
+                  0{index + 1}
+                </span>
+                <h3 className="mt-2 font-display font-black text-lg text-[var(--text-main)]">
+                  {stage.title}
+                </h3>
+                <p className="mt-1 text-sm text-[var(--text-muted)] leading-relaxed">
+                  {stage.description}
+                </p>
+              </li>
+            ))}
+          </ol>
+
+          <h3 className="font-display font-bold text-xl text-[var(--text-main)]">
+            Técnicas para idear en equipo
+          </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {IDEATION_TECHNIQUES.map((tech) => (
@@ -921,59 +945,7 @@ export const MethodologyContent: React.FC = () => {
         </div>
 
         {/* ======================================================== */}
-        {/* SECCIÓN 2: FASE DE PROTOTIPADO (4 HERRAMIENTAS + REGLA)  */}
-        {/* ======================================================== */}
-        <div className="mt-20 p-8 sm:p-10 rounded-3xl bg-[var(--bg-surface)] border-3 border-[var(--border-ink)] sticker-shadow space-y-8">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-            <div className="space-y-1 max-w-xl">
-              <div className="inline-block">
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--accent-mint)]">
-                  DESIGN THINKING · FASE CONVERGENTE
-                </span>
-              </div>
-              <h2 className="font-display font-black text-3xl sm:text-4xl text-[var(--text-main)]">
-                Prototipado Rápido
-              </h2>
-              <p className="text-xs sm:text-sm text-[var(--text-muted)]">
-                Convierte la idea en algo que los jueces y mentores puedan ver, entender y
-                retroalimentar.
-              </p>
-            </div>
-
-            {/* Regla de oro sticker */}
-            <div className="p-4 rounded-2xl bg-[var(--accent-yellow)] text-[#111111] border-2 border-[var(--border-ink)] sticker-shadow rotate-1 shrink-0 max-w-xs">
-              <span className="text-[10px] font-mono font-bold uppercase block tracking-wider">
-                REGLA DE ORO:
-              </span>
-              <p className="font-display font-black text-xs sm:text-sm leading-snug mt-0.5">
-                "Un prototipo se hace rápido, barato y para aprender."
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {PROTOTYPING_TOOLS.map((tool) => (
-              <div
-                key={tool.id}
-                className="p-5 rounded-2xl bg-[var(--bg-surface-2)] border-2 border-[var(--border-soft)] space-y-2 hover:border-[var(--border-ink)] transition-colors"
-              >
-                <div className="w-9 h-9 rounded-xl bg-[var(--accent-blue)] text-white flex items-center justify-center border border-[var(--border-ink)]">
-                  {tool.id === "sketch" && <FileText className="w-4 h-4" />}
-                  {tool.id === "storyboard" && <Film className="w-4 h-4" />}
-                  {tool.id === "mockup-fisico" && <Box className="w-4 h-4" />}
-                  {tool.id === "mockup-celular" && <Smartphone className="w-4 h-4" />}
-                </div>
-                <h3 className="font-display font-bold text-base text-[var(--text-main)]">
-                  {tool.title}
-                </h3>
-                <p className="text-xs text-[var(--text-muted)] leading-relaxed">{tool.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* ======================================================== */}
-        {/* SECCIÓN 3: LEAN CANVAS (PIEZA CENTRAL - 9 BLOQUES)        */}
+        {/* SECCIÓN 2: LEAN CANVAS (PIEZA CENTRAL - 9 BLOQUES)        */}
         {/* ======================================================== */}
         <div id="lean-canvas-section" className="mt-20 space-y-6">
           <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4">
@@ -1333,6 +1305,61 @@ export const MethodologyContent: React.FC = () => {
                 </div>
               );
             })}
+          </div>
+        </div>
+
+        {/* ======================================================== */}
+        {/* SECCIÓN 3: FASE DE PROTOTIPADO (4 HERRAMIENTAS + REGLA)  */}
+        {/* ======================================================== */}
+        <div
+          id="prototyping-section"
+          className="mt-20 p-8 sm:p-10 rounded-3xl bg-[var(--bg-surface)] border-3 border-[var(--border-ink)] sticker-shadow space-y-8"
+        >
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div className="space-y-1 max-w-xl">
+              <div className="inline-block">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--accent-mint)]">
+                  DESIGN THINKING · FASE CONVERGENTE
+                </span>
+              </div>
+              <h2 className="font-display font-black text-3xl sm:text-4xl text-[var(--text-main)]">
+                Prototipado Rápido
+              </h2>
+              <p className="text-xs sm:text-sm text-[var(--text-muted)]">
+                Convierte la idea en algo que los jueces y mentores puedan ver, entender y
+                retroalimentar.
+              </p>
+            </div>
+
+            {/* Regla de oro sticker */}
+            <div className="p-4 rounded-2xl bg-[var(--accent-yellow)] text-[#111111] border-2 border-[var(--border-ink)] sticker-shadow rotate-1 shrink-0 max-w-xs">
+              <span className="text-[10px] font-mono font-bold uppercase block tracking-wider">
+                REGLA DE ORO:
+              </span>
+              <p className="font-display font-black text-xs sm:text-sm leading-snug mt-0.5">
+                "Un prototipo se hace rápido, barato y para aprender."
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {PROTOTYPING_TOOLS.map((tool) => (
+              <div
+                key={tool.id}
+                className="p-5 rounded-2xl bg-[var(--bg-surface-2)] border-2 border-[var(--border-soft)] space-y-2 hover:border-[var(--border-ink)] transition-colors"
+              >
+                <div className="w-9 h-9 rounded-xl bg-[var(--accent-blue)] text-white flex items-center justify-center border border-[var(--border-ink)]">
+                  {tool.id === "sketch" && <FileText className="w-4 h-4" />}
+                  {tool.id === "storyboard" && <Film className="w-4 h-4" />}
+                  {tool.id === "mockup-fisico" && <Box className="w-4 h-4" />}
+                  {tool.id === "mockup-celular" && <Smartphone className="w-4 h-4" />}
+                </div>
+                <h3 className="font-display font-bold text-base text-[var(--text-main)]">
+                  {tool.title}
+                </h3>
+                <p className="text-xs text-[var(--text-muted)] leading-relaxed">{tool.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
 

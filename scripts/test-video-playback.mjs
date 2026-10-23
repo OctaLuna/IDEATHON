@@ -97,8 +97,48 @@ try {
     0,
     "The public site should not associate the event with the degree program.",
   );
+  for (const width of [390, 1280]) {
+    await page.setViewportSize({ width, height: 900 });
+    const documentWidth = await page.evaluate(() => document.documentElement.scrollWidth);
+    assert.ok(
+      documentWidth <= width,
+      `The homepage overflows the ${width}px viewport (${documentWidth}px).`,
+    );
+  }
+  await page.goto(new URL("/metodologia", baseUrl).href, { waitUntil: "networkidle" });
+  assert.deepEqual(
+    (await page.locator(".methodology-step-card h3").allTextContents()).slice(4, 8),
+    [
+      "Ideación (Design Thinking)",
+      "Lean Canvas",
+      "Prototipado (Design Thinking)",
+      "Pitch y premiación",
+    ],
+    "The methodology timeline should follow the event sequence.",
+  );
+  assert.deepEqual(await page.locator("#ideation-section ol h3").allTextContents(), [
+    "USUARIO",
+    "PROBLEMAS",
+    "IDEA / SOLUCIÓN",
+  ]);
+  const detailedSectionPositions = await page
+    .locator("#ideation-section, #lean-canvas-section, #prototyping-section")
+    .evaluateAll((sections) => sections.map((section) => section.getBoundingClientRect().top));
+  assert.ok(
+    detailedSectionPositions[0] < detailedSectionPositions[1] &&
+      detailedSectionPositions[1] < detailedSectionPositions[2],
+    "The detailed methodology should show ideation, Lean Canvas, and prototyping in order.",
+  );
+  for (const width of [390, 1280]) {
+    await page.setViewportSize({ width, height: 900 });
+    const documentWidth = await page.evaluate(() => document.documentElement.scrollWidth);
+    assert.ok(
+      documentWidth <= width,
+      `The methodology page overflows the ${width}px viewport (${documentWidth}px).`,
+    );
+  }
   console.log(
-    "Local MP4 loading, lazy requests, landscape/portrait playback, filtering, organizer copy, and mobile width pass.",
+    "Local video playback, organizer copy, methodology order, and methodology widths pass.",
   );
 } finally {
   await browser.close();

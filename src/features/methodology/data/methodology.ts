@@ -49,27 +49,27 @@ export const METHODOLOGY_STEPS: MethodologyStep[] = [
     stepCode: "05",
     title: "Ideación (Design Thinking)",
     description:
-      "Genera muchas ideas creativas usando las historias de los productores locales como inspiración y selecciona la propuesta más prometedora en equipo.",
+      "Comprende al usuario, define sus problemas y genera ideas de solución con el equipo siguiendo Design Thinking.",
     tip: "Aplica la regla de oro: cantidad primero, juicio y crítica después.",
     accentColor: "#1F3FD1",
   },
   {
     number: 6,
     stepCode: "06",
+    title: "Lean Canvas",
+    description:
+      "Estructura la propuesta en nueve bloques para definir clientes, problema, solución y viabilidad del modelo.",
+    tip: "Comienza siempre por los Segmentos de clientes y el Problema antes que por la solución.",
+    accentColor: "#FFD23F",
+  },
+  {
+    number: 7,
+    stepCode: "07",
     title: "Prototipado (Design Thinking)",
     description:
       "Convierte la idea elegida en algo visible y tangible: un boceto en papel, un storyboard de viñetas, una maqueta simple o un mockup en celular.",
     tip: "Hazlo rápido y barato para aprender y recibir retroalimentación temprana.",
     accentColor: "#FF6B35",
-  },
-  {
-    number: 7,
-    stepCode: "07",
-    title: "Lean Canvas",
-    description:
-      "Estructura tu modelo de negocio en el lienzo interactivo de 9 bloques en una sola hoja: propuesta de valor, clientes, solución, canales, costos e ingresos.",
-    tip: "Comienza siempre por los Segmentos de clientes y el Problema antes que por la solución.",
-    accentColor: "#FFD23F",
   },
   {
     number: 8,
@@ -79,6 +79,24 @@ export const METHODOLOGY_STEPS: MethodologyStep[] = [
       "Presenta tu propuesta en un pitch de formato libre ante el jurado interinstitucional. Al finalizar, se anuncian los tres equipos con mayor puntuación.",
     tip: "Destaca con claridad cómo tu modelo genera empleo digno para jóvenes en La Paz.",
     accentColor: "#22C55E",
+  },
+];
+
+export const IDEATION_STAGES = [
+  {
+    id: "user",
+    title: "USUARIO",
+    description: "Conoce a las personas y el contexto que viven.",
+  },
+  {
+    id: "problems",
+    title: "PROBLEMAS",
+    description: "Define las necesidades concretas que enfrentan.",
+  },
+  {
+    id: "solution-idea",
+    title: "IDEA / SOLUCIÓN",
+    description: "Propón y selecciona una respuesta para esos problemas.",
   },
 ];
 
