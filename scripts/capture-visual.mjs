@@ -18,7 +18,7 @@ try {
           reducedMotion: "no-preference",
         });
         await context.addInitScript((initialTheme) => {
-          localStorage.setItem("ideaton_theme", initialTheme);
+          localStorage.setItem("ideathon_theme", initialTheme);
         }, theme);
 
         const page = await context.newPage();

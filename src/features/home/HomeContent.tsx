@@ -222,15 +222,15 @@ export const HomeContent: React.FC = () => {
     const icsContent = [
       "BEGIN:VCALENDAR",
       "VERSION:2.0",
-      "PRODID:-//IDEATON UCB//ES",
+      "PRODID:-//IDEATHON UCB//ES",
       "CALSCALE:GREGORIAN",
       "METHOD:PUBLISH",
       "BEGIN:VEVENT",
-      "UID:ideaton-ucb-2026@ucb.edu.bo",
+      "UID:ideathon-ucb-2026@ucb.edu.bo",
       "DTSTAMP:20261019T120000Z",
       "DTSTART:20261106T130000Z",
       "DTEND:20261106T170000Z",
-      "SUMMARY:IDEATON UCB 2026 - Jornada de Innovación",
+      "SUMMARY:IDEATHON UCB 2026 - Jornada de Innovación",
       "DESCRIPTION:Ideathon Colegios 2026 en la Capilla de la UCB Sede La Paz.",
       "LOCATION:Capilla de la UCB, Av. 14 de Septiembre y Calle 2, Obrajes, La Paz",
       "STATUS:CONFIRMED",
@@ -242,7 +242,7 @@ export const HomeContent: React.FC = () => {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.setAttribute("download", "IDEATON-UCB-2026.ics");
+    link.setAttribute("download", "IDEATHON-UCB-2026.ics");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -840,7 +840,7 @@ export const HomeContent: React.FC = () => {
                     UNIVERSIDAD CATÓLICA BOLIVIANA "SAN PABLO"
                   </span>
                   <h3 className="font-display font-black text-2xl sm:text-3xl text-[var(--text-main)] tracking-tight">
-                    IDEATON 2026
+                    IDEATHON 2026
                   </h3>
                   <p className="text-xs text-[var(--text-muted)]">
                     Facultad de Ciencias Económicas y Financieras · UCB Sede La Paz

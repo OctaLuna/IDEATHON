@@ -1,6 +1,6 @@
 ---
 name: test-runner
-description: Run, target, and diagnose IDEATON's Vitest and React Testing Library suite.
+description: Run, target, and diagnose IDEATHON's Vitest and React Testing Library suite.
 ---
 
 # Test runner

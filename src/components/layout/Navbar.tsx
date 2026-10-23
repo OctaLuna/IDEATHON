@@ -160,14 +160,14 @@ export const Navbar: React.FC = () => {
             to="/"
             onClick={() => setIsMobileMenuOpen(false)}
             className="shrink-0 flex items-center gap-2 sm:gap-2.5 select-none"
-            aria-label="Ir al inicio de IDEATON"
+            aria-label="Ir al inicio de IDEATHON"
           >
             <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[var(--accent-blue)] border-2 border-[var(--border-ink)] flex items-center justify-center sticker-shadow group-hover:rotate-6 transition-transform duration-200 shrink-0">
               <LightbulbDoodle size={22} color="var(--accent-yellow)" />
             </div>
             <div className="flex flex-col">
               <span className="font-display font-black text-xl sm:text-2xl tracking-tighter text-[var(--text-main)] leading-none">
-                IDEATON<span className="text-[var(--accent-orange)]">.</span>
+                IDEATHON<span className="text-[var(--accent-orange)]">.</span>
               </span>
               <span className="text-[10px] font-mono tracking-widest font-bold text-[var(--accent-blue)] uppercase">
                 UCB · LA PAZ
@@ -264,7 +264,7 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between pb-3 mb-3 border-b-2 border-[var(--border-soft)] max-w-sm mx-auto w-full">
           <div className="flex items-center gap-2">
             <span className="text-[11px] font-mono uppercase tracking-widest text-[var(--text-muted)] font-bold">
-              NAVEGACIÓN IDEATON 2026
+              NAVEGACIÓN IDEATHON 2026
             </span>
           </div>
 

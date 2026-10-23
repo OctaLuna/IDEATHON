@@ -599,7 +599,7 @@ export const MethodologyContent: React.FC = () => {
             <TapeBadge text="GUÍA METODOLÓGICA" rotate="-1.5deg" color="var(--accent-yellow)" />
           </div>
           <h1 className="font-display font-black text-4xl sm:text-6xl text-[var(--text-main)] tracking-tight">
-            Tu ruta en el Ideaton
+            Tu ruta en el Ideathon
           </h1>
           <p className="text-base sm:text-lg text-[var(--text-muted)]">
             8 pasos para transformar una idea en una propuesta ganadora.

@@ -1,6 +1,6 @@
-# IDEATON — Plataforma Web Creativa & Juvenil UCB
+# IDEATHON — Plataforma Web Creativa & Juvenil UCB
 
-Sitio web oficial, informativo e interactivo para el evento **IDEATON**, organizado por la carrera de Administración de Empresas de la Universidad Católica Boliviana (UCB) con premios otorgados por Samuel Doria Medina. Diseñado con una identidad visual _"collage juvenil / streetwear editorial"_ inspirada en la cultura creativa urbana, con tipografías display expresivas, garabatos vectoriales dibujados a mano, stickers con efecto parallax e ingeniería de animación fluida mediante GSAP.
+Sitio web oficial, informativo e interactivo para el evento **IDEATHON**, organizado por la carrera de Administración de Empresas de la Universidad Católica Boliviana (UCB) con premios otorgados por Samuel Doria Medina. Diseñado con una identidad visual _"collage juvenil / streetwear editorial"_ inspirada en la cultura creativa urbana, con tipografías display expresivas, garabatos vectoriales dibujados a mano, stickers con efecto parallax e ingeniería de animación fluida mediante GSAP.
 
 ---
 
@@ -18,7 +18,7 @@ Sitio web oficial, informativo e interactivo para el evento **IDEATON**, organiz
 
 ## 1. Overview & Core Concept
 
-- **Qué es Ideaton**: Es un certamen de innovación y emprendimiento escolar de la UCB para colegios de La Paz y Bolivia. Equipos de promoción y prepromoción (3 a 5 estudiantes + 1 profesor tutor) formulan soluciones a desafíos reales y compiten por mentorías, visitas empresariales exclusivas y premios otorgados por Samuel Doria Medina.
+- **Qué es Ideathon**: Es un certamen de innovación y emprendimiento escolar de la UCB para colegios de La Paz y Bolivia. Equipos de promoción y prepromoción (3 a 5 estudiantes + 1 profesor tutor) formulan soluciones a desafíos reales y compiten por mentorías, visitas empresariales exclusivas y premios otorgados por Samuel Doria Medina.
 - **Audiencia Objetivo**: Estudiantes bolivianos de 5to y 6to de secundaria (prepromoción y promoción), profesores asesores, directores de colegio y la comunidad universitaria.
 - **Tono y Voz**: Enérgico, motivador, juvenil y cercano (tuteo boliviano amigable: _"animate", "mostrá tu talento", "transformá tu realidad"_), sin perder el rigor institucional de la UCB.
 - **Objetivo Principal**: Comunicar las bases, inspirar a los jóvenes y facilitar el registro de equipos mediante una experiencia visual vibrante y moderna.
@@ -51,14 +51,14 @@ Sitio web oficial, informativo e interactivo para el evento **IDEATON**, organiz
 1. **Inicio (`/`)**:
    - _Hero Section_: Titular cinemático animado con SplitText _"TU IDEA PUEDE CAMBIAR EL MUNDO"_, badges flotantes con micro-parallax, stickers interactivos, CTAs _"Inscríbete"_ y _"Ver cronograma"_, y placeholder de estudiantes en blob azul.
    - _Banda de Estadísticas_: Contadores numéricos que suben dinámicamente (`30+ Colegios`, `500+ Estudiantes`, `3 Empresas Aliadas`, `Bs 10.000+ en Premios & Experiencias`).
-   - _¿Qué es Ideaton?_: Bloques estilo tarjetas de recortes con beneficios clave para alumnos.
+   - _¿Qué es Ideathon?_: Bloques estilo tarjetas de recortes con beneficios clave para alumnos.
    - _Explorador por Categorías_: 4 tarjetas con inclinación y hover elástico conectadas a las demás secciones.
    - _Marquee Infinito_: Cinta reactiva a la velocidad de scroll con texto dinámico.
    - _Preguntas Frecuentes_: Acordeón con animación suave de apertura y cierre.
    - _Bloque CTA Cohete_: Sección final de alto impacto con cohete SVG en ascenso y acceso al registro.
 2. **Empresas Aliadas (`/empresas`)**:
    - Tarjetas editoriales de _Fundación Samuel Doria Medina_ y _Fundación Jubileo_.
-   - Resumen institucional, áreas de impacto, por qué son aliadas estratégicas para Ideaton y botón para expandir detalles con animación de morphing/Flip.
+   - Resumen institucional, áreas de impacto, por qué son aliadas estratégicas para Ideathon y botón para expandir detalles con animación de morphing/Flip.
 3. **Metodología (`/metodologia`)**:
    - Ruta serpenteante de 8 pasos desde la inscripción hasta el gran pitch final ante el jurado.
    - Trazo de camino SVG que se dibuja progresivamente con ScrollTrigger y un marcador cohete que avanza sobre el trayecto.
@@ -86,7 +86,7 @@ Sitio web oficial, informativo e interactivo para el evento **IDEATON**, organiz
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│                          IDEATON WEB APP                               │
+│                          IDEATHON WEB APP                               │
 │                                                                        │
 │   ┌────────────────────────────────────────────────────────────────┐   │
 │   │  Navbar (Logo, Links, ThemeToggle [Circular Clip], CTA Modal)   │   │

@@ -1,4 +1,4 @@
-﻿import { gsap, ScrollTrigger, useGSAP } from "@/animations/gsap";
+import { gsap, ScrollTrigger, useGSAP } from "@/animations/gsap";
 import { TapeBadge } from "@/components/decorative/DoodleSVGs";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import {
@@ -324,7 +324,7 @@ export const PartnersContent: React.FC = () => {
                   <div className="flex items-center gap-2">
                     <Coins className="w-4 h-4 text-[#111111]" />
                     <span className="text-xs font-bold font-mono text-[#111111] uppercase tracking-wider">
-                      CONEXIÓN CON EL IDEATON & EL LEAN CANVAS
+                      CONEXIÓN CON EL IDEATHON & EL LEAN CANVAS
                     </span>
                   </div>
                   <p className="text-xs sm:text-sm text-[var(--text-main)] leading-relaxed font-medium">

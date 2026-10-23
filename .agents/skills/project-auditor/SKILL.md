@@ -1,6 +1,6 @@
 ---
 name: project-auditor
-description: Audit IDEATON changes for correctness, accessibility, performance, and consistency with its React and Vite architecture.
+description: Audit IDEATHON changes for correctness, accessibility, performance, and consistency with its React and Vite architecture.
 ---
 
 # Project auditor

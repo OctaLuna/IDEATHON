@@ -15,7 +15,7 @@ export interface DayAgendaItem {
 
 export const PROGRAM_DATA = {
   eventName: "Ideathon Colegios 2026",
-  eventBrand: "IDEATON",
+  eventBrand: "IDEATHON",
   organizer:
     'Facultad de Ciencias Económicas y Financieras · Universidad Católica Boliviana "San Pablo" Sede La Paz',
   career: "Administración de Empresas",

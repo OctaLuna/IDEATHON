@@ -1,4 +1,4 @@
-# IDEATON UCB Colegios 2026
+# IDEATHON UCB Colegios 2026
 
 Sitio en español para el evento escolar de innovación de la UCB. La aplicación es una SPA con React 19, TypeScript, Vite, React Router, Tailwind CSS 4, GSAP y Motion.
 

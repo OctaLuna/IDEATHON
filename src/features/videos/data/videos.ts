@@ -149,7 +149,7 @@ export const VIDEO_REFLECTION_QUESTIONS = [
     hint: "Segmentos de clientes y canales de distribución utilizados.",
   },
   {
-    q: "¿Qué oportunidad o aprendizaje ves para tu propia idea en el Ideaton?",
+    q: "¿Qué oportunidad o aprendizaje ves para tu propia idea en el Ideathon?",
     hint: "Elementos del modelo que tu equipo puede adaptar con Lean Canvas.",
   },
 ];

@@ -1,5 +1,5 @@
 {
-  "name": "IDEATON UCB 2026",
+  "name": "IDEATHON UCB 2026",
   "description": "Ideathon Colegios 2026 organizado por la Facultad de Ciencias Económicas y Financieras de la Universidad Católica Boliviana \"San Pablo\" (U.C.B.) Sede La Paz, junto a Fundación Jubileo, Manq'a, Escuela de Emprendedores Samuel Doria Medina y BancoSol.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]

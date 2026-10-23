@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
             </div>
             <div>
               <span className="font-display font-black text-3xl tracking-tight text-[var(--text-main)] block">
-                IDEATON<span className="text-[var(--accent-orange)]">.</span>
+                IDEATHON<span className="text-[var(--accent-orange)]">.</span>
               </span>
               <span className="font-mono text-xs text-[var(--accent-blue)] tracking-wider uppercase font-bold">
                 UCB · LA PAZ · Colegios 2026
@@ -119,7 +119,7 @@ export const Footer: React.FC = () => {
             organizadores.
           </p>
           <div className="text-xs text-[var(--text-muted)] font-mono">
-            IDEATON UCB © 2026 · La Paz, Bolivia
+            IDEATHON UCB © 2026 · La Paz, Bolivia
           </div>
         </div>
       </div>

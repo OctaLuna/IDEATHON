@@ -1,6 +1,6 @@
-# Guía de IDEATON
+# Guía de IDEATHON
 
-IDEATON es un sitio en español para el evento escolar de innovación de la UCB. La aplicación es una SPA de React 19, TypeScript, Vite, React Router, Tailwind CSS 4, GSAP y Motion. Mantén el contenido y los datos verificables en español y respeta la identidad, hechos y rutas existentes del evento.
+IDEATHON es un sitio en español para el evento escolar de innovación de la UCB. La aplicación es una SPA de React 19, TypeScript, Vite, React Router, Tailwind CSS 4, GSAP y Motion. Mantén el contenido y los datos verificables en español y respeta la identidad, hechos y rutas existentes del evento.
 
 ## Comandos
 

@@ -15,7 +15,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(() => {
     try {
-      const saved = localStorage.getItem("ideaton_theme");
+      const saved = localStorage.getItem("ideathon_theme");
       if (saved === "light" || saved === "dark") {
         return saved;
       }
@@ -45,7 +45,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       metaThemeColor.setAttribute("content", t === "dark" ? "#0A1128" : "#F6F2E9");
     }
     try {
-      localStorage.setItem("ideaton_theme", t);
+      localStorage.setItem("ideathon_theme", t);
     } catch {
       /* Storage can be unavailable in private browsing contexts. */
     }

@@ -1,6 +1,6 @@
 ---
 name: code-formatter
-description: Format IDEATON source and check formatting with Prettier.
+description: Format IDEATHON source and check formatting with Prettier.
 ---
 
 # Code formatter

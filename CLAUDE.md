@@ -1,6 +1,6 @@
 # Claude Code guide
 
-Follow `AGENTS.md` for the project architecture and conventions. IDEATON is a Spanish-language React 19 and TypeScript SPA built with Vite, React Router, Tailwind CSS 4, GSAP, and Motion.
+Follow `AGENTS.md` for the project architecture and conventions. IDEATHON is a Spanish-language React 19 and TypeScript SPA built with Vite, React Router, Tailwind CSS 4, GSAP, and Motion.
 
 - Install: `bun install`
 - Develop: `bun run dev`
