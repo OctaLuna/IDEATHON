@@ -13,7 +13,7 @@ export const METHODOLOGY_STEPS: MethodologyStep[] = [
     stepCode: "01",
     title: "Postulación a través de tu colegio",
     description:
-      "La unidad educativa inscribe a equipos de 4 a 5 estudiantes de prepromoción o promoción mediante el formulario oficial hasta el 23 de octubre. Máximo 3 equipos por colegio.",
+      "La unidad educativa inscribe a equipos de 4 a 5 estudiantes de prepromoción o promoción mediante el formulario oficial hasta el 26 de octubre. Máximo 3 equipos por colegio.",
     tip: "Habla con la dirección o los profesores de tu colegio para postular a tiempo.",
     accentColor: "#1F3FD1",
   },

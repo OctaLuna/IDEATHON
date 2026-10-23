@@ -21,7 +21,7 @@ export const FAQS_DATA: FAQItem[] = [
   {
     question: "¿Cómo se postula?",
     answer:
-      "La unidad educativa inscribe a los equipos completos mediante el formulario digital de postulación de los organizadores, hasta el 23 de octubre de 2026. Consulta con la dirección o los docentes de tu colegio.",
+      "La unidad educativa inscribe a los equipos completos mediante el formulario digital de postulación de los organizadores, hasta el 26 de octubre de 2026. Consulta con la dirección o los docentes de tu colegio.",
   },
   {
     question: "¿Cómo se asignan los cupos?",

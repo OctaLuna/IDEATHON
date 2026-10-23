@@ -66,7 +66,7 @@ export const CountdownTimer: React.FC = () => {
       {isPostulationOpen && (
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[var(--accent-yellow)] text-[#111111] text-[11px] font-mono font-bold border border-[var(--border-ink)] sticker-shadow">
           <Clock className="w-3.5 h-3.5 text-[#111111] shrink-0" />
-          <span>Postulación hasta el 23 de octubre</span>
+          <span>Postulación hasta el 26 de octubre</span>
         </div>
       )}
     </div>

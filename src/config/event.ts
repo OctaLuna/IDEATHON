@@ -25,7 +25,7 @@ export const PROGRAM_DATA = {
   campusAddress: "Av. 14 de Septiembre y Calle 2, Obrajes, La Paz",
   city: "La Paz, Bolivia",
   countdownTarget: "2026-11-06T09:00:00-04:00",
-  postulationDeadline: "2026-10-23T23:59:59-04:00",
+  postulationDeadline: "2026-10-26T23:59:59-04:00",
   notificationDate: "Viernes 30 de octubre de 2026",
   cost: "Bs 0 (Gratuito)",
   sheetNumber: "IDTN-UCB-2026",
@@ -64,7 +64,7 @@ export const PROGRAM_DATA = {
   },
   milestones: [
     {
-      date: "Hasta el 23 de octubre",
+      date: "Hasta el 26 de octubre",
       badge: "Postulación",
       title: "Plazo de postulación de colegios",
       description:
