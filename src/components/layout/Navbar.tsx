@@ -1,5 +1,6 @@
-﻿import { gsap, useGSAP } from "@/animations/gsap";
+import { gsap, useGSAP } from "@/animations/gsap";
 import { LightbulbDoodle } from "@/components/decorative/DoodleSVGs";
+import { NAVIGATION_LINKS } from "@/config/navigation";
 import { useTheme } from "@/features/theme";
 import { ArrowUpRight, Calendar, Menu, Moon, Sun, X } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
@@ -18,14 +19,8 @@ export const Navbar: React.FC = () => {
   const navContainerRef = useRef<HTMLDivElement | null>(null);
   const { contextSafe } = useGSAP({ scope: navContainerRef });
 
-  // 5 pestañas oficiales en este orden estricto
-  const navLinks = [
-    { label: "Ideathon 2026", path: "/" },
-    { label: "Reportes", path: "/reportes" },
-    { label: "Videos", path: "/videos" },
-    { label: "Metodología", path: "/metodologia" },
-    { label: "Socios", path: "/socios" },
-  ];
+  // La navegacion se comparte con el footer y se controla desde config.
+  const navLinks = NAVIGATION_LINKS;
 
   // En /, las anclas (#cronograma, #premios, etc.) NO cambian el link activo
   useEffect(() => {

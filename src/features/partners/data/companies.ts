@@ -47,11 +47,8 @@ export const PARTNERS_DATA: Partner[] = [
       "Portal institucional: jubileobolivia.org.bo",
     ],
     contribution:
-      "Proporciona los reportes y estadísticas de empleo juvenil para la fase de diagnóstico inicial y participa activamente en la formulación de las cápsulas de video formativas.",
-    links: [
-      { label: "Ver Reportes de Empleo", url: "/reportes" },
-      { label: "Ver Videos Formativos", url: "/videos" },
-    ],
+      "Proporciona reportes y estadísticas de empleo juvenil que sirven como base para el diagnóstico inicial.",
+    links: [{ label: "Ver Reportes de Empleo", url: "/reportes" }],
     website: "https://jubileobolivia.org.bo",
     disclaimer: "Información referencial basada en fuentes institucionales oficiales.",
   },
@@ -82,8 +79,7 @@ export const PARTNERS_DATA: Partner[] = [
       "Primera escuela fundada en 2014 en la ciudad de El Alto",
     ],
     contribution:
-      "Elabora cápsulas de video testimoniales de productores locales, aportando su comprobada experiencia en inserción laboral digna y emprendimiento juvenil.",
-    links: [{ label: "Ver Cápsulas de Videos", url: "/videos?socio=manqa" }],
+      "Aporta su experiencia en la inserción laboral digna y el emprendimiento juvenil de productores locales.",
     website: "https://www.manqa.org.bo/",
     disclaimer: "Información referencial basada en fuentes institucionales oficiales.",
   },
@@ -113,8 +109,7 @@ export const PARTNERS_DATA: Partner[] = [
       "Docentes y directivos empresariales de trayectoria nacional e internacional",
     ],
     contribution:
-      "Coorganiza el evento, participa en las cápsulas de video, aporta la lógica de estructuración del Lean Canvas y otorga a los estudiantes de los 3 equipos ganadores un paquete virtual exclusivo de capacitación empresarial.",
-    links: [{ label: "Ver cápsulas de video", url: "/videos?socio=samuel" }],
+      "Coorganiza el evento y aporta la lógica de estructuración del Lean Canvas y otorga a los estudiantes de los 3 equipos ganadores un paquete virtual exclusivo de capacitación empresarial.",
     website: "https://fundacionsamueldoriamedina.com/",
     disclaimer: "Información sujeta a verificación y ajustes por los organizadores oficiales.",
   },
@@ -155,8 +150,8 @@ export const ECOSYSTEM_FLOW_STEPS = [
   { step: "1", title: "Socios", desc: "Fundación Jubileo, Manq'a y Escuela Doria Medina" },
   {
     step: "2",
-    title: "Reportes + Videos",
-    desc: "Datos técnicos de empleo y cápsulas inspiradoras",
+    title: "Reportes para innovar",
+    desc: "Datos de empleo juvenil y oportunidades productivas",
   },
   { step: "3", title: "Metodología", desc: "Design Thinking + Lean Canvas de 9 bloques" },
   {

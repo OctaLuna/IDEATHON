@@ -5,18 +5,13 @@
   TapeBadge,
 } from "@/components/decorative/DoodleSVGs";
 import { PROGRAM_DATA } from "@/config/event";
+import { NAVIGATION_LINKS } from "@/config/navigation";
 import { Building2, Mail, MapPin } from "lucide-react";
 import React from "react";
 import { Link } from "react-router-dom";
 
 export const Footer: React.FC = () => {
-  const navLinks = [
-    { label: "Ideathon 2026", path: "/" },
-    { label: "Reportes", path: "/reportes" },
-    { label: "Videos", path: "/videos" },
-    { label: "Metodología", path: "/metodologia" },
-    { label: "Socios", path: "/socios" },
-  ];
+  const navLinks = NAVIGATION_LINKS;
 
   return (
     <footer className="relative bg-[var(--bg-surface)] text-[var(--text-main)] pt-16 pb-12 overflow-hidden border-t-4 border-[var(--accent-blue)]">

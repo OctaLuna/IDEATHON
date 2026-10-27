@@ -589,7 +589,7 @@ export const HomeContent: React.FC = () => {
             </svg>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
             <Link
               to="/reportes"
               className="p-6 rounded-3xl bg-[var(--bg-surface)] border-3 border-[var(--border-ink)] sticker-shadow space-y-3 hover:-translate-y-1 transition-transform group"
@@ -605,24 +605,6 @@ export const HomeContent: React.FC = () => {
               </p>
               <span className="text-xs font-bold text-[var(--accent-blue)] flex items-center gap-1">
                 Explorar biblioteca <ArrowRight className="w-3.5 h-3.5" />
-              </span>
-            </Link>
-
-            <Link
-              to="/videos"
-              className="p-6 rounded-3xl bg-[var(--bg-surface)] border-3 border-[var(--border-ink)] sticker-shadow space-y-3 hover:-translate-y-1 transition-transform group"
-            >
-              <div className="w-10 h-10 rounded-xl bg-[var(--accent-orange)] text-white font-display font-black flex items-center justify-center border-2 border-[var(--border-ink)]">
-                ②
-              </div>
-              <h3 className="font-display font-black text-lg text-[var(--text-main)] group-hover:text-[var(--accent-orange)] transition-colors">
-                Videos
-              </h3>
-              <p className="text-xs text-[var(--text-muted)]">
-                Inspírate con cápsulas de productores locales realizadas por los socios.
-              </p>
-              <span className="text-xs font-bold text-[var(--accent-orange)] flex items-center gap-1">
-                Ver testimonios <ArrowRight className="w-3.5 h-3.5" />
               </span>
             </Link>
 
@@ -1391,8 +1373,8 @@ export const HomeContent: React.FC = () => {
           </h2>
 
           <p className="text-sm sm:text-lg text-[var(--sky-soft)] max-w-2xl mx-auto leading-relaxed">
-            Revisa los reportes con datos reales, mira los videos de inspiración y domina la
-            metodología del Lean Canvas para defender tu propuesta ante el jurado.
+            Revisa los reportes con datos reales y domina la metodología Lean Canvas para preparar
+            tu propuesta ante el jurado.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
@@ -1401,13 +1383,6 @@ export const HomeContent: React.FC = () => {
               className="px-5 py-3 rounded-xl bg-white text-[#111111] font-display font-black text-xs sm:text-sm border-2 border-[var(--border-ink)] sticker-shadow hover:-translate-y-0.5 active:scale-95 transition-all"
             >
               Revisar reportes
-            </Link>
-
-            <Link
-              to="/videos"
-              className="px-5 py-3 rounded-xl bg-[var(--accent-orange)] text-white font-display font-black text-xs sm:text-sm border-2 border-[var(--border-ink)] sticker-shadow hover:-translate-y-0.5 active:scale-95 transition-all"
-            >
-              Mirar videos
             </Link>
 
             <Link

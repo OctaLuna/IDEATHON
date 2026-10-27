@@ -29,9 +29,9 @@ export const METHODOLOGY_STEPS: MethodologyStep[] = [
   {
     number: 3,
     stepCode: "03",
-    title: "Prepárate con reportes y videos",
+    title: "Prepárate con reportes",
     description:
-      "Revisa la biblioteca de Reportes (/reportes) y las cápsulas de Videos (/videos) para entender la realidad del empleo juvenil y las potencialidades productivas de La Paz.",
+      "Revisa la biblioteca de Reportes (/reportes) para entender la realidad del empleo juvenil y las potencialidades productivas de La Paz.",
     tip: "Anota ideas preliminares, datos llamativos y preguntas antes de llegar a la jornada.",
     accentColor: "#FFD23F",
   },
