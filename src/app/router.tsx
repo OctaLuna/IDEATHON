@@ -1,5 +1,7 @@
 import { lazy } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
+import { VIDEO_LIBRARY_ENABLED } from "@/config/features";
+import { SITE_ROUTES } from "@/config/navigation";
 import { ScrollRestoration } from "./ScrollRestoration";
 
 const HomePage = lazy(() => import("@/pages/home/HomePage"));
@@ -15,7 +17,12 @@ export function SiteRoutes() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/reportes" element={<ReportsPage />} />
-        <Route path="/videos" element={<VideosPage />} />
+        <Route
+          path={SITE_ROUTES.videos}
+          element={
+            VIDEO_LIBRARY_ENABLED ? <VideosPage /> : <Navigate to={SITE_ROUTES.home} replace />
+          }
+        />
         <Route path="/metodologia" element={<MethodologyPage />} />
         <Route path="/socios" element={<PartnersPage />} />
         <Route path="/empresas" element={<Navigate to="/socios" replace />} />

@@ -1,0 +1,17 @@
+.git
+.github
+.agents
+.agent
+.claude
+.codex
+.githooks
+.impeccable
+.visual-*
+node_modules
+coverage
+playwright-report
+test-results
+.env
+.env.*
+!.env.example
+BORRAR
