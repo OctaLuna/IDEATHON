@@ -69,7 +69,7 @@ export const ReportsContent: React.FC = () => {
             juvenil y las oportunidades productivas de La Paz.
           </p>
           <div className="pt-2">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-[var(--accent-blue)]/10 text-[var(--accent-blue)] border border-[var(--accent-blue)]/30">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-[var(--accent-blue)]/10 text-[var(--accent-blue-text)] border border-[var(--accent-blue)]/30">
               Datos e investigaciones aportados por Fundación Jubileo y aliados
             </span>
           </div>
@@ -78,7 +78,7 @@ export const ReportsContent: React.FC = () => {
         {/* Datos clave de un vistazo (4 tarjetas) */}
         <div className="space-y-4">
           <div className="flex items-center gap-2">
-            <BarChart3 className="w-5 h-5 text-[var(--accent-blue)]" />
+            <BarChart3 className="w-5 h-5 text-[var(--accent-blue-text)]" />
             <h2 className="font-display font-black text-xl sm:text-2xl text-[var(--text-main)]">
               Datos clave de un vistazo
             </h2>
@@ -112,7 +112,7 @@ export const ReportsContent: React.FC = () => {
             </div>
 
             <div className="max-w-3xl space-y-4 pt-4 sm:pt-0">
-              <div className="flex items-center gap-2 text-xs font-mono font-bold text-[var(--accent-blue)]">
+              <div className="flex items-center gap-2 text-xs font-mono font-bold text-[var(--accent-blue-text)]">
                 <span>{featuredReport.institution}</span>
                 <span>·</span>
                 <span>Año {featuredReport.year}</span>
@@ -205,7 +205,9 @@ export const ReportsContent: React.FC = () => {
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between text-xs font-mono text-[var(--text-muted)]">
-                  <span className="font-bold text-[var(--accent-blue)]">{doc.institution}</span>
+                  <span className="font-bold text-[var(--accent-blue-text)]">
+                    {doc.institution}
+                  </span>
                   <span>{doc.year}</span>
                 </div>
 
@@ -271,7 +273,7 @@ export const ReportsContent: React.FC = () => {
                 className="p-4 rounded-2xl bg-[var(--bg-surface-2)] border-2 border-[var(--border-soft)] space-y-2 hover:border-[var(--border-ink)] transition-colors"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-[var(--accent-blue)]">
+                  <span className="text-xs font-mono font-bold text-[var(--accent-blue-text)]">
                     {pot.badge}
                   </span>
                   <span className="w-2 h-2 rounded-full bg-[var(--accent-mint)]" />
@@ -290,7 +292,7 @@ export const ReportsContent: React.FC = () => {
           {/* Guía en 3 pasos */}
           <div className="lg:col-span-7 p-6 sm:p-8 rounded-3xl bg-[var(--bg-surface)] border-3 border-[var(--border-ink)] sticker-shadow space-y-6">
             <div className="flex items-center gap-2">
-              <BookOpen className="w-5 h-5 text-[var(--accent-blue)]" />
+              <BookOpen className="w-5 h-5 text-[var(--accent-blue-text)]" />
               <h2 className="font-display font-black text-xl sm:text-2xl text-[var(--text-main)]">
                 Guía para leer un reporte
               </h2>
@@ -333,7 +335,7 @@ export const ReportsContent: React.FC = () => {
                   key={i}
                   className="flex items-start gap-2.5 text-xs sm:text-sm text-[var(--text-main)] font-medium"
                 >
-                  <span className="font-mono font-bold text-[var(--accent-blue)] mt-0.5">
+                  <span className="font-mono font-bold text-[var(--accent-blue-text)] mt-0.5">
                     0{i + 1}.
                   </span>
                   <span>{q}</span>
@@ -343,7 +345,7 @@ export const ReportsContent: React.FC = () => {
             <div className="pt-3">
               <Link
                 to="/metodologia"
-                className="inline-flex items-center gap-2 text-xs font-bold text-[var(--accent-blue)] hover:underline"
+                className="inline-flex items-center gap-2 text-xs font-bold text-[var(--accent-blue-text)] hover:underline"
               >
                 <span>Aprende a transformar estos datos en el Lean Canvas</span>
                 <ArrowRight className="w-3.5 h-3.5" />

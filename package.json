@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build",
+    "build": "vite build && node scripts/check-dist-media.mjs",
+    "build:vercel": "node scripts/sync-vercel-media.mjs && npm run build",
     "preview": "vite preview",
     "clean": "node -e \"for (const path of ['dist', 'server.js']) require('node:fs').rmSync(path, { recursive: true, force: true })\"",
     "lint": "eslint src scripts vite.config.ts vitest.config.ts eslint.config.js",
@@ -22,7 +23,9 @@
     "test:media": "node scripts/test-video-playback.mjs",
     "visual:baseline": "node scripts/capture-visual.mjs .visual-baseline",
     "visual:compare": "node scripts/compare-visual.mjs .visual-baseline .visual-current",
-    "media:prepare": "node scripts/prepare-media.mjs"
+    "media:prepare": "node scripts/prepare-media.mjs",
+    "media:upload": "node scripts/upload-vercel-media.mjs",
+    "media:sync:vercel": "node scripts/sync-vercel-media.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

@@ -164,7 +164,7 @@ export const Navbar: React.FC = () => {
               <span className="font-display font-black text-xl sm:text-2xl tracking-tighter text-[var(--text-main)] leading-none">
                 IDEATHON<span className="text-[var(--accent-orange)]">.</span>
               </span>
-              <span className="text-[10px] font-mono tracking-widest font-bold text-[var(--accent-blue)] uppercase">
+              <span className="text-[10px] font-mono tracking-widest font-bold text-[var(--accent-blue-text)] uppercase">
                 UCB · LA PAZ
               </span>
             </div>
@@ -184,7 +184,7 @@ export const Navbar: React.FC = () => {
                   className={`relative z-10 px-3.5 py-1.5 text-xs xl:text-sm font-bold tracking-tight rounded-full transition-colors duration-150 ${
                     isActive
                       ? "bg-[var(--accent-blue)] text-white shadow-xs"
-                      : "text-[var(--text-main)] hover:text-[var(--accent-blue)]"
+                      : "text-[var(--text-main)] hover:text-[var(--accent-blue-text)]"
                   }`}
                 >
                   {link.label}

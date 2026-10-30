@@ -161,7 +161,7 @@ export const VideosContent: React.FC = () => {
                     <span>Próximamente para la jornada</span>
                   </div>
                 )}
-                <div className="text-white text-xs font-mono font-bold tracking-wider uppercase opacity-90">
+                <div className="rounded-md bg-black/70 px-2 py-1 text-white text-xs font-mono font-bold tracking-wider uppercase opacity-90">
                   {featuredVideo.municipality} · {featuredVideo.duration}
                 </div>
               </div>
@@ -210,7 +210,7 @@ export const VideosContent: React.FC = () => {
         <div className="space-y-4 pt-4">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-2 border-b-2 border-[var(--border-soft)]">
             <h3 className="font-display font-black text-lg text-[var(--text-main)] flex items-center gap-2">
-              <VideoIcon className="w-5 h-5 text-[var(--accent-blue)]" />
+              <VideoIcon className="w-5 h-5 text-[var(--accent-blue-text)]" />
               Explora las cápsulas ({filteredVideos.length})
             </h3>
             <span className="text-xs font-mono text-[var(--text-muted)]">
@@ -247,7 +247,7 @@ export const VideosContent: React.FC = () => {
                 onClick={() => setSectorFilter(s.id)}
                 className={`px-3 py-1 rounded-xl text-xs font-mono font-bold border-2 transition-all cursor-pointer ${
                   sectorFilter === s.id
-                    ? "bg-[var(--accent-orange)] text-white border-[var(--border-ink)] sticker-shadow-sm"
+                    ? "bg-[var(--accent-orange)] text-[#111111] border-[var(--border-ink)] sticker-shadow-sm"
                     : "bg-[var(--bg-surface)] text-[var(--text-main)] border-[var(--border-soft)] hover:border-[var(--border-ink)]"
                 }`}
               >
@@ -356,7 +356,7 @@ export const VideosContent: React.FC = () => {
         <div className="p-8 sm:p-10 rounded-3xl bg-[var(--accent-blue)]/10 border-3 border-[var(--accent-blue)] sticker-shadow space-y-6">
           <div className="space-y-2">
             <div className="inline-block">
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--accent-blue)]">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--accent-blue-text)]">
                 GUÍA PARA EL EQUIPO
               </span>
             </div>
@@ -384,7 +384,7 @@ export const VideosContent: React.FC = () => {
             </div>
 
             <div className="p-5 rounded-2xl bg-[var(--bg-surface)] border-2 border-[var(--border-ink)] space-y-2">
-              <div className="w-8 h-8 rounded-xl bg-[var(--accent-orange)] text-white font-display font-black flex items-center justify-center border border-[var(--border-ink)]">
+              <div className="w-8 h-8 rounded-xl bg-[var(--accent-orange)] text-[#111111] font-display font-black flex items-center justify-center border border-[var(--border-ink)]">
                 2
               </div>
               <h3 className="font-display font-bold text-base text-[var(--text-main)]">

@@ -13,6 +13,9 @@ IDEATHON es un sitio en español para el evento escolar de innovación de la UCB
 - Build: `bun run build`
 - Verificación completa: `bun run verify`
 - Preparar medios locales: `bun run media:prepare`
+- Subir MP4 preparados al Blob público: `bun run media:upload`
+- Sincronizar videos desde Blob para Vercel: `bun run media:sync:vercel`
+- Build de producción Vercel: `bun run build:vercel`
 - Comprobar reproducción con Playwright: `bun run test:media` (con Vite en marcha)
 
 El lockfile del proyecto es `bun.lock`. No agregues secretos a archivos versionados; `.env.example` solo documenta nombres de variables.
@@ -56,3 +59,5 @@ Prefiere los componentes y datos tipados existentes antes de duplicarlos. Conser
 ## Medios locales
 
 `bun run media:prepare` lee los originales temporales en `BORRAR/` y crea MP4 optimizados, pósteres, logos y un manifiesto. `public/media/videos/` está ignorado por Git. Para repetir el proceso en otro equipo, recupera los originales. No agregues a Git las fuentes ni los MP4.
+
+Para producción, `bun run media:upload` carga los MP4 optimizados a un almacén público de Vercel Blob usando el CLI autenticado. Configura `MEDIA_BLOB_BASE_URL` en Vercel con el origen público del almacén. `bun run build:vercel` los descarga antes de Vite, que los publica dentro de `dist/media/videos/`. El token de escritura de Blob solo se usa para cargar archivos y nunca se incorpora al bundle. `vercel.json` define este build, `dist` y el fallback de rutas SPA.

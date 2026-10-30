@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
               <span className="font-display font-black text-3xl tracking-tight text-[var(--text-main)] block">
                 IDEATHON<span className="text-[var(--accent-orange)]">.</span>
               </span>
-              <span className="font-mono text-xs text-[var(--accent-blue)] tracking-wider uppercase font-bold">
+              <span className="font-mono text-xs text-[var(--accent-blue-text)] tracking-wider uppercase font-bold">
                 UCB · LA PAZ · Colegios 2026
               </span>
             </div>
@@ -74,7 +74,7 @@ export const Footer: React.FC = () => {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-[var(--text-muted)] hover:text-[var(--accent-blue)] transition-colors font-semibold flex items-center gap-2"
+                    className="text-[var(--text-muted)] hover:text-[var(--accent-blue-text)] transition-colors font-semibold flex items-center gap-2"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-blue)]" />
                     <span>{link.label}</span>
@@ -87,16 +87,16 @@ export const Footer: React.FC = () => {
           {/* Column 3: Sede & Contacto */}
           <div className="space-y-3">
             <h4 className="font-display font-extrabold text-lg text-[var(--text-main)] flex items-center gap-2">
-              <Building2 className="w-5 h-5 text-[var(--accent-blue)]" />
+              <Building2 className="w-5 h-5 text-[var(--accent-blue-text)]" />
               Sede de la Jornada
             </h4>
             <div className="space-y-2.5 text-xs text-[var(--text-muted)]">
               <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-[var(--accent-blue)] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[var(--accent-blue-text)] shrink-0 mt-0.5" />
                 <span>{PROGRAM_DATA.campusAddress}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-[var(--accent-blue)] shrink-0" />
+                <Mail className="w-4 h-4 text-[var(--accent-blue-text)] shrink-0" />
                 <span>{PROGRAM_DATA.contact.email}</span>
               </div>
               <div className="pt-2 text-[11px] font-mono text-[var(--accent-orange)] font-bold">

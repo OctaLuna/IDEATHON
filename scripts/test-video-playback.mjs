@@ -107,7 +107,7 @@ try {
   }
   await page.goto(new URL("/metodologia", baseUrl).href, { waitUntil: "networkidle" });
   assert.deepEqual(
-    (await page.locator(".methodology-step-card h3").allTextContents()).slice(4, 8),
+    (await page.locator(".methodology-step-card h2").allTextContents()).slice(4, 8),
     [
       "Ideación (Design Thinking)",
       "Lean Canvas",

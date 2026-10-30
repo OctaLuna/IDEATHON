@@ -680,7 +680,7 @@ export const MethodologyContent: React.FC = () => {
                   </svg>
                 </div>
                 <div
-                  className="sparkle-destello absolute top-6 -left-8 text-[var(--accent-blue)] opacity-0 animate-sparkle-twinkle origin-center"
+                  className="sparkle-destello absolute top-6 -left-8 text-[var(--accent-blue-text)] opacity-0 animate-sparkle-twinkle origin-center"
                   style={{ animationDelay: "0.9s" }}
                 >
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
@@ -770,7 +770,7 @@ export const MethodologyContent: React.FC = () => {
                   </svg>
                 </div>
                 <div
-                  className="sparkle-destello absolute top-4 -left-5 text-[var(--accent-blue)] opacity-0 animate-sparkle-twinkle origin-center"
+                  className="sparkle-destello absolute top-4 -left-5 text-[var(--accent-blue-text)] opacity-0 animate-sparkle-twinkle origin-center"
                   style={{ animationDelay: "0.8s" }}
                 >
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
@@ -833,7 +833,8 @@ export const MethodologyContent: React.FC = () => {
                           className="step-number-badge px-3 py-1 rounded-full text-xs font-bold font-mono border-2 border-[var(--border-ink)] shadow-xs"
                           style={{
                             backgroundColor: step.accentColor,
-                            color: step.accentColor === "#FFD23F" ? "#111111" : "#ffffff",
+                            color:
+                              step.accentColor.toUpperCase() === "#1F3FD1" ? "#ffffff" : "#111111",
                           }}
                         >
                           Paso {step.stepCode}
@@ -844,9 +845,9 @@ export const MethodologyContent: React.FC = () => {
                       </div>
 
                       {/* Title */}
-                      <h3 className="font-display font-black text-xl sm:text-2xl text-[var(--text-main)] mb-2">
+                      <h2 className="font-display font-black text-xl sm:text-2xl text-[var(--text-main)] mb-2">
                         {step.title}
-                      </h3>
+                      </h2>
 
                       {/* Description */}
                       <p className="text-sm text-[var(--text-muted)] leading-relaxed mb-4">
@@ -924,7 +925,7 @@ export const MethodologyContent: React.FC = () => {
                 className="p-6 rounded-3xl bg-[var(--bg-surface)] border-3 border-[var(--border-ink)] sticker-shadow flex flex-col justify-between hover:-translate-y-1 transition-transform card-theme-transition"
               >
                 <div className="space-y-3">
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--accent-blue)] block">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--accent-blue-text)] block">
                     {tech.subtitle}
                   </span>
                   <h3 className="font-display font-black text-xl text-[var(--text-main)] leading-snug">
@@ -1043,7 +1044,7 @@ export const MethodologyContent: React.FC = () => {
                     <span className="font-display font-black text-sm text-[var(--text-main)]">
                       4. Solución
                     </span>
-                    <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-[var(--accent-orange)] text-white">
+                    <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-[var(--accent-orange)] text-[#111111]">
                       #4
                     </span>
                   </div>
@@ -1159,7 +1160,7 @@ export const MethodologyContent: React.FC = () => {
                     <span className="font-display font-black text-sm text-[var(--text-main)]">
                       5. Canales
                     </span>
-                    <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-[var(--accent-orange)] text-white">
+                    <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-[var(--accent-orange)] text-[#111111]">
                       #5
                     </span>
                   </div>
@@ -1284,7 +1285,7 @@ export const MethodologyContent: React.FC = () => {
                     </div>
                     <ChevronDown
                       className={`w-4 h-4 text-[var(--text-muted)] transition-transform duration-200 ${
-                        isOpen ? "rotate-180 text-[var(--accent-blue)]" : ""
+                        isOpen ? "rotate-180 text-[var(--accent-blue-text)]" : ""
                       }`}
                     />
                   </button>
@@ -1370,7 +1371,7 @@ export const MethodologyContent: React.FC = () => {
           {/* Criterios de Evaluación (4 barras animadas, peso por definir) */}
           <div className="lg:col-span-7 p-6 sm:p-8 rounded-3xl bg-[var(--bg-surface)] border-3 border-[var(--border-ink)] sticker-shadow-lg space-y-6 card-theme-transition">
             <div className="flex items-center gap-2">
-              <BarChart3 className="w-6 h-6 text-[var(--accent-blue)]" />
+              <BarChart3 className="w-6 h-6 text-[var(--accent-blue-text)]" />
               <h3 className="font-display font-black text-2xl text-[var(--text-main)]">
                 Criterios de Evaluación
               </h3>
@@ -1385,7 +1386,7 @@ export const MethodologyContent: React.FC = () => {
                 <div key={idx} className="space-y-1.5">
                   <div className="flex justify-between text-sm sm:text-base font-bold">
                     <span className="text-[var(--text-main)]">{crit.label}</span>
-                    <span className="font-mono text-xs text-[var(--accent-blue)] font-bold">
+                    <span className="font-mono text-xs text-[var(--accent-blue-text)] font-bold">
                       Eje evaluativo #{idx + 1}
                     </span>
                   </div>

@@ -23,7 +23,7 @@ export const CountdownTimer: React.FC = () => {
     <div className="space-y-3">
       <div className="grid grid-cols-4 gap-2 text-center select-none font-mono">
         <div className="p-2 sm:p-2.5 rounded-xl bg-[var(--bg-surface)] border-2 border-[var(--border-ink)] sticker-shadow">
-          <span className="font-display font-black text-xl sm:text-2xl text-[var(--accent-blue)] block leading-none">
+          <span className="font-display font-black text-xl sm:text-2xl text-[var(--accent-blue-text)] block leading-none">
             {timeLeft.days}
           </span>
           <span className="text-[9px] uppercase tracking-wider text-[var(--text-muted)] font-bold block mt-1">
@@ -82,7 +82,7 @@ export const CompactCountdown: React.FC = () => {
       <Clock className="w-4 h-4 text-[var(--accent-orange)] shrink-0 animate-pulse" />
       <span className="text-[var(--text-muted)] font-bold hidden sm:inline">Faltan:</span>
       <div className="flex items-center gap-1.5 font-display font-black text-sm text-[var(--text-main)]">
-        <span className="text-[var(--accent-blue)]">{timeLeft.days}d</span>
+        <span className="text-[var(--accent-blue-text)]">{timeLeft.days}d</span>
         <span>:</span>
         <span className="text-[var(--text-main)]">{String(timeLeft.hours).padStart(2, "0")}h</span>
         <span>:</span>

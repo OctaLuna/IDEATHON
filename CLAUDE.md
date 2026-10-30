@@ -11,5 +11,7 @@ Follow `AGENTS.md` for the project architecture and conventions. IDEATHON is a S
 - Build: `bun run build`
 - Full verification: `bun run verify`
 - Prepare local videos: `bun run media:prepare`
+- Upload optimized videos to public Vercel Blob: `bun run media:upload`
+- Sync Blob videos and build for Vercel: `bun run build:vercel`
 
 Shared skills are in `.agents/skills/`; Claude Code also reads `.claude/skills/`. Apply `frontend-design` for a new visual direction and Impeccable for its explicit design commands, audits, and refinement tasks. Hooks live in `.claude/settings.json` and `.claude/settings.local.json`; the local Impeccable hook calls a Node launcher so it works on Windows and POSIX shells.

@@ -286,7 +286,9 @@ export const HomeContent: React.FC = () => {
             >
               <span className="inline-block word-item">BIENVENIDO</span>{" "}
               <span className="inline-block word-item">AL</span>{" "}
-              <span className="inline-block word-item text-[var(--accent-blue)]">IDEATHON</span>{" "}
+              <span className="inline-block word-item text-[var(--accent-blue-text)]">
+                IDEATHON
+              </span>{" "}
               <span className="inline-block word-item text-[var(--accent-orange)]">2026</span>
             </h1>
 
@@ -316,7 +318,7 @@ export const HomeContent: React.FC = () => {
                 className="px-6 py-3.5 bg-[var(--bg-surface)] hover:bg-[var(--bg-surface-2)] text-[var(--text-main)] font-display font-black text-sm sm:text-base rounded-2xl border-2 border-[var(--border-ink)] sticker-shadow hover:-translate-y-0.5 active:scale-95 transition-all flex items-center gap-2"
               >
                 <span>Conoce la metodología</span>
-                <ArrowRight className="w-5 h-5 text-[var(--accent-blue)]" />
+                <ArrowRight className="w-5 h-5 text-[var(--accent-blue-text)]" />
               </Link>
             </div>
           </div>
@@ -363,7 +365,7 @@ export const HomeContent: React.FC = () => {
                 ref={(el) => {
                   statsCountersRef.current[0] = el;
                 }}
-                className="font-display font-black text-3xl sm:text-4xl text-[var(--accent-blue)] block"
+                className="font-display font-black text-3xl sm:text-4xl text-[var(--accent-blue-text)] block"
               >
                 4–5
               </span>
@@ -435,7 +437,7 @@ export const HomeContent: React.FC = () => {
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <div className="max-w-3xl mx-auto text-center space-y-3">
           <div className="inline-block">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--accent-blue)]">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--accent-blue-text)]">
               EL CONCEPTO
             </span>
           </div>
@@ -475,7 +477,7 @@ export const HomeContent: React.FC = () => {
           </div>
 
           <div className="p-6 sm:p-8 rounded-3xl bg-[var(--bg-surface)] border-3 border-[var(--border-ink)] sticker-shadow space-y-3 rotate-[-0.5deg] hover:rotate-0 transition-transform">
-            <div className="w-12 h-12 rounded-2xl bg-[var(--accent-orange)] text-white flex items-center justify-center font-display font-black text-xl border-2 border-[var(--border-ink)]">
+            <div className="w-12 h-12 rounded-2xl bg-[var(--accent-orange)] text-[#111111] flex items-center justify-center font-display font-black text-xl border-2 border-[var(--border-ink)]">
               3
             </div>
             <h3 className="font-display font-black text-2xl text-[var(--text-main)]">Presenta</h3>
@@ -526,7 +528,7 @@ export const HomeContent: React.FC = () => {
             </div>
 
             <div className="p-6 sm:p-8 rounded-3xl bg-[var(--bg-surface)] border-3 border-[var(--border-ink)] sticker-shadow space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-[var(--accent-orange)] text-white flex items-center justify-center border-2 border-[var(--border-ink)]">
+              <div className="w-12 h-12 rounded-2xl bg-[var(--accent-orange)] text-[#111111] flex items-center justify-center border-2 border-[var(--border-ink)]">
                 <Lightbulb className="w-6 h-6" />
               </div>
               <h3 className="font-display font-bold text-lg text-[var(--text-main)] leading-snug">
@@ -563,7 +565,7 @@ export const HomeContent: React.FC = () => {
       >
         <div className="max-w-3xl mx-auto text-center space-y-3">
           <div className="inline-block">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--accent-blue)]">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--accent-blue-text)]">
               PASO A PASO
             </span>
           </div>
@@ -597,13 +599,13 @@ export const HomeContent: React.FC = () => {
               <div className="w-10 h-10 rounded-xl bg-[var(--accent-blue)] text-white font-display font-black flex items-center justify-center border-2 border-[var(--border-ink)]">
                 ①&nbsp;
               </div>
-              <h3 className="font-display font-black text-lg text-[var(--text-main)] group-hover:text-[var(--accent-blue)] transition-colors">
+              <h3 className="font-display font-black text-lg text-[var(--text-main)] group-hover:text-[var(--accent-blue-text)] transition-colors">
                 Reportes
               </h3>
               <p className="text-xs text-[var(--text-muted)]">
                 Entiende las cifras oficiales de desempleo y potencialidades productivas de La Paz.
               </p>
-              <span className="text-xs font-bold text-[var(--accent-blue)] flex items-center gap-1">
+              <span className="text-xs font-bold text-[var(--accent-blue-text)] flex items-center gap-1">
                 Explorar biblioteca <ArrowRight className="w-3.5 h-3.5" />
               </span>
             </Link>
@@ -615,7 +617,7 @@ export const HomeContent: React.FC = () => {
               <div className="w-10 h-10 rounded-xl bg-[var(--accent-yellow)] text-[#111111] font-display font-black flex items-center justify-center border-2 border-[var(--border-ink)]">
                 ③
               </div>
-              <h3 className="font-display font-black text-lg text-[var(--text-main)] group-hover:text-[var(--accent-blue)] transition-colors">
+              <h3 className="font-display font-black text-lg text-[var(--text-main)] group-hover:text-[var(--accent-blue-text)] transition-colors">
                 Metodología
               </h3>
               <p className="text-xs text-[var(--text-muted)]">
@@ -673,7 +675,7 @@ export const HomeContent: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-5 rounded-2xl bg-[var(--bg-surface-2)] border-2 border-[var(--border-soft)] space-y-2">
-              <Users className="w-5 h-5 text-[var(--accent-blue)]" />
+              <Users className="w-5 h-5 text-[var(--accent-blue-text)]" />
               <h3 className="font-display font-bold text-sm text-[var(--text-main)]">
                 Equipos de 4 a 5 estudiantes
               </h3>
@@ -714,7 +716,7 @@ export const HomeContent: React.FC = () => {
             </div>
 
             <div className="p-5 rounded-2xl bg-[var(--bg-surface-2)] border-2 border-[var(--border-soft)] space-y-2">
-              <Clock className="w-5 h-5 text-[var(--accent-blue)]" />
+              <Clock className="w-5 h-5 text-[var(--accent-blue-text)]" />
               <h3 className="font-display font-bold text-sm text-[var(--text-main)]">
                 Asignación de cupos
               </h3>
@@ -779,7 +781,7 @@ export const HomeContent: React.FC = () => {
           <div className="lg:col-span-3 space-y-6 order-2 lg:order-1">
             <div className="p-5 rounded-3xl bg-[var(--bg-surface)] border-3 border-[var(--border-ink)] sticker-shadow space-y-3">
               <div className="flex items-center gap-2">
-                <CheckSquare className="w-5 h-5 text-[var(--accent-blue)]" />
+                <CheckSquare className="w-5 h-5 text-[var(--accent-blue-text)]" />
                 <h3 className="font-display font-black text-lg text-[var(--text-main)]">
                   ¿Qué llevar?
                 </h3>
@@ -831,7 +833,7 @@ export const HomeContent: React.FC = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <div className="p-3.5 rounded-2xl bg-[var(--bg-surface-2)] border border-[var(--border-soft)]">
-                    <div className="flex items-center gap-1.5 text-xs font-bold text-[var(--accent-blue)] mb-1">
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-[var(--accent-blue-text)] mb-1">
                       <Calendar className="w-3.5 h-3.5" />
                       <span>FECHA</span>
                     </div>
@@ -895,7 +897,7 @@ export const HomeContent: React.FC = () => {
             </div>
 
             <div className="p-5 rounded-3xl bg-[var(--bg-surface)] border-3 border-[var(--border-ink)] sticker-shadow space-y-2">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--accent-blue)] font-bold block">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--accent-blue-text)] font-bold block">
                 {PROGRAM_DATA.rememberNote.title}
               </span>
               <p className="text-xs text-[var(--text-main)] font-semibold">
@@ -940,12 +942,12 @@ export const HomeContent: React.FC = () => {
                       {m.badge}
                     </span>
                     {m.isDeadline && (
-                      <span className="px-2 py-0.5 rounded-md bg-[var(--accent-orange)] text-white text-[10px] font-mono font-bold uppercase">
+                      <span className="px-2 py-0.5 rounded-md bg-[var(--accent-orange)] text-[#111111] text-[10px] font-mono font-bold uppercase">
                         Fecha límite
                       </span>
                     )}
                   </div>
-                  <div className="font-mono text-xs font-bold text-[var(--accent-blue)]">
+                  <div className="font-mono text-xs font-bold text-[var(--accent-blue-text)]">
                     {m.date}
                   </div>
                   <h4 className="font-display font-black text-lg text-[var(--text-main)]">
@@ -983,7 +985,7 @@ export const HomeContent: React.FC = () => {
                 className="py-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2"
               >
                 <div className="flex items-center gap-3">
-                  <span className="font-mono font-black text-sm text-[var(--accent-blue)] w-16">
+                  <span className="font-mono font-black text-sm text-[var(--accent-blue-text)] w-16">
                     {item.time}
                   </span>
                   <span className="font-display font-bold text-sm sm:text-base text-[var(--text-main)]">
@@ -994,7 +996,7 @@ export const HomeContent: React.FC = () => {
                   className="px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold self-start sm:self-auto uppercase"
                   style={{
                     backgroundColor: item.badgeColor === "#111111" ? "#1F3FD1" : item.badgeColor,
-                    color: item.badgeColor === "#FFD23F" ? "#111111" : "#ffffff",
+                    color: item.badgeColor === "#111111" ? "#ffffff" : "#111111",
                   }}
                 >
                   {item.badge}
@@ -1036,7 +1038,7 @@ export const HomeContent: React.FC = () => {
             <div className="podium-card-item order-2 md:order-1 p-7 sm:p-8 rounded-3xl bg-[var(--bg-surface)] border-3 border-[var(--border-ink)] sticker-shadow flex flex-col justify-between hover:-translate-y-1 transition-transform card-theme-transition">
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="px-3 py-1 rounded-full text-xs font-bold font-mono bg-[var(--accent-orange)] text-white border-2 border-[var(--border-ink)]">
+                  <span className="px-3 py-1 rounded-full text-xs font-bold font-mono bg-[var(--accent-orange)] text-[#111111] border-2 border-[var(--border-ink)]">
                     2do Lugar
                   </span>
                   <Award className="w-7 h-7 text-[var(--accent-orange)]" />
@@ -1116,7 +1118,7 @@ export const HomeContent: React.FC = () => {
                 key={step.step}
                 className="p-6 rounded-2xl bg-[var(--bg-surface)] border-2 border-[var(--border-ink)] space-y-2"
               >
-                <div className="font-mono text-xs font-bold text-[var(--accent-blue)]">
+                <div className="font-mono text-xs font-bold text-[var(--accent-blue-text)]">
                   EXPERIENCIA {step.step}
                 </div>
                 <h4 className="font-display font-black text-lg text-[var(--text-main)]">
@@ -1153,7 +1155,7 @@ export const HomeContent: React.FC = () => {
         <div className="p-8 sm:p-12 rounded-3xl bg-[var(--bg-surface)] border-3 border-[var(--border-ink)] sticker-shadow-lg grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-8 space-y-4">
             <div className="inline-block">
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--accent-blue)]">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--accent-blue-text)]">
                 ORGANIZADOR ACADÉMICO
               </span>
             </div>
@@ -1230,7 +1232,7 @@ export const HomeContent: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--accent-blue)]">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--accent-blue-text)]">
                 RED DE APOYO INSTITUCIONAL
               </span>
               <h3 className="font-display font-black text-2xl text-[var(--text-main)]">
@@ -1239,7 +1241,7 @@ export const HomeContent: React.FC = () => {
             </div>
             <Link
               to="/socios"
-              className="text-xs font-mono font-bold text-[var(--accent-blue)] hover:underline flex items-center gap-1.5"
+              className="text-xs font-mono font-bold text-[var(--accent-blue-text)] hover:underline flex items-center gap-1.5"
             >
               <span>Conoce a todos los socios</span>
               <ArrowRight className="w-4 h-4" />
@@ -1251,7 +1253,7 @@ export const HomeContent: React.FC = () => {
               to="/socios"
               className="p-5 rounded-2xl bg-[var(--bg-surface-2)] border-2 border-[var(--border-soft)] hover:border-[var(--border-ink)] transition-all text-center space-y-1.5"
             >
-              <span className="text-[10px] font-mono uppercase text-[var(--accent-blue)] font-bold block">
+              <span className="text-[10px] font-mono uppercase text-[var(--accent-blue-text)] font-bold block">
                 Socio
               </span>
               <h4 className="font-display font-bold text-sm sm:text-base text-[var(--text-main)]">
@@ -1292,7 +1294,7 @@ export const HomeContent: React.FC = () => {
               to="/socios"
               className="p-5 rounded-2xl bg-[var(--accent-yellow)]/20 border-2 border-[var(--accent-yellow)] hover:border-[var(--border-ink)] transition-all text-center space-y-1.5"
             >
-              <span className="text-[10px] font-mono uppercase text-[#111111] font-black block">
+              <span className="text-[10px] font-mono uppercase text-[var(--text-main)] font-black block">
                 Auspicia
               </span>
               <h4 className="font-display font-black text-sm sm:text-base text-[var(--text-main)]">
@@ -1337,7 +1339,7 @@ export const HomeContent: React.FC = () => {
                   <span>{faq.question}</span>
                   <ChevronDown
                     className={`w-5 h-5 text-[var(--text-muted)] transition-transform duration-200 shrink-0 ml-3 ${
-                      isOpen ? "rotate-180 text-[var(--accent-blue)]" : ""
+                      isOpen ? "rotate-180 text-[var(--accent-blue-text)]" : ""
                     }`}
                   />
                 </button>

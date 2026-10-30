@@ -8,6 +8,7 @@ colors:
   ink: "#111111"
   muted-ink: "#4b5563"
   cobalt: "#1f3fd1"
+  accent-blue-text: "#1f3fd1"
   energy-yellow: "#ffd23f"
   coral-orange: "#ff6b35"
   mint: "#22c55e"
@@ -108,7 +109,7 @@ La paleta combina papel cálido y tinta oscura con acentos brillantes que orient
 - **Tinta** (`#111111`): texto principal, contornos y sombras.
 - **Tinta secundaria** (`#4b5563`): texto de apoyo.
 
-En tema oscuro se conservan los acentos y se sustituyen las superficies por azul noche (`#0a1128`), índigo profundo (`#121c45`) e índigo elevado (`#1a2760`). El texto principal pasa a papel cálido (`#f6f2e9`), el texto secundario a lavanda gris (`#a9b4d6`), el cobalto a azul eléctrico (`#4f6bff`) y el verde menta a (`#4ade80`).
+En tema oscuro se conservan los acentos y se sustituyen las superficies por azul noche (`#0a1128`), índigo profundo (`#121c45`) e índigo elevado (`#1a2760`). El texto principal pasa a papel cálido (`#f6f2e9`), el texto secundario a lavanda gris (`#a9b4d6`), el cobalto de superficie a azul eléctrico (`#4b63ed`), el texto de acento a lavanda azul (`#a5b4fc`) y el verde menta a (`#4ade80`).
 
 **The Action Color Rule.** El amarillo identifica la acción principal; el cobalto marca selección y navegación activa. Mantén esas funciones reconocibles.
 

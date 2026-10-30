@@ -112,7 +112,7 @@ export const PartnersContent: React.FC = () => {
                             className="h-full w-full rounded-xl object-contain"
                           />
                         ) : (
-                          <Building2 className="w-8 h-8 text-[var(--accent-blue)]" />
+                          <Building2 className="w-8 h-8 text-[var(--accent-blue-text)]" />
                         )}
                       </div>
 
@@ -134,7 +134,7 @@ export const PartnersContent: React.FC = () => {
                             key={i}
                             className="text-xs sm:text-sm text-[var(--text-muted)] font-medium flex items-center gap-2"
                           >
-                            <span className="text-[var(--accent-blue)] font-bold">·</span>
+                            <span className="text-[var(--accent-blue-text)] font-bold">·</span>
                             <span>{st}</span>
                           </div>
                         ))}
@@ -159,7 +159,7 @@ export const PartnersContent: React.FC = () => {
                   {/* Right Column (Detailed Investigation) */}
                   <div className={`lg:col-span-8 space-y-5 ${isEven ? "" : "lg:order-1"}`}>
                     <div>
-                      <span className="text-xs font-bold font-mono text-[var(--accent-blue)] uppercase tracking-wider block mb-1">
+                      <span className="text-xs font-bold font-mono text-[var(--accent-blue-text)] uppercase tracking-wider block mb-1">
                         RESUMEN INSTITUCIONAL
                       </span>
                       <p className="text-sm sm:text-base text-[var(--text-main)] leading-relaxed">
@@ -177,7 +177,7 @@ export const PartnersContent: React.FC = () => {
                     )}
 
                     <div className="p-4 rounded-xl bg-[var(--bg-surface-2)] border border-[var(--border-soft)]">
-                      <span className="text-xs font-bold font-mono text-[var(--accent-blue)] uppercase block mb-1">
+                      <span className="text-xs font-bold font-mono text-[var(--accent-blue-text)] uppercase block mb-1">
                         MISIÓN:
                       </span>
                       <p className="text-xs sm:text-sm text-[var(--text-muted)] italic">
@@ -186,7 +186,7 @@ export const PartnersContent: React.FC = () => {
                     </div>
 
                     <div>
-                      <span className="text-xs font-bold font-mono text-[var(--accent-blue)] uppercase block mb-2">
+                      <span className="text-xs font-bold font-mono text-[var(--accent-blue-text)] uppercase block mb-2">
                         ÁREAS DE TRABAJO:
                       </span>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
@@ -205,8 +205,8 @@ export const PartnersContent: React.FC = () => {
                     {/* Destacado: Su aporte a la metodología y a los videos */}
                     <div className="p-5 rounded-2xl bg-[var(--accent-blue)]/10 border-2 border-[var(--accent-blue)] space-y-3">
                       <div className="flex items-center gap-2">
-                        <Sparkles className="w-4 h-4 text-[var(--accent-blue)]" />
-                        <span className="text-xs font-bold font-mono text-[var(--accent-blue)] uppercase tracking-wider">
+                        <Sparkles className="w-4 h-4 text-[var(--accent-blue-text)]" />
+                        <span className="text-xs font-bold font-mono text-[var(--accent-blue-text)] uppercase tracking-wider">
                           SU APORTE A LA METODOLOGÍA Y A LOS VIDEOS
                         </span>
                       </div>
@@ -355,7 +355,7 @@ export const PartnersContent: React.FC = () => {
         {/* Cierre: Diagrama SVG animado sencillo */}
         <div className="p-8 sm:p-12 rounded-3xl bg-[var(--bg-surface)] border-3 border-[var(--border-ink)] sticker-shadow text-center space-y-6">
           <div className="inline-block">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--accent-blue)]">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--accent-blue-text)]">
               FLUJO DEL ECOSISTEMA
             </span>
           </div>

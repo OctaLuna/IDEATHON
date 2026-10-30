@@ -13,6 +13,7 @@
     --accent-orange: #ff6b35;
     --accent-red: #dc2626;
     --accent-blue: #1f3fd1;
+    --accent-blue-text: #1f3fd1;
     --bg-accent-blue: #1f3fd1;
     --sky-soft: #a9c7ff;
     --accent-mint: #22c55e;
@@ -35,7 +36,8 @@
     --accent-yellow: #ffd23f;
     --accent-orange: #ff6b35;
     --accent-red: #ef4444;
-    --accent-blue: #4f6bff;
+    --accent-blue: #4b63ed;
+    --accent-blue-text: #a5b4fc;
     --bg-accent-blue: #182c73;
     --sky-soft: #bfd7fe;
     --accent-mint: #4ade80;

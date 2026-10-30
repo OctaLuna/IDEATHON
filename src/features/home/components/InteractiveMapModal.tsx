@@ -41,8 +41,8 @@ export const InteractiveMapModal: React.FC<InteractiveMapModalProps> = ({ isOpen
         {/* Top Header Bar inside Modal */}
         <div className="flex items-start justify-between gap-3 pb-3 mb-4 border-b-2 border-[var(--border-soft)]">
           <div className="pr-2">
-            <div className="flex items-center gap-2 text-xs font-bold font-mono uppercase text-[var(--accent-blue)] mb-1">
-              <MapPin className="w-4 h-4 text-[var(--accent-blue)]" />
+            <div className="flex items-center gap-2 text-xs font-bold font-mono uppercase text-[var(--accent-blue-text)] mb-1">
+              <MapPin className="w-4 h-4 text-[var(--accent-blue-text)]" />
               <span>SEDE OFICIAL DEL EVENTO</span>
             </div>
             <h3
@@ -78,7 +78,7 @@ export const InteractiveMapModal: React.FC<InteractiveMapModalProps> = ({ isOpen
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <div className="p-4 rounded-xl bg-[var(--accent-blue)]/10 border-2 border-[var(--accent-blue)] text-left">
-              <span className="text-[10px] font-bold font-mono text-[var(--accent-blue)]">
+              <span className="text-[10px] font-bold font-mono text-[var(--accent-blue-text)]">
                 ZONA A
               </span>
               <h4 className="font-bold text-sm text-[var(--text-main)] mt-1">
@@ -114,7 +114,7 @@ export const InteractiveMapModal: React.FC<InteractiveMapModalProps> = ({ isOpen
         {/* Transportation guidelines */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left text-xs sm:text-sm">
           <div className="p-4 rounded-xl bg-[var(--bg-surface-2)] border border-[var(--border-soft)]">
-            <div className="flex items-center gap-2 font-bold mb-2 text-[var(--accent-blue)]">
+            <div className="flex items-center gap-2 font-bold mb-2 text-[var(--accent-blue-text)]">
               <Bus className="w-4 h-4" />
               <span>En Transporte Público & PumaKatari</span>
             </div>
