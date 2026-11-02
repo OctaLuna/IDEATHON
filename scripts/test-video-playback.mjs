@@ -13,6 +13,7 @@ try {
   });
 
   await page.goto(new URL("/videos", baseUrl).href, { waitUntil: "networkidle" });
+  await page.locator('button[aria-label^="Ver video"]').first().waitFor({ timeout: 20_000 });
   assert.equal(await page.locator('button[aria-label^="Ver video"]').count(), 8);
   assert.equal(videoRequests, 0, "Video files should not load before the visitor opens a player.");
 

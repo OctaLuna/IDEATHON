@@ -22,3 +22,6 @@
 - Medios: subir los ocho MP4 optimizados a Blob y corregir el cargador para evitar un conflicto entre las credenciales OIDC y el token de escritura en Windows. Los archivos y las credenciales locales permanecen fuera de Git.
 - Publicación: desplegar la rama `main` en producción y comprobar en los registros que los ocho videos y sus pósteres se incluyen en `dist`. Las rutas directas y la reproducción se verificaron en el sitio publicado; los ocho MP4 respondieron con HTTP 200.
 - Calidad: `npm run verify` pasó completo y la prueba de medios pasó contra el despliegue público. Se usó npm porque Bun no está disponible en este equipo.
+- Apertura: ocultar enlaces a Reportes y Videos hasta el 6 de noviembre de 2026 a las 09:00 en Bolivia; activar la navegación sin recargar y conservar el acceso por URL directa.
+- Responsive: revisar cinco rutas en seis anchos y ambos temas con Playwright; corregir una carrera en el menú móvil y respetar movimiento reducido.
+- Capacidad: ejecutar en local etapas de 30, 100 y 300 usuarios virtuales y registrar resultados y límites de Vercel en `docs/capacity-2026-11-02.md`.

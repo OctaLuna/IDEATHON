@@ -1,5 +1,7 @@
 import { gsap, ScrollTrigger, useGSAP } from "@/animations/gsap";
 import { TapeBadge } from "@/components/decorative/DoodleSVGs";
+import { isEventResourcePath } from "@/config/navigation";
+import { useEventResourcesOpen } from "@/hooks/useEventResourcesOpen";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import {
   AlertCircle,
@@ -15,6 +17,7 @@ import { Link } from "react-router-dom";
 import { ECOSYSTEM_FLOW_STEPS, PARTNERS_DATA } from "./data/companies";
 
 export const PartnersContent: React.FC = () => {
+  const resourcesOpen = useEventResourcesOpen();
   const prefersReducedMotion = useReducedMotion();
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -214,20 +217,25 @@ export const PartnersContent: React.FC = () => {
                         {partner.contribution}
                       </p>
 
-                      {partner.links && partner.links.length > 0 && (
-                        <div className="flex flex-wrap items-center gap-3 pt-2">
-                          {partner.links.map((lnk, li) => (
-                            <Link
-                              key={li}
-                              to={lnk.url}
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[var(--accent-blue)] text-white text-xs font-bold border border-[var(--border-ink)] hover:opacity-90"
-                            >
-                              <span>{lnk.label}</span>
-                              <ArrowRight className="w-3 h-3" />
-                            </Link>
-                          ))}
-                        </div>
-                      )}
+                      {partner.links &&
+                        partner.links.some(
+                          (link) => resourcesOpen || !isEventResourcePath(link.url),
+                        ) && (
+                          <div className="flex flex-wrap items-center gap-3 pt-2">
+                            {partner.links
+                              .filter((link) => resourcesOpen || !isEventResourcePath(link.url))
+                              .map((lnk, li) => (
+                                <Link
+                                  key={li}
+                                  to={lnk.url}
+                                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[var(--accent-blue)] text-white text-xs font-bold border border-[var(--border-ink)] hover:opacity-90"
+                                >
+                                  <span>{lnk.label}</span>
+                                  <ArrowRight className="w-3 h-3" />
+                                </Link>
+                              ))}
+                          </div>
+                        )}
                     </div>
 
                     {partner.disclaimer && (

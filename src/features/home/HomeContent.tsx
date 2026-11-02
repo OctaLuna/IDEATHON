@@ -1,6 +1,7 @@
 ﻿import { gsap, ScrollTrigger, useGSAP } from "@/animations/gsap";
 import { RocketVehicleSVG, TapeBadge } from "@/components/decorative/DoodleSVGs";
 import { PROGRAM_DATA } from "@/config/event";
+import { useEventResourcesOpen } from "@/hooks/useEventResourcesOpen";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import confetti from "canvas-confetti";
 import {
@@ -43,6 +44,7 @@ const anchorLinks = [
 ];
 
 export const HomeContent: React.FC = () => {
+  const resourcesOpen = useEventResourcesOpen();
   const prefersReducedMotion = useReducedMotion();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const headlineRef = useRef<HTMLHeadingElement | null>(null);
@@ -591,24 +593,29 @@ export const HomeContent: React.FC = () => {
             </svg>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
-            <Link
-              to="/reportes"
-              className="p-6 rounded-3xl bg-[var(--bg-surface)] border-3 border-[var(--border-ink)] sticker-shadow space-y-3 hover:-translate-y-1 transition-transform group"
-            >
-              <div className="w-10 h-10 rounded-xl bg-[var(--accent-blue)] text-white font-display font-black flex items-center justify-center border-2 border-[var(--border-ink)]">
-                ①&nbsp;
-              </div>
-              <h3 className="font-display font-black text-lg text-[var(--text-main)] group-hover:text-[var(--accent-blue-text)] transition-colors">
-                Reportes
-              </h3>
-              <p className="text-xs text-[var(--text-muted)]">
-                Entiende las cifras oficiales de desempleo y potencialidades productivas de La Paz.
-              </p>
-              <span className="text-xs font-bold text-[var(--accent-blue-text)] flex items-center gap-1">
-                Explorar biblioteca <ArrowRight className="w-3.5 h-3.5" />
-              </span>
-            </Link>
+          <div
+            className={`grid grid-cols-1 sm:grid-cols-2 ${resourcesOpen ? "lg:grid-cols-3" : "lg:grid-cols-2"} gap-6 relative z-10`}
+          >
+            {resourcesOpen && (
+              <Link
+                to="/reportes"
+                className="p-6 rounded-3xl bg-[var(--bg-surface)] border-3 border-[var(--border-ink)] sticker-shadow space-y-3 hover:-translate-y-1 transition-transform group"
+              >
+                <div className="w-10 h-10 rounded-xl bg-[var(--accent-blue)] text-white font-display font-black flex items-center justify-center border-2 border-[var(--border-ink)]">
+                  ①&nbsp;
+                </div>
+                <h3 className="font-display font-black text-lg text-[var(--text-main)] group-hover:text-[var(--accent-blue-text)] transition-colors">
+                  Reportes
+                </h3>
+                <p className="text-xs text-[var(--text-muted)]">
+                  Entiende las cifras oficiales de desempleo y potencialidades productivas de La
+                  Paz.
+                </p>
+                <span className="text-xs font-bold text-[var(--accent-blue-text)] flex items-center gap-1">
+                  Explorar biblioteca <ArrowRight className="w-3.5 h-3.5" />
+                </span>
+              </Link>
+            )}
 
             <Link
               to="/metodologia"
@@ -1380,12 +1387,14 @@ export const HomeContent: React.FC = () => {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-            <Link
-              to="/reportes"
-              className="px-5 py-3 rounded-xl bg-white text-[#111111] font-display font-black text-xs sm:text-sm border-2 border-[var(--border-ink)] sticker-shadow hover:-translate-y-0.5 active:scale-95 transition-all"
-            >
-              Revisar reportes
-            </Link>
+            {resourcesOpen && (
+              <Link
+                to="/reportes"
+                className="px-5 py-3 rounded-xl bg-white text-[#111111] font-display font-black text-xs sm:text-sm border-2 border-[var(--border-ink)] sticker-shadow hover:-translate-y-0.5 active:scale-95 transition-all"
+              >
+                Revisar reportes
+              </Link>
+            )}
 
             <Link
               to="/metodologia"

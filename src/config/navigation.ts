@@ -15,3 +15,11 @@ export const NAVIGATION_LINKS = [
   { label: "Metodología", path: SITE_ROUTES.methodology },
   { label: "Socios", path: SITE_ROUTES.partners },
 ] as const;
+
+export function isEventResourcePath(path: string) {
+  return path === SITE_ROUTES.reports || path === SITE_ROUTES.videos;
+}
+
+export function visibleNavigationLinks(resourcesOpen: boolean) {
+  return NAVIGATION_LINKS.filter((link) => resourcesOpen || !isEventResourcePath(link.path));
+}

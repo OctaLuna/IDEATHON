@@ -1,6 +1,8 @@
 import { gsap, useGSAP } from "@/animations/gsap";
 import { LightbulbDoodle } from "@/components/decorative/DoodleSVGs";
-import { NAVIGATION_LINKS } from "@/config/navigation";
+import { visibleNavigationLinks } from "@/config/navigation";
+import { useEventResourcesOpen } from "@/hooks/useEventResourcesOpen";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { useTheme } from "@/features/theme";
 import { ArrowUpRight, Calendar, Menu, Moon, Sun, X } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
@@ -8,6 +10,7 @@ import { Link, useLocation } from "react-router-dom";
 
 export const Navbar: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
+  const prefersReducedMotion = useReducedMotion();
   const location = useLocation();
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,7 +23,7 @@ export const Navbar: React.FC = () => {
   const { contextSafe } = useGSAP({ scope: navContainerRef });
 
   // La navegacion se comparte con el footer y se controla desde config.
-  const navLinks = NAVIGATION_LINKS;
+  const navLinks = visibleNavigationLinks(useEventResourcesOpen());
 
   // En /, las anclas (#cronograma, #premios, etc.) NO cambian el link activo
   useEffect(() => {
@@ -70,6 +73,18 @@ export const Navbar: React.FC = () => {
       const linksContainer = mobileLinksRef.current;
       if (!menu || !linksContainer) return;
 
+      gsap.killTweensOf(menu);
+      if (prefersReducedMotion) {
+        gsap.killTweensOf(linksContainer.children);
+        gsap.set(menu, {
+          display: isMobileMenuOpen ? "flex" : "none",
+          opacity: isMobileMenuOpen ? 1 : 0,
+          y: 0,
+        });
+        gsap.set(linksContainer.children, { opacity: 1, y: 0 });
+        return;
+      }
+
       if (isMobileMenuOpen) {
         const tl = gsap.timeline();
         tl.set(menu, { display: "flex", opacity: 0, y: -15 })
@@ -103,7 +118,7 @@ export const Navbar: React.FC = () => {
         });
       }
     },
-    { scope: navContainerRef, dependencies: [isMobileMenuOpen] },
+    { scope: navContainerRef, dependencies: [isMobileMenuOpen, prefersReducedMotion] },
   );
 
   useEffect(() => {
