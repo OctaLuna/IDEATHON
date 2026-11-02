@@ -15,3 +15,10 @@
 - Auditoría: corregir contraste de textos y el salto de encabezado en la guía metodológica sin cambiar el sistema visual ni las animaciones; revisar hallazgos y verificaciones en `docs/audit-2026-10-30.md`.
 - Publicación pendiente: el entorno no tiene sesión de Vercel ni origen/token de Blob configurados, así que no se cargaron medios ni se inició un despliegue de producción.
 - Identidad: auditoría exhaustiva de la marca confirmando su completa estandarización como IDEATHON en código, configuración, metadatos y documentación.
+
+## 2026-11-02
+
+- Vercel: vincular el proyecto existente `ideathon-2026`, crear y conectar el almacén público `ideathon-videos`, y configurar su origen para Production y Preview.
+- Medios: subir los ocho MP4 optimizados a Blob y corregir el cargador para evitar un conflicto entre las credenciales OIDC y el token de escritura en Windows. Los archivos y las credenciales locales permanecen fuera de Git.
+- Publicación: desplegar la rama `main` en producción y comprobar en los registros que los ocho videos y sus pósteres se incluyen en `dist`. Las rutas directas y la reproducción se verificaron en el sitio publicado; los ocho MP4 respondieron con HTTP 200.
+- Calidad: `npm run verify` pasó completo y la prueba de medios pasó contra el despliegue público. Se usó npm porque Bun no está disponible en este equipo.

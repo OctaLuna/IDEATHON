@@ -15,3 +15,5 @@ BORRAR/
 .visual-diff/
 tests/visual/__baseline__/
 public/media/videos/
+
+.vercel/
