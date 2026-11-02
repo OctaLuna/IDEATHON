@@ -25,3 +25,4 @@
 - Apertura: ocultar enlaces a Reportes y Videos hasta el 6 de noviembre de 2026 a las 09:00 en Bolivia; activar la navegación sin recargar y conservar el acceso por URL directa.
 - Responsive: revisar cinco rutas en seis anchos y ambos temas con Playwright; corregir una carrera en el menú móvil y respetar movimiento reducido.
 - Capacidad: ejecutar en local etapas de 30, 100 y 300 usuarios virtuales y registrar resultados y límites de Vercel en `docs/capacity-2026-11-02.md`.
+- Producción: comprobar 100 solicitudes simultáneas al HTML inicial y otras 100 visitas simuladas que descargaron HTML y recursos principales en Vercel (800 respuestas HTTP 200); verificar una visita con Playwright y registrar el alcance en el informe de capacidad.
