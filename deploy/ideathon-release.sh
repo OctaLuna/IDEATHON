@@ -25,6 +25,12 @@ container=${IDEATHON_CONTAINER_NAME:?}
 [[ -f "$project_dir/compose.yaml" ]] || exit 3
 exec 9>"$state_dir/deploy.lock"
 flock -n 9 || { echo 'Another IDEATHON deployment is running.' >&2; exit 4; }
+actual_project=$(docker inspect --format '{{index .Config.Labels "com.docker.compose.project"}}' "$container")
+actual_service=$(docker inspect --format '{{index .Config.Labels "com.docker.compose.service"}}' "$container")
+if [[ "$actual_project" != "$project_name" || "$actual_service" != ideathon-web ]]; then
+  echo 'Container is not the configured IDEATHON Compose service; deployment stopped.' >&2
+  exit 3
+fi
 old_image=$(docker inspect --format '{{.Image}}' "$container")
 [[ "$old_image" =~ ^sha256:[0-9a-f]{64}$ ]] || exit 3
 available_kb=$(df -Pk "$state_dir" | awk 'NR==2 {print $4}')
