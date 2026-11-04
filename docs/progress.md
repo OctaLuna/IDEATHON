@@ -46,3 +46,4 @@
 - Socios: incorporar el logo proporcionado de BancoSol en la tarjeta del auspiciador, conservando el estilo existente.
 - CI/CD: preparar workflow de validación, públicación de imagen por commit y despliegue condicionado a aprobación; crear entorno production protegido y documentar la preparacion SSH pendiente.
 - CI/CD: reconstrucción Docker local completada tras autorización; se comprobaron rutas, PDF, 404 y rangos de los ocho videos. La instalación SSH y el rollback en la VPS siguen pendientes de aprobación y prueba.
+- Seguridad: mover las rutas y nombres internos de infraestructura a una configuración local protegida en la VPS, pendiente de instalación y revisión.

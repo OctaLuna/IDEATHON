@@ -9,11 +9,19 @@ fi
 commit=${BASH_REMATCH[1]}
 digest=${BASH_REMATCH[2]}
 image="ghcr.io/octaluna/ideathon@$digest"
-project_dir=/home/adminkaaiya/projects/tedx-facultyweek-platform
+config=/etc/ideathon-deploy.conf
 state_dir=/var/lib/ideathon-deploy
 overlay="$state_dir/ideathon.override.yaml"
-container=tedx-facultyweek-platform-ideathon-web-1
 [[ $(id -u) -eq 0 && -d "$state_dir" && ! -L "$state_dir" ]] || exit 3
+[[ -f "$config" && ! -L "$config" && $(stat -c '%u:%a' "$config") == '0:600' ]] || {
+  echo 'Root-owned deployment configuration with mode 600 is required.' >&2; exit 3;
+}
+# This file is created and reviewed by the server administrator; it is never committed.
+source "$config"
+project_dir=${IDEATHON_PROJECT_DIR:?}
+project_name=${IDEATHON_PROJECT_NAME:?}
+container=${IDEATHON_CONTAINER_NAME:?}
+[[ "$project_dir" =~ ^/[a-zA-Z0-9._/-]+$ && "$project_name" =~ ^[a-z0-9_-]+$ && "$container" =~ ^[a-zA-Z0-9_.-]+$ ]] || exit 3
 [[ -f "$project_dir/compose.yaml" ]] || exit 3
 exec 9>"$state_dir/deploy.lock"
 flock -n 9 || { echo 'Another IDEATHON deployment is running.' >&2; exit 4; }
@@ -39,7 +47,7 @@ write_overlay() {
   chmod 600 "$tmp"
   mv -f -- "$tmp" "$overlay"
 }
-compose=(docker compose -p tedx-facultyweek-platform -f "$project_dir/compose.yaml" -f "$overlay")
+compose=(docker compose -p "$project_name" -f "$project_dir/compose.yaml" -f "$overlay")
 rollback() {
   echo "Deployment failed; restoring previous IDEATHON image $old_image." >&2
   if (( had_overlay )); then
