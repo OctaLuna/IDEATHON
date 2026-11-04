@@ -36,6 +36,11 @@ jobs:
         run: bun run media:sync:vercel
       - name: Verify source and production build
         run: bun run verify
+      - name: Test isolated deployment and rollback logic
+        run: |
+          bash -n deploy/ideathon-release.sh
+          bash -n deploy/ideathon-ssh-entry.sh
+          bash scripts/test-deploy.sh
       - name: Build Linux amd64 image
         run: docker build --platform linux/amd64 -f deploy/Dockerfile -t ideathon-ci:${GITHUB_SHA} .
       - name: Verify image locally
