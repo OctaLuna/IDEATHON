@@ -10,7 +10,7 @@ Los archivos `deploy/ideathon-ssh-entry.sh` y `deploy/ideathon-release.sh` son c
 
 Para está arquitectura hace falta una cuenta SSH dedicada, una clave exclusiva forzada a la entrada SSH y una regla sudo estricta que permita solamente el script root-owned. Los scripts, el directorio de estado y el archivo sudoers deben ser propiedad de root y no ser modificables por la cuenta de despliegue. La cuenta no debe pertenecer al grupo docker: ese grupo equivale a privilegios elevados. Aun asi, el wrapper autorizado ejecuta Docker como root y requiere una revisión de seguridad del administrador; la restricción no elimina ese riesgo.
 
-Antes de instalar nada, el administrador debe revisar los dos scripts exactos y autorizar explicitamente la creacion de la cuenta, la clave forzada, el directorio `/var/lib/ideathon-deploy`, los scripts instalados en `/usr/local/libexec/ideathon-ssh-entry` y `/usr/local/sbin/ideathon-release`, y la regla sudo especifica. Los comandos de instalacion y su rollback se entregaran con los hashes del commit aprobado. No copiar ni guardar claves privadas en el repositorio ni en el chat.
+Antes de instalar nada, el administrador debe revisar los dos scripts exactos y autorizar explicitamente la creacion de la cuenta, la clave forzada, el directorio `/var/lib/ideathon-deploy`, el archivo local de configuración `/etc/ideathon-deploy.conf`, los scripts instalados en `/usr/local/libexec/ideathon-ssh-entry` y `/usr/local/sbin/ideathon-release`, y la regla sudo especifica. Los comandos de instalacion y su rollback se entregaran con los hashes del commit aprobado. No copiar ni guardar claves privadas en el repositorio ni en el chat.
 
 ## Configuracion de GitHub pendiente
 
@@ -20,4 +20,4 @@ Los trabajos de CI y el wrapper no se han ejecutado integralmente todavia. La pr
 
 ## Recuperacion
 
-El script conserva la imagen anterior y la configuración previa de su override; intenta restaurarlas si falla el servicio o sus comprobaciones. Si el rollback falla, detiene el proceso y requiere intervencion. Antes del primer despliegue se debe acordar con infraestructura una recuperacion manual concreta de `ideathon-web` y verificar la disponibilidad de `tedx-platform-ideathon:release-20261026-v2`. No ejecutar `docker compose down`, limpiezas globales ni operaciónes sobre otros servicios.
+El script conserva la imagen anterior y la configuración previa de su override; intenta restaurarlas si falla el servicio o sus comprobaciones. Si el rollback falla, detiene el proceso y requiere intervencion. Antes del primer despliegue se debe acordar con infraestructura una recuperacion manual concreta de `ideathon-web` y verificar la disponibilidad de la imagen anterior. No ejecutar `docker compose down`, limpiezas globales ni operaciónes sobre otros servicios.

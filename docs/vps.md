@@ -1,6 +1,6 @@
 # Preparación Docker de IDEATHON
 
-El dominio previsto es `ideathon.adm-ucb.lat`. Otra persona administra DNS, Cloudflare y Caddy. El servidor ya ejecuta `ideathon-web` dentro del proyecto Compose compartido `tedx-facultyweek-platform`. No modifiques ese proyecto ni ejecutes sus comandos de despliegue hasta acordar con infraestructura el procedimiento específico y recibir autorización de despliegue.
+El dominio previsto es `ideathon.adm-ucb.lat`. Otra persona administra DNS, Cloudflare y Caddy. El servidor ya ejecuta `ideathon-web` dentro de un proyecto Compose compartido. No modifiques ese proyecto ni ejecutes sus comandos de despliegue hasta acordar con infraestructura el procedimiento específico y recibir autorización de despliegue.
 
 ## Preparación y prueba local
 
@@ -25,6 +25,6 @@ El puerto por defecto del servicio local es `127.0.0.1:8080`, configurable con `
 
 Caddy corre en un contenedor y comparte una red con el `ideathon-web` existente. Su dirección `127.0.0.1` es la del propio contenedor Caddy, no la del host ni la del nuevo servicio. La persona responsable de Caddy y Cloudflare debe acordar la red, el nombre DNS interno y el puerto antes de configurar la ruta del dominio. La integración no está implementada ni validada en la VPS.
 
-La imagen anterior observada es `tedx-platform-ideathon:release-20261026-v2`. Antes de publicar, el responsable debe confirmar que sigue disponible, identificar la imagen actualmente activa, acordar el cambio mínimo sobre el servicio existente y documentar los comandos exactos de recuperación. No ejecutar limpiezas, reinicios generales ni `docker compose down` sobre el proyecto compartido. El servidor tenía 4,4 GB libres durante la auditoría; verificar de nuevo el espacio con infraestructura antes de construir o importar imágenes.
+Antes de publicar, el responsable debe confirmar que la imagen anterior sigue disponible, identificar la imagen actualmente activa, acordar el cambio mínimo sobre el servicio existente y documentar los comandos exactos de recuperación. No ejecutar limpiezas, reinicios generales ni `docker compose down` sobre el proyecto compartido. El servidor tenía 4,4 GB libres durante la auditoría; verificar de nuevo el espacio con infraestructura antes de construir o importar imágenes.
 
 Vercel conserva su configuración actual durante la transición. Esta guía prepara y verifica la imagen; el primer despliegue requiere un plan específico y autorización independientes.
