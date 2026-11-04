@@ -51,3 +51,5 @@
 - Seguridad: comprobar las etiquetas Compose antes de actualizar para rechazar cualquier contenedor ajeno a IDEATHON.
 - Socios: sustituir BancoSol por Banco FIE en la ficha, la portada y el pie; incorporar información institucional, áreas de trabajo y logo oficial.
 - VPS: confirmada por consulta del administrador la ruta activa de Caddy hacia ideathon-web:80; la preparacion SSH y el primer despliegue siguen pendientes de revision y autorizacion.
+- VPS: creada la cuenta SSH dedicada y registrados los scripts verificados y secretos de produccion; despliegue desactivado. La clave autorizada aun no es legible para la cuenta y el ajuste de permisos quedo bloqueado por revision automatica. IDEATHON sigue saludable con la imagen anterior.
+- VPS: tras autorizacion expresa, se ajusto la lectura de la clave publica; el archivo y su directorio permanecen bajo propiedad de root y la cuenta no puede modificarlos. Pendientes la prueba de acceso de Actions y la aprobacion del primer despliegue.
