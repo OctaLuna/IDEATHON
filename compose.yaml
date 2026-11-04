@@ -1,0 +1,20 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "${IDEATHON_BIND_ADDRESS:-127.0.0.1}:${IDEATHON_PORT:-8080}:80"
+
+  media-fetch:
+    image: node:24-alpine
+    profiles: [media]
+    working_dir: /app
+    environment:
+      MEDIA_BLOB_BASE_URL: ${MEDIA_BLOB_BASE_URL:-https://lwv0jzj5c8tpqdyg.public.blob.vercel-storage.com}
+    volumes:
+      - ./scripts/sync-vercel-media.mjs:/app/scripts/sync-vercel-media.mjs:ro
+      - ./src/features/videos/data/media-manifest.json:/app/src/features/videos/data/media-manifest.json:ro
+      - ./public/media/videos:/app/public/media/videos
+    command: ["node", "scripts/sync-vercel-media.mjs"]

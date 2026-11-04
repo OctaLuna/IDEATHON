@@ -1,9 +1,15 @@
+FROM node:24-alpine AS build
+WORKDIR /app
+RUN npm install --global bun@1.4.4
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile
+COPY . .
+RUN bun run build
+
 FROM nginx:alpine
-
 COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf
-COPY dist /usr/share/nginx/html
-
+COPY --from=build /app/dist /usr/share/nginx/html
 EXPOSE 80
-
 HEALTHCHECK --interval=15s --timeout=5s --retries=5 \
   CMD wget -q -O /dev/null http://127.0.0.1/ || exit 1
+

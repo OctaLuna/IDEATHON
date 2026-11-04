@@ -16,7 +16,6 @@ import {
   Clock,
   Coins,
   Crown,
-  Download,
   GraduationCap,
   Laptop,
   Lightbulb,
@@ -219,37 +218,6 @@ export const HomeContent: React.FC = () => {
     },
     { scope: containerRef, dependencies: [prefersReducedMotion], revertOnUpdate: true },
   );
-
-  const handleDownloadICS = () => {
-    const icsContent = [
-      "BEGIN:VCALENDAR",
-      "VERSION:2.0",
-      "PRODID:-//IDEATHON UCB//ES",
-      "CALSCALE:GREGORIAN",
-      "METHOD:PUBLISH",
-      "BEGIN:VEVENT",
-      "UID:ideathon-ucb-2026@ucb.edu.bo",
-      "DTSTAMP:20261019T120000Z",
-      "DTSTART:20261106T130000Z",
-      "DTEND:20261106T170000Z",
-      "SUMMARY:IDEATHON UCB 2026 - Jornada de Innovación",
-      "DESCRIPTION:Ideathon Colegios 2026 en la Capilla de la UCB Sede La Paz.",
-      "LOCATION:Capilla de la UCB, Av. 14 de Septiembre y Calle 2, Obrajes, La Paz",
-      "STATUS:CONFIRMED",
-      "END:VEVENT",
-      "END:VCALENDAR",
-    ].join("\r\n");
-
-    const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.setAttribute("download", "IDEATHON-UCB-2026.ics");
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-  };
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
@@ -637,7 +605,10 @@ export const HomeContent: React.FC = () => {
 
             <button
               onClick={() => scrollToSection("cronograma")}
-              className="p-6 rounded-3xl bg-[var(--accent-mint)]/20 border-3 border-[var(--border-ink)] sticker-shadow space-y-3 hover:-translate-y-1 transition-transform text-left cursor-pointer group"
+              style={{
+                backgroundColor: "color-mix(in srgb, var(--accent-mint) 20%, var(--bg-surface))",
+              }}
+              className="p-6 rounded-3xl border-3 border-[var(--border-ink)] sticker-shadow space-y-3 hover:-translate-y-1 transition-transform text-left cursor-pointer group"
             >
               <div className="w-10 h-10 rounded-xl bg-[var(--accent-mint)] text-[#111111] font-display font-black flex items-center justify-center border-2 border-[var(--border-ink)]">
                 ④
@@ -877,14 +848,6 @@ export const HomeContent: React.FC = () => {
                   >
                     <Navigation className="w-4 h-4" />
                     <span>Cómo llegar</span>
-                  </button>
-
-                  <button
-                    onClick={handleDownloadICS}
-                    className="px-5 py-2.5 bg-[var(--accent-yellow)] text-[#111111] text-xs sm:text-sm font-bold rounded-xl border-2 border-[var(--border-ink)] sticker-shadow hover:brightness-105 transition-all cursor-pointer flex items-center gap-2"
-                  >
-                    <Download className="w-4 h-4 text-[#111111]" />
-                    <span>Agregar al calendario (.ics)</span>
                   </button>
                 </div>
               </div>

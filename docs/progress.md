@@ -26,3 +26,10 @@
 - Responsive: revisar cinco rutas en seis anchos y ambos temas con Playwright; corregir una carrera en el menú móvil y respetar movimiento reducido.
 - Capacidad: ejecutar en local etapas de 30, 100 y 300 usuarios virtuales y registrar resultados y límites de Vercel en `docs/capacity-2026-11-02.md`.
 - Producción: comprobar 100 solicitudes simultáneas al HTML inicial y otras 100 visitas simuladas que descargaron HTML y recursos principales en Vercel (800 respuestas HTTP 200); verificar una visita con Playwright y registrar el alcance en el informe de capacidad.
+
+## 2026-11-03
+
+- Metodología: incorporar la guía rápida original con visor para escritorio, vista previa móvil y enlaces para abrirla y descargarla; se confirmó que el PDF copiado es idéntico al original.
+- Portada y socios: retirar la descarga del calendario, corregir la línea visible sobre la tarjeta de la jornada y añadir el logo de Fundación Jubileo conservando el diseño y las animaciones.
+- VPS: añadir Docker Compose, compilación con Bun y Nginx con rutas SPA, PDF, archivos ausentes y video por rangos. Documentar en `docs/vps.md` la conexión al proxy, los comandos y las opciones de copiar o descargar los ocho MP4, que permanecen fuera de Git. La configuración de Vercel se conserva.
+- Calidad: `npm run verify` y `npm run test:media` aprobados. Playwright comprobó guía, descarga, logo y portada en 320, 390, 768, 1024 y 1440 px, temas claro y oscuro, movimiento reducido y fechas anterior y posterior a la activación. En Docker se verificaron rutas directas, PDF, 404 y respuestas 206 de los ocho videos. Se usó npm localmente porque Bun no está en el PATH; la imagen se construyó con Bun.

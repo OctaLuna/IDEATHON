@@ -108,6 +108,12 @@ export const PartnersContent: React.FC = () => {
                             alt="Logo de Manq'a"
                             className="h-full w-full rounded-xl object-contain"
                           />
+                        ) : partner.id === "fundacion-jubileo" ? (
+                          <img
+                            src="/media/partners/fundacion-jubileo.jpg"
+                            alt="Logo de Fundación Jubileo"
+                            className="h-full w-full rounded-xl object-contain"
+                          />
                         ) : partner.id === "escuela-doria-medina" ? (
                           <img
                             src="/media/partners/samuel-logo.jpeg"
