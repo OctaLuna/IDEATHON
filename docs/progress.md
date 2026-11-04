@@ -38,4 +38,11 @@
 
 - Metodología: trasladar la guía rápida debajo de los ocho pasos y antes de la explicación de ideación, conservando su visor y descarga.
 
+## 2026-11-04 — Preparación institucional
+
+- Docker: permitir etiquetar la imagen local por commit y añadir una comprobación local de rutas, PDF, errores y rangos de los ocho videos.
+- VPS: actualizar la guía para reflejar Caddy, el servicio IDEATHON existente y la coordinación y autorización requeridas antes de publicar.
+- Validación local: rutas, PDF y rangos de ocho videos comprobados sobre una imagen ya existente; la reconstrucción de la imagen actual queda pendiente de autorización para descargar sus bases.
 - Socios: incorporar el logo proporcionado de BancoSol en la tarjeta del auspiciador, conservando el estilo existente.
+- CI/CD: preparar workflow de validación, públicación de imagen por commit y despliegue condicionado a aprobación; crear entorno production protegido y documentar la preparacion SSH pendiente.
+- CI/CD: reconstrucción Docker local completada tras autorización; se comprobaron rutas, PDF, 404 y rangos de los ocho videos. La instalación SSH y el rollback en la VPS siguen pendientes de aprobación y prueba.

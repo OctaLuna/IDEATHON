@@ -1,0 +1,112 @@
+name: IDEATHON CI and production
+
+on:
+  pull_request:
+    branches: [develop, main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ideathon-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      digest: ${{ steps.publish.outputs.digest }}
+    permissions:
+      contents: read
+      packages: write
+    env:
+      MEDIA_BLOB_BASE_URL: https://lwv0jzj5c8tpqdyg.public.blob.vercel-storage.com
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
+        with:
+          bun-version: 1.4.4
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+      - name: Download required public media
+        run: bun run media:sync:vercel
+      - name: Verify source and production build
+        run: bun run verify
+      - name: Build Linux amd64 image
+        run: docker build --platform linux/amd64 -f deploy/Dockerfile -t ideathon-ci:${GITHUB_SHA} .
+      - name: Verify image locally
+        shell: bash
+        run: |
+          set -euo pipefail
+          trap 'docker rm -f ideathon-ci-test >/dev/null 2>&1 || true' EXIT
+          docker run -d --name ideathon-ci-test -p 127.0.0.1:18080:80 ideathon-ci:${GITHUB_SHA}
+          for attempt in {1..30}; do
+            if curl -fsS http://127.0.0.1:18080/ >/dev/null; then break; fi
+            sleep 1
+          done
+          IDEATHON_TEST_URL=http://127.0.0.1:18080 node scripts/test-container.mjs
+      - name: Publish immutable commit image
+        id: publish
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          GHCR_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          image="ghcr.io/${GITHUB_REPOSITORY,,}"
+          echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+          docker tag "ideathon-ci:$GITHUB_SHA" "$image:$GITHUB_SHA"
+          docker push "$image:$GITHUB_SHA"
+          ref=$(docker image inspect --format '{{index .RepoDigests 0}}' "$image:$GITHUB_SHA")
+          digest=${ref##*@}
+          [[ "$digest" =~ ^sha256:[0-9a-f]{64}$ ]]
+          echo "digest=$digest" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    needs: verify
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.IDEATHON_DEPLOY_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: production
+      url: https://ideathon.adm-ucb.lat
+    permissions:
+      contents: read
+      actions: read
+    env:
+      GH_TOKEN: ${{ github.token }}
+      DEPLOY_HOST: ${{ vars.IDEATHON_DEPLOY_HOST }}
+      DEPLOY_USER: ${{ vars.IDEATHON_DEPLOY_USER }}
+      DEPLOY_KEY: ${{ secrets.IDEATHON_DEPLOY_KEY }}
+      DEPLOY_KNOWN_HOSTS: ${{ secrets.IDEATHON_KNOWN_HOSTS }}
+      IMAGE_DIGEST: ${{ needs.verify.outputs.digest }}
+    steps:
+      - name: Confirm latest main and deploy approved image
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$GITHUB_SHA" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$IMAGE_DIGEST" =~ ^sha256:[0-9a-f]{64}$ ]]
+          [[ "$DEPLOY_HOST" =~ ^[a-zA-Z0-9.-]+$ ]]
+          [[ "$DEPLOY_USER" =~ ^[a-z_][a-z0-9_-]*$ ]]
+          protection=$(gh api "repos/$GITHUB_REPOSITORY/environments/production" \
+            --jq '[.protection_rules[] | select(.type == "required_reviewers") | .reviewers[] | select(.reviewer.login == "OctaLuna")] | length')
+          if [[ "$protection" == 0 ]]; then
+            echo 'Production has no required approval from OctaLuna; refusing deployment.' >&2
+            exit 1
+          fi
+          current=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/main" --jq .object.sha)
+          if [[ "$current" != "$GITHUB_SHA" ]]; then
+            echo 'Main changed since this workflow began; refusing outdated deployment.' >&2
+            exit 1
+          fi
+          install -d -m 700 "$HOME/.ssh"
+          printf '%s\n' "$DEPLOY_KEY" > "$HOME/.ssh/ideathon_key"
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
+          chmod 600 "$HOME/.ssh/ideathon_key" "$HOME/.ssh/known_hosts"
+          ssh -i "$HOME/.ssh/ideathon_key" -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes \
+            -o ConnectTimeout=10 -o BatchMode=yes "$DEPLOY_USER@$DEPLOY_HOST" "$GITHUB_SHA $IMAGE_DIGEST"

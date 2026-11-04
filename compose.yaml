@@ -1,5 +1,6 @@
 services:
   web:
+    image: ${IDEATHON_IMAGE:-ideathon:local}
     build:
       context: .
       dockerfile: deploy/Dockerfile
