@@ -44,3 +44,4 @@
 - VPS: actualizar la guía para reflejar Caddy, el servicio IDEATHON existente y la coordinación y autorización requeridas antes de publicar.
 - Validación local: rutas, PDF y rangos de ocho videos comprobados sobre una imagen ya existente; la reconstrucción de la imagen actual queda pendiente de autorización para descargar sus bases.
 - Socios: incorporar el logo proporcionado de BancoSol en la tarjeta del auspiciador, conservando el estilo existente.
+- CI/CD: preparar workflow de validación, públicación de imagen por commit y despliegue condicionado a aprobación; crear entorno production protegido y documentar la preparacion SSH pendiente.
