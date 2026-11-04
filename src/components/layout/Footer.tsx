@@ -58,7 +58,7 @@ export const Footer: React.FC = () => {
               </p>
               <div className="p-3 rounded-xl bg-[var(--accent-yellow)]/15 border-2 border-[var(--accent-yellow)] inline-block">
                 <span className="font-mono font-bold text-xs text-[var(--text-main)] block">
-                  Auspicia: Banco Sol (BancoSol)
+                  Auspicia: Banco FIE
                 </span>
               </div>
             </div>
