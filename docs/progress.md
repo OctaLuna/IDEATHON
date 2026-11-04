@@ -43,3 +43,4 @@
 - Docker: permitir etiquetar la imagen local por commit y añadir una comprobación local de rutas, PDF, errores y rangos de los ocho videos.
 - VPS: actualizar la guía para reflejar Caddy, el servicio IDEATHON existente y la coordinación y autorización requeridas antes de publicar.
 - Validación local: rutas, PDF y rangos de ocho videos comprobados sobre una imagen ya existente; la reconstrucción de la imagen actual queda pendiente de autorización para descargar sus bases.
+- Socios: incorporar el logo proporcionado de BancoSol en la tarjeta del auspiciador, conservando el estilo existente.
