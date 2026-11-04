@@ -49,3 +49,5 @@
 - Seguridad: mover las rutas y nombres internos de infraestructura a una configuración local protegida en la VPS, pendiente de instalación y revisión.
 - CI/CD: validar en una simulación local aislada el flujo exitoso y el intento de recuperación ante una falla; no se ejecutó el despliegue real en la VPS.
 - Seguridad: comprobar las etiquetas Compose antes de actualizar para rechazar cualquier contenedor ajeno a IDEATHON.
+- Socios: sustituir BancoSol por Banco FIE en la ficha, la portada y el pie; incorporar información institucional, áreas de trabajo y logo oficial.
+- VPS: confirmada por consulta del administrador la ruta activa de Caddy hacia ideathon-web:80; la preparacion SSH y el primer despliegue siguen pendientes de revision y autorizacion.

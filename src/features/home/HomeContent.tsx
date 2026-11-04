@@ -1268,7 +1268,7 @@ export const HomeContent: React.FC = () => {
                 Auspicia
               </span>
               <h4 className="font-display font-black text-sm sm:text-base text-[var(--text-main)]">
-                Banco Sol (BancoSol)
+                Banco FIE
               </h4>
               <span className="text-[11px] text-[var(--text-muted)] block">
                 Microfinanzas & Inclusión
