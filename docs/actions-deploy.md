@@ -1,23 +1,21 @@
-# IDEATHON: automatización propuesta
+# IDEATHON: despliegue con GitHub Actions
 
-El flujo de GitHub Actions valida los PR a `develop` y `main`. Un push a `main` construye y verifica la imagen y pública una etiqueta por commit en GitHub Packages. El paquete incluye los videos públicos y debe hacerse público en GitHub Packages antes de que la VPS pueda descargarlo sin credenciales. Las descargas de medios y dependencias requieren la autorización acordada antes de lanzar estas pruebas.
+Los PR a `develop` y `main` ejecutan la verificaci?n del proyecto, construyen una imagen Linux/amd64 y comprueban el PDF y los ocho videos. Un push a `main` publica una imagen p?blica en GitHub Packages, identificada por el commit y su digest.
 
-El entorno de GitHub `production` requiere aprobación de OctaLuna, admite autoaprobación y está restringido a `main`. El job de despliegue permanece desactivado mientras la variable de repositorio `IDEATHON_DEPLOY_ENABLED` sea distinta de `true`. No activar está variable hasta que el responsable de la VPS apruebe y verifique la preparacion y el plan de rollback, y se apruebe expresamente el primer despliegue.
+El entorno `production` est? restringido a `main` y requiere aprobaci?n en GitHub. Con `IDEATHON_DEPLOY_ENABLED=true`, cada push validado a `main` espera esa aprobaci?n antes de actualizar la VPS. La publicaci?n comprueba que el commit siga siendo el ?ltimo de `main` y despliega por digest.
 
-## Entrada SSH propuestá para revisión
+## VPS y acceso SSH
 
-Los archivos `deploy/ideathon-ssh-entry.sh` y `deploy/ideathon-release.sh` son candidatos para una instalacion controlada por el administrador; no están instalados ni probados en la VPS. El primero invoca al segundo mediante sudo sin interacción, pasando solo el comando original. El segundo acepta exclusivamente un SHA de commit y un digest de imagen, toma un bloqueo, comprueba espacio y actualiza solo `ideathon-web` mediante un override propio; no ejecuta `down`, `prune` ni modifica la configuración original compartida. Si fallan las comprobaciones, intenta restaurar la configuración anterior del servicio.
+El 4 de noviembre de 2026 se instal? una cuenta SSH dedicada con una clave forzada a `deploy/ideathon-ssh-entry.sh`. La cuenta no pertenece al grupo Docker. El script de entrada invoca mediante sudo a `deploy/ideathon-release.sh`, que valida el comando, verifica el servicio y actualiza exclusivamente `ideathon-web` con un override propio, sin modificar el Compose compartido.
 
-Para está arquitectura hace falta una cuenta SSH dedicada, una clave exclusiva forzada a la entrada SSH y una regla sudo estricta que permita solamente el script root-owned. Los scripts, el directorio de estado y el archivo sudoers deben ser propiedad de root y no ser modificables por la cuenta de despliegue. La cuenta no debe pertenecer al grupo docker: ese grupo equivale a privilegios elevados. Aun asi, el wrapper autorizado ejecuta Docker como root y requiere una revisión de seguridad del administrador; la restricción no elimina ese riesgo.
+Los scripts instalados, su configuraci?n, el directorio de estado y la regla sudo pertenecen a root. La clave autorizada es legible por la cuenta, pero esta no puede modificarla. La regla permite ejecutar un script que opera Docker como root, por lo que requiere mantener la revisi?n de seguridad y la protecci?n de sus archivos.
 
-Antes de instalar nada, el administrador debe revisar los dos scripts exactos y autorizar explicitamente la creacion de la cuenta, la clave forzada, el directorio `/var/lib/ideathon-deploy`, el archivo local de configuración `/etc/ideathon-deploy.conf`, los scripts instalados en `/usr/local/libexec/ideathon-ssh-entry` y `/usr/local/sbin/ideathon-release`, y la regla sudo especifica. Los comandos de instalacion y su rollback se entregaran con los hashes del commit aprobado. No copiar ni guardar claves privadas en el repositorio ni en el chat.
+Los scripts instalados en la VPS **no se actualizan autom?ticamente** al cambiar los archivos del repositorio. Antes de usar una nueva versi?n, una persona administradora debe revisar los cambios y sus hashes e instalarla de forma controlada. No guardar claves privadas en el repositorio ni en el chat.
 
-## Configuracion de GitHub pendiente
+Las variables de repositorio `IDEATHON_DEPLOY_HOST` e `IDEATHON_DEPLOY_USER` y los secretos del entorno `IDEATHON_DEPLOY_KEY` e `IDEATHON_KNOWN_HOSTS` est?n configurados. La identidad del servidor debe verificarse antes de modificar `IDEATHON_KNOWN_HOSTS`.
 
-Despues de revisar y autorizar el acceso, configurar las variables de repositorio `IDEATHON_DEPLOY_HOST` e `IDEATHON_DEPLOY_USER`, y los secretos de entorno `IDEATHON_DEPLOY_KEY` e `IDEATHON_KNOWN_HOSTS`. El ultimo debe contener la clave pública de servidor confirmada por el administrador; el fingerprint no reemplaza el archivo known_hosts. Una vez que GitHub Packages sea público, la imagen se haya probado y se haya verificado la proteccion de `production`, habilitar el despliegue solamente con aprobación expresa.
+## Verificaci?n y recuperaci?n
 
-Los trabajos de CI y el wrapper no se han ejecutado integralmente todavia. La prueba local previa utilizo una imagen anterior. No públicar ni activar el flujo hasta probarlo y revisar los resultados. No hay CI obligatorio en las ramas hasta que un workflow exitoso establezca su nombre de comprobacion.
+El despliegue del 4 de noviembre de 2026 fue aprobado en GitHub y comprob? la salud del servicio, el PDF y las respuestas por rango de los videos. El dominio conserva la ruta existente de Caddy hacia `ideathon-web:80`.
 
-## Recuperacion
-
-El script conserva la imagen anterior y la configuración previa de su override; intenta restaurarlas si falla el servicio o sus comprobaciones. Si el rollback falla, detiene el proceso y requiere intervencion. Antes del primer despliegue se debe acordar con infraestructura una recuperacion manual concreta de `ideathon-web` y verificar la disponibilidad de la imagen anterior. No ejecutar `docker compose down`, limpiezas globales ni operaciónes sobre otros servicios.
+El script conserva la configuraci?n anterior y trata de restaurar ?nicamente IDEATHON si fallan sus verificaciones. En el primer intento, una incompatibilidad de la comprobaci?n con BusyBox wget activ? el rollback; se corrigi? y se comprob? antes del despliegue exitoso. Si el rollback falla, requiere intervenci?n de infraestructura. Mantener disponible la imagen anterior y no ejecutar `docker compose down`, limpiezas globales ni operaciones sobre otros servicios.
