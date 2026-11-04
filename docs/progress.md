@@ -48,3 +48,4 @@
 - CI/CD: reconstrucción Docker local completada tras autorización; se comprobaron rutas, PDF, 404 y rangos de los ocho videos. La instalación SSH y el rollback en la VPS siguen pendientes de aprobación y prueba.
 - Seguridad: mover las rutas y nombres internos de infraestructura a una configuración local protegida en la VPS, pendiente de instalación y revisión.
 - CI/CD: validar en una simulación local aislada el flujo exitoso y el intento de recuperación ante una falla; no se ejecutó el despliegue real en la VPS.
+- Seguridad: comprobar las etiquetas Compose antes de actualizar para rechazar cualquier contenedor ajeno a IDEATHON.

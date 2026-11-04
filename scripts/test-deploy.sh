@@ -19,7 +19,12 @@ cat > "$t/bin/docker" <<'EOF'
 #!/bin/sh
 printf '%s\n' "$*" >> "$MOCK_LOG"
 case "$1" in
- inspect) case "$*" in *State.Health*) if [ "${MOCK_FAIL:-0}" = 1 ]; then echo unhealthy; else echo healthy; fi;; *) printf 'sha256:'; printf 'a%.0s' $(seq 1 64); printf '\n';; esac;;
+ inspect) case "$*" in
+  *com.docker.compose.project*) if [ "${MOCK_WRONG_LABEL:-0}" = 1 ]; then echo wrong-project; else echo isolated; fi;;
+  *com.docker.compose.service*) echo ideathon-web;;
+  *State.Health*) if [ "${MOCK_FAIL:-0}" = 1 ]; then echo unhealthy; else echo healthy; fi;;
+  *) printf 'sha256:'; printf 'a%.0s' $(seq 1 64); printf '\n';;
+ esac;;
  exec) case "$*" in *videos*) echo 'HTTP/1.1 206 Partial Content';; esac;;
 esac
 exit 0
@@ -47,4 +52,9 @@ export MOCK_FAIL=1
 if bash "$t/release.sh" "$sha $digest"; then echo 'FAIL: rollback was not triggered'; exit 1; fi
 grep -q 'image: "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"' "$t/state/ideathon.override.yaml"
 test "$(grep -c ' up -d --no-deps --no-build --pull never ideathon-web' "$MOCK_LOG")" = 2
+unset MOCK_FAIL
+: > "$MOCK_LOG"
+export MOCK_WRONG_LABEL=1
+if bash "$t/release.sh" "$sha $digest"; then echo 'FAIL: incorrect service accepted'; exit 1; fi
+if grep -Eq '^(pull|compose)' "$MOCK_LOG"; then echo 'FAIL: wrong service caused changes'; exit 1; fi
 echo 'PASS: isolated success and rollback simulations'
