@@ -33,3 +33,7 @@
 - Portada y socios: retirar la descarga del calendario, corregir la línea visible sobre la tarjeta de la jornada y añadir el logo de Fundación Jubileo conservando el diseño y las animaciones.
 - VPS: añadir Docker Compose, compilación con Bun y Nginx con rutas SPA, PDF, archivos ausentes y video por rangos. Documentar en `docs/vps.md` la conexión al proxy, los comandos y las opciones de copiar o descargar los ocho MP4, que permanecen fuera de Git. La configuración de Vercel se conserva.
 - Calidad: `npm run verify` y `npm run test:media` aprobados. Playwright comprobó guía, descarga, logo y portada en 320, 390, 768, 1024 y 1440 px, temas claro y oscuro, movimiento reducido y fechas anterior y posterior a la activación. En Docker se verificaron rutas directas, PDF, 404 y respuestas 206 de los ocho videos. Se usó npm localmente porque Bun no está en el PATH; la imagen se construyó con Bun.
+
+## 2026-11-04
+
+- Metodología: trasladar la guía rápida debajo de los ocho pasos y antes de la explicación de ideación, conservando su visor y descarga.

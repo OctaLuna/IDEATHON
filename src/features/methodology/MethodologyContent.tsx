@@ -607,64 +607,6 @@ export const MethodologyContent: React.FC = () => {
           </p>
         </div>
 
-        <section
-          aria-labelledby="guia-equipo-title"
-          className="mb-16 p-5 sm:p-8 rounded-3xl bg-[var(--bg-surface)] border-3 border-[var(--border-ink)] sticker-shadow space-y-5"
-        >
-          <div className="flex flex-wrap items-start justify-between gap-4">
-            <div className="space-y-2">
-              <h2 id="guia-equipo-title" className="font-display font-black text-2xl sm:text-3xl">
-                Guía rápida del equipo
-              </h2>
-              <p className="text-sm sm:text-base text-[var(--text-muted)]">
-                Consulta la guía para completar el canvas con tu equipo.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              <a
-                href="/media/docs/guia-rapida-del-equipo.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-3 rounded-xl border-2 border-[var(--border-ink)] bg-[var(--bg-surface-2)] font-bold text-sm sticker-shadow"
-              >
-                Abrir PDF
-              </a>
-              <a
-                href="/media/docs/guia-rapida-del-equipo.pdf"
-                download
-                className="px-4 py-3 rounded-xl border-2 border-[var(--border-ink)] bg-[var(--accent-yellow)] text-[#111111] font-bold text-sm sticker-shadow"
-              >
-                Descargar guía
-              </a>
-            </div>
-          </div>
-          <div className="hidden md:block overflow-hidden rounded-xl border-2 border-[var(--border-ink)] bg-white">
-            <iframe
-              title="Vista previa de la guía rápida del equipo"
-              src="/media/docs/guia-rapida-del-equipo.pdf#view=FitH"
-              className="block w-full h-[600px]"
-            >
-              Tu navegador no admite la vista previa. Usa el enlace Abrir PDF.
-            </iframe>
-          </div>
-          <a
-            href="/media/docs/guia-rapida-del-equipo.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block md:hidden"
-            aria-label="Abrir la guía rápida del equipo en PDF"
-          >
-            <img
-              src="/media/docs/guia-rapida-vista-previa.png"
-              alt="Vista previa de la guía rápida del equipo"
-              className="w-full rounded-xl border-2 border-[var(--border-ink)]"
-            />
-          </a>
-          <p className="text-xs text-[var(--text-muted)]">
-            Si no ves la guía, selecciona «Abrir PDF» o descárgala.
-          </p>
-        </section>
-
         {/* Timeline Container */}
         <div className="methodology-timeline-wrapper relative my-12">
           {/* Desktop SVG Serpentine Line + MotionPath Rocket */}
@@ -933,6 +875,64 @@ export const MethodologyContent: React.FC = () => {
             })}
           </div>
         </div>
+
+        <section
+          aria-labelledby="guia-equipo-title"
+          className="mb-16 p-5 sm:p-8 rounded-3xl bg-[var(--bg-surface)] border-3 border-[var(--border-ink)] sticker-shadow space-y-5"
+        >
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div className="space-y-2">
+              <h2 id="guia-equipo-title" className="font-display font-black text-2xl sm:text-3xl">
+                Guía rápida del equipo
+              </h2>
+              <p className="text-sm sm:text-base text-[var(--text-muted)]">
+                Consulta la guía para completar el canvas con tu equipo.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="/media/docs/guia-rapida-del-equipo.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-3 rounded-xl border-2 border-[var(--border-ink)] bg-[var(--bg-surface-2)] font-bold text-sm sticker-shadow"
+              >
+                Abrir PDF
+              </a>
+              <a
+                href="/media/docs/guia-rapida-del-equipo.pdf"
+                download
+                className="px-4 py-3 rounded-xl border-2 border-[var(--border-ink)] bg-[var(--accent-yellow)] text-[#111111] font-bold text-sm sticker-shadow"
+              >
+                Descargar guía
+              </a>
+            </div>
+          </div>
+          <div className="hidden md:block overflow-hidden rounded-xl border-2 border-[var(--border-ink)] bg-white">
+            <iframe
+              title="Vista previa de la guía rápida del equipo"
+              src="/media/docs/guia-rapida-del-equipo.pdf#view=FitH"
+              className="block w-full h-[600px]"
+            >
+              Tu navegador no admite la vista previa. Usa el enlace Abrir PDF.
+            </iframe>
+          </div>
+          <a
+            href="/media/docs/guia-rapida-del-equipo.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block md:hidden"
+            aria-label="Abrir la guía rápida del equipo en PDF"
+          >
+            <img
+              src="/media/docs/guia-rapida-vista-previa.png"
+              alt="Vista previa de la guía rápida del equipo"
+              className="w-full rounded-xl border-2 border-[var(--border-ink)]"
+            />
+          </a>
+          <p className="text-xs text-[var(--text-muted)]">
+            Si no ves la guía, selecciona «Abrir PDF» o descárgala.
+          </p>
+        </section>
 
         {/* ======================================================== */}
         {/* SECCIÓN 1: FASE DE IDEACIÓN (DESIGN THINKING) */}
