@@ -1,48 +1,30 @@
-# Despliegue en VPS
+# Preparación Docker de IDEATHON
 
-La VPS necesita Git, Docker Engine y Docker Compose. El proxy existente administra el dominio y HTTPS. Este servicio escucha por defecto en `127.0.0.1:8080` del servidor, por lo que el proxy instalado en el host puede reenviar tráfico HTTP a esa dirección. Si el proxy está en otro contenedor, conéctalo a la red de Compose y usa el servicio `web` en el puerto 80; no uses `127.0.0.1` dentro de ese otro contenedor.
+El dominio previsto es `ideathon.adm-ucb.lat`. Otra persona administra DNS, Cloudflare y Caddy. El servidor ya ejecuta `ideathon-web` dentro del proyecto Compose compartido `tedx-facultyweek-platform`. No modifiques ese proyecto ni ejecutes sus comandos de despliegue hasta acordar con infraestructura el procedimiento específico y recibir autorización de despliegue.
 
-## Primera instalación
+## Preparación y prueba local
 
-```sh
-git clone https://github.com/OctaLuna/IDEATHON.git
-cd IDEATHON
-git checkout main
-```
+Necesitas Docker Engine y Docker Compose. Los ocho MP4 no están en Git. Cópialos a `public/media/videos/`, con los nombres de `src/features/videos/data/media-manifest.json`. En el equipo local también está disponible `docker compose --profile media run --rm media-fetch`, que descarga los ocho archivos desde el almacén público configurado; esta operación requiere acceso externo y reemplaza los videos existentes después de validarlos.
 
-Los ocho MP4 no están en Git. Elige una de estas opciones antes de construir:
-
-1. Descargarlos una vez del almacén público actual, sin token:
-
-   ```sh
-   docker compose --profile media run --rm media-fetch
-   ```
-
-   Para otro almacén público, define `MEDIA_BLOB_BASE_URL` con su origen HTTPS antes del comando. La descarga requiere que el almacén siga disponible. Se sustituyen los videos locales existentes.
-
-2. Copiar manualmente los ocho MP4 optimizados a `public/media/videos/`, conservando los nombres indicados en `src/features/videos/data/media-manifest.json`. Por ejemplo, desde el equipo que los contiene: `scp public/media/videos/*.mp4 usuario@servidor:/ruta/IDEATHON/public/media/videos/` (crea primero el directorio en la VPS).
-
-Después construye y levanta el servicio:
+Para construir una imagen identificada por commit y probarla en un proyecto Compose local aislado, verifica primero que `git status --short` no muestre cambios sin confirmar; de otro modo la etiqueta no identifica todo el contenido compilado:
 
 ```sh
-docker compose up -d --build
+export IDEATHON_IMAGE="ideathon:$(git rev-parse --short=12 HEAD)"
+export IDEATHON_PORT=18080
+docker compose -p ideathon-local build web
+docker compose -p ideathon-local up -d --no-build web
+IDEATHON_TEST_URL=http://127.0.0.1:18080 node scripts/test-container.mjs
+docker compose -p ideathon-local stop web
 ```
 
-La construcción comprueba los ocho videos y sus pósteres y falla si faltan. El PDF, el logo y todos los medios se sirven desde la imagen construida; el contenedor en ejecución no depende de Blob. La aplicación no necesita variables de entorno para mostrarse. Los MP4 siguen fuera de Git.
+En PowerShell, usa `$env:IDEATHON_IMAGE = "ideathon:$(git rev-parse --short=12 HEAD)"`, `$env:IDEATHON_PORT = "18080"` y `$env:IDEATHON_TEST_URL = "http://127.0.0.1:18080"` antes de los comandos correspondientes. La compilación falla si falta un video o póster requerido. La imagen final sirve localmente el PDF, los ocho MP4 y sus pósteres; no necesita conexión a Blob en ejecución.
 
-Para cambiar la dirección o puerto del host, define `IDEATHON_BIND_ADDRESS` e `IDEATHON_PORT` al ejecutar Compose. Por ejemplo, `IDEATHON_PORT=8081 docker compose up -d --build`. Ajusta el destino del proxy de acuerdo con ello. Evita publicar el puerto en todas las interfaces cuando solo el proxy deba acceder.
+El puerto por defecto del servicio local es `127.0.0.1:8080`, configurable con `IDEATHON_BIND_ADDRESS` e `IDEATHON_PORT`. La prueba usa 18080 para evitar conflictos habituales. No publiques el puerto en todas las interfaces sin acordarlo con infraestructura.
 
-## Actualización y comprobación
+## Integración institucional pendiente
 
-```sh
-git pull --ff-only origin main
-docker compose up -d --build
-docker compose ps
-curl -I http://127.0.0.1:8080/metodologia
-curl -I http://127.0.0.1:8080/media/docs/guia-rapida-del-equipo.pdf
-curl -I -H 'Range: bytes=0-1023' http://127.0.0.1:8080/media/videos/NOMBRE-DEL-VIDEO.mp4
-```
+Caddy corre en un contenedor y comparte una red con el `ideathon-web` existente. Su dirección `127.0.0.1` es la del propio contenedor Caddy, no la del host ni la del nuevo servicio. La persona responsable de Caddy y Cloudflare debe acordar la red, el nombre DNS interno y el puerto antes de configurar la ruta del dominio. La integración no está implementada ni validada en la VPS.
 
-Sustituye el nombre del video por uno del manifiesto: la respuesta por rango debe ser `206 Partial Content`. Un archivo inexistente debe devolver `404`. También abre el dominio HTTPS y comprueba la guía, su descarga, las rutas directas y la reproducción. Si se añaden o cambian videos, vuelve a copiarlos o sincronizarlos antes del build. Los archivos descargados permanecen en `public/media/videos/` entre actualizaciones.
+La imagen anterior observada es `tedx-platform-ideathon:release-20261026-v2`. Antes de publicar, el responsable debe confirmar que sigue disponible, identificar la imagen actualmente activa, acordar el cambio mínimo sobre el servicio existente y documentar los comandos exactos de recuperación. No ejecutar limpiezas, reinicios generales ni `docker compose down` sobre el proyecto compartido. El servidor tenía 4,4 GB libres durante la auditoría; verificar de nuevo el espacio con infraestructura antes de construir o importar imágenes.
 
-Vercel conserva su configuración y su proceso de sincronización durante la transición. Esta guía prepara la instalación; no configura el proxy ni los certificados.
+Vercel conserva su configuración actual durante la transición. Esta guía prepara y verifica la imagen; el primer despliegue requiere un plan específico y autorización independientes.
