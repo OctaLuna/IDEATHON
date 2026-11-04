@@ -114,35 +114,40 @@ export const PARTNERS_DATA: Partner[] = [
     disclaimer: "Información sujeta a verificación y ajustes por los organizadores oficiales.",
   },
   {
-    id: "banco-sol",
-    name: "Banco Sol (Banco Solidario S.A.)",
-    shortName: "BancoSol",
+    id: "banco-fie",
+    name: "Banco FIE",
+    shortName: "Banco FIE",
     badge: "Auspiciador Oficial",
     roleType: "auspiciador",
     accentColor: "#FFD23F",
     secondaryColor: "#111111",
     summary:
-      "Entidad financiera boliviana pionera y referente mundial en microfinanzas, con un fuerte enfoque en inclusión financiera, desarrollo social y respaldo a microempresarios y emprendedores de todo el país.",
+      "Entidad bancaria múltiple boliviana con sede en La Paz, especializada en microfinanzas, inclusión financiera y social, desarrollo productivo y financiamiento agropecuario. Promueve la equidad de género y las finanzas sostenibles mediante una red de agencias urbanas, periurbanas y rurales.",
     origin:
-      "Nació en Bolivia en 1992 como el primer banco comercial del mundo dedicado exclusivamente a las microfinanzas, transformando el acceso al crédito productivo para sectores tradicionalmente desatendidos.",
+      "Cinco mujeres impulsaron la ONG FIE, que inició operaciones en 1985 durante la crisis económica para atender a personas y pequeñas unidades productivas excluidas de la banca tradicional. En 1998 se constituyó el FFP FIE, en 2010 se transformó en banco y en 2014 se constituyó jurídicamente como Banco Múltiple.",
     mission:
-      "Brindar oportunidades de desarrollo y crecimiento sostenible a personas y emprendedores mediante servicios financieros inclusivos, transparentes y de impacto medible.",
+      "Somos un Banco que ofrece soluciones financieras integrales de calidad para nuestra clientela, preferentemente al sector de la micro y pequeña empresa. Basamos nuestro accionar en la ética, generamos valor para nuestros grupos de interés y aportamos a la construcción de una sociedad sostenible, inclusiva y equitativa.",
     workAreas: [
-      "Microcrédito productivo y financiamiento para emprendimientos",
-      "Educación financiera para jóvenes y familias bolivianas",
-      "Banca digital inclusiva y canales de ahorro accesibles",
-      "Programas de responsabilidad social empresarial con impacto comunitario",
+      "Microcrédito y PyME: financiamiento para unidades productivas familiares y pequeñas empresas.",
+      "Financiamiento agropecuario sostenible: apoyo financiero y técnico a productores y cadenas de valor mediante FIExperto.",
+      "Igualdad de género: Marca Magenta, apoyo a negocios liderados por mujeres y educación digital y financiera.",
+      "Inclusión financiera: presencia en áreas urbanas, periurbanas y rurales de los nueve departamentos.",
+      "Sostenibilidad y ecoeficiencia: gestión ambiental, agricultura climáticamente inteligente, Pacto Global y residuos electrónicos.",
+      "Captaciones y banca digital: ahorro, depósitos a plazo fijo y canales electrónicos.",
     ],
     keyStats: [
-      "Pionero global en microfinanzas desde 1992",
-      "Presencia en los 9 departamentos de Bolivia",
-      "Auspiciador oficial del Ideathon Colegios 2026",
+      "Sede central: La Paz, Bolivia; agencias en Sopocachi y San Jorge",
+      "Más de 40 años de trayectoria; operaciones desde 1985",
+      "Supervisado por la Autoridad de Supervisión del Sistema Financiero (ASFI)",
+      "Identidad: inclusión, microfinanzas y Marca Magenta",
+      "Portal institucional: bancofie.com.bo",
     ],
     contribution:
-      "Auspicia el Ideathon Colegios 2026. Conexión clave con el evento: el acceso responsable al financiamiento es el puente que permite a una idea innovadora transformarse en una empresa sostenible. Esto se refleja directamente en los bloques 'Fuentes de Ingresos' y 'Estructura de Costos' del Lean Canvas.",
+      "Provee financiamiento formal a sectores tradicionalmente excluidos, especialmente a mujeres emprendedoras y pequeños productores agropecuarios, con acompañamiento técnico, inclusión territorial e impacto social y ambiental.",
     links: [{ label: "Ver Bloques del Lean Canvas", url: "/metodologia" }],
-    website: "https://www.bancosol.com.bo/",
-    disclaimer: "Información sujeta a verificación y ajustes por los organizadores oficiales.",
+    website: "https://www.bancofie.com.bo/",
+    disclaimer:
+      "Información referencial basada en fuentes institucionales y memorias corporativas de Banco FIE.",
   },
 ];
 

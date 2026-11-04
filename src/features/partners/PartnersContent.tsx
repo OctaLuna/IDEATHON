@@ -257,7 +257,7 @@ export const PartnersContent: React.FC = () => {
           })}
         </div>
 
-        {/* Tarjeta Diferenciada del Auspiciador (Banco Sol) */}
+        {/* Tarjeta Diferenciada del Auspiciador (Banco FIE) */}
         {sponsor && (
           <div className="partner-card-item p-6 sm:p-10 rounded-3xl bg-gradient-to-br from-[var(--accent-yellow)]/25 via-[var(--bg-surface)] to-[var(--bg-surface)] border-3 border-[var(--accent-yellow)] sticker-shadow-lg card-theme-transition">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -265,9 +265,9 @@ export const PartnersContent: React.FC = () => {
                 <div className="p-6 sm:p-8 rounded-2xl border-2 border-[var(--border-ink)] bg-[var(--accent-yellow)]/20 text-center relative sticker-shadow">
                   <div className="w-16 h-16 mx-auto rounded-2xl bg-white border-2 border-[var(--border-ink)] flex items-center justify-center mb-4 sticker-shadow overflow-hidden">
                     <img
-                      src="/media/partners/bancosol-logo.png"
-                      alt="Logo de BancoSol"
-                      className="h-full w-full object-cover"
+                      src="/media/partners/banco-fie.svg"
+                      alt="Logo de Banco FIE"
+                      className="h-full w-full object-contain p-1"
                     />
                   </div>
 
@@ -302,7 +302,7 @@ export const PartnersContent: React.FC = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 px-4 py-2 bg-[var(--bg-surface)] text-[var(--text-main)] text-xs sm:text-sm font-bold rounded-xl border-2 border-[var(--border-ink)] hover:bg-[var(--accent-yellow)] hover:text-[#111111] transition-colors"
                       >
-                        <span>Visitar BancoSol</span>
+                        <span>Visitar Banco FIE</span>
                         <ExternalLink className="w-3.5 h-3.5" />
                       </a>
                     </div>
@@ -331,18 +331,29 @@ export const PartnersContent: React.FC = () => {
 
                 <div className="p-4 rounded-xl bg-[var(--bg-surface-2)] border border-[var(--border-soft)]">
                   <span className="text-xs font-bold font-mono text-[var(--accent-orange)] uppercase block mb-1">
-                    MISIÓN SOCIAL Y FINANCIERA:
+                    MISIÓN (MEMORIA INSTITUCIONAL DE 2019):
                   </span>
                   <p className="text-xs sm:text-sm text-[var(--text-muted)] italic">
                     "{sponsor.mission}"
                   </p>
                 </div>
 
+                <div className="p-4 rounded-xl bg-[var(--bg-surface-2)] border border-[var(--border-soft)] space-y-2">
+                  <span className="text-xs font-bold font-mono text-[var(--accent-orange)] uppercase block">
+                    ÁREAS DE TRABAJO Y PILARES ESTRATÉGICOS:
+                  </span>
+                  <ul className="space-y-2 text-xs sm:text-sm text-[var(--text-muted)] list-disc pl-5">
+                    {sponsor.workAreas.map((area) => (
+                      <li key={area}>{area}</li>
+                    ))}
+                  </ul>
+                </div>
+
                 <div className="p-5 rounded-2xl bg-[var(--accent-yellow)]/20 border-2 border-[var(--border-ink)] space-y-3">
                   <div className="flex items-center gap-2">
                     <Coins className="w-4 h-4 text-[#111111]" />
                     <span className="text-xs font-bold font-mono text-[#111111] uppercase tracking-wider">
-                      CONEXIÓN CON EL IDEATHON & EL LEAN CANVAS
+                      APORTE AL ECOSISTEMA ECONÓMICO Y SOCIAL
                     </span>
                   </div>
                   <p className="text-xs sm:text-sm text-[var(--text-main)] leading-relaxed font-medium">
@@ -361,9 +372,7 @@ export const PartnersContent: React.FC = () => {
 
                 <div className="text-[11px] font-mono text-[var(--text-muted)] flex items-center gap-1.5">
                   <AlertCircle className="w-3.5 h-3.5 shrink-0" />
-                  <span>
-                    Información sujeta a verificación y ajustes por los organizadores oficiales.
-                  </span>
+                  <span>{sponsor.disclaimer}</span>
                 </div>
               </div>
             </div>
