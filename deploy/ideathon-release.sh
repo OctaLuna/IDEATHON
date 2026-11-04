@@ -83,8 +83,11 @@ if (( ! ready )) || ! docker exec "$container" wget -q --spider http://127.0.0.1
   exit 1
 fi
 for video in guesandina miski-muu qarwita wayna alwacafe bio-bol du-de-una sin-etiquetas; do
-  if ! docker exec "$container" wget -S -O /dev/null --header='Range: bytes=0-0' \
-    "http://127.0.0.1/media/videos/$video.mp4" 2>&1 | grep -Eq 'HTTP/[0-9.]+ 206'; then
+  # BusyBox wget reports HTTP 206 as an error even when Nginx supports ranges.
+  # Inspect the response status independently of wget's exit status.
+  response=$(docker exec "$container" wget -S -O /dev/null --header='Range: bytes=0-0' \
+    "http://127.0.0.1/media/videos/$video.mp4" 2>&1) || true
+  if ! grep -Eq 'HTTP/[0-9.]+ 206([[:space:]]|$)' <<< "$response"; then
     echo "Video range check failed: $video" >&2
     rollback || true
     exit 1

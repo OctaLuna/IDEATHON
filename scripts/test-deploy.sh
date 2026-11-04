@@ -25,7 +25,7 @@ case "$1" in
   *State.Health*) if [ "${MOCK_FAIL:-0}" = 1 ]; then echo unhealthy; else echo healthy; fi;;
   *) printf 'sha256:'; printf 'a%.0s' $(seq 1 64); printf '\n';;
  esac;;
- exec) case "$*" in *videos*) echo 'HTTP/1.1 206 Partial Content';; esac;;
+ exec) case "$*" in *videos*) if [ "${MOCK_BAD_RANGE:-0}" = 1 ]; then echo 'HTTP/1.1 404 Not Found' >&2; else echo 'HTTP/1.1 206 Partial Content' >&2; fi; exit 1;; esac;;
 esac
 exit 0
 EOF
@@ -53,6 +53,11 @@ if bash "$t/release.sh" "$sha $digest"; then echo 'FAIL: rollback was not trigge
 grep -q 'image: "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"' "$t/state/ideathon.override.yaml"
 test "$(grep -c ' up -d --no-deps --no-build --pull never ideathon-web' "$MOCK_LOG")" = 2
 unset MOCK_FAIL
+: > "$MOCK_LOG"
+export MOCK_BAD_RANGE=1
+if bash "$t/release.sh" "$sha $digest"; then echo 'FAIL: invalid video range was accepted'; exit 1; fi
+test "$(grep -c ' up -d --no-deps --no-build --pull never ideathon-web' "$MOCK_LOG")" = 2
+unset MOCK_BAD_RANGE
 : > "$MOCK_LOG"
 export MOCK_WRONG_LABEL=1
 if bash "$t/release.sh" "$sha $digest"; then echo 'FAIL: incorrect service accepted'; exit 1; fi
