@@ -263,8 +263,12 @@ export const PartnersContent: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               <div className="lg:col-span-4">
                 <div className="p-6 sm:p-8 rounded-2xl border-2 border-[var(--border-ink)] bg-[var(--accent-yellow)]/20 text-center relative sticker-shadow">
-                  <div className="w-16 h-16 mx-auto rounded-2xl bg-[var(--accent-yellow)] border-2 border-[var(--border-ink)] flex items-center justify-center mb-4 sticker-shadow">
-                    <Coins className="w-8 h-8 text-[#111111]" />
+                  <div className="w-16 h-16 mx-auto rounded-2xl bg-white border-2 border-[var(--border-ink)] flex items-center justify-center mb-4 sticker-shadow overflow-hidden">
+                    <img
+                      src="/media/partners/bancosol-logo.png"
+                      alt="Logo de BancoSol"
+                      className="h-full w-full object-cover"
+                    />
                   </div>
 
                   <div className="inline-block px-3.5 py-1 rounded-full text-xs font-black font-mono border-2 border-[var(--border-ink)] mb-3 bg-[var(--accent-yellow)] text-[#111111] uppercase tracking-wider">

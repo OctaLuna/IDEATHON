@@ -37,3 +37,5 @@
 ## 2026-11-04
 
 - Metodología: trasladar la guía rápida debajo de los ocho pasos y antes de la explicación de ideación, conservando su visor y descarga.
+
+- Socios: incorporar el logo proporcionado de BancoSol en la tarjeta del auspiciador, conservando el estilo existente.
