@@ -76,7 +76,7 @@ jobs:
     needs: verify
     if: github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.IDEATHON_DEPLOY_ENABLED == 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 60
     environment:
       name: production-auto
       url: https://ideathon.adm-ucb.lat

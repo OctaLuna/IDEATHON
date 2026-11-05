@@ -15,7 +15,7 @@ root=/home/adminkaaiya/projects/tedx-facultyweek-platform
 compose=(docker compose --env-file .env -f compose.yaml)
 
 exec 9>/tmp/tedx-platform-deploy.lock
-flock -w 180 9 || { echo 'Another platform deployment is running.' >&2; exit 4; }
+flock -w 1800 9 || { echo 'Another platform deployment is running after a 30-minute wait.' >&2; exit 4; }
 available_kb=$(df -Pk "$root" | awk 'NR==2 {print $4}')
 [[ "$available_kb" =~ ^[0-9]+$ ]] && (( available_kb >= 2097152 )) || {
   echo 'Less than 2 GiB is available; deployment stopped.' >&2
