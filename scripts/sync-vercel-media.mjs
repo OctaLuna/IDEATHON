@@ -14,7 +14,7 @@ const baseUrlValue = process.env.MEDIA_BLOB_BASE_URL;
 
 if (!baseUrlValue) {
   throw new Error(
-    "Falta MEDIA_BLOB_BASE_URL. Configura el origen público de Vercel Blob en el entorno de build.",
+    "Falta MEDIA_BLOB_BASE_URL. Configura el origen público de los medios en el entorno de build.",
   );
 }
 
@@ -30,7 +30,7 @@ if (
   baseUrl.password
 ) {
   throw new Error(
-    "MEDIA_BLOB_BASE_URL debe ser el origen HTTPS público del almacén, sin ruta, credenciales ni parámetros.",
+    "MEDIA_BLOB_BASE_URL debe ser el origen HTTPS público de los medios, sin ruta, credenciales ni parámetros.",
   );
 }
 
@@ -73,7 +73,9 @@ for (const asset of manifest) {
   const response = await fetch(url, { signal: AbortSignal.timeout(300_000) });
 
   if (!response.ok || !response.body) {
-    throw new Error(`No se pudo descargar ${filename} desde Blob (HTTP ${response.status}).`);
+    throw new Error(
+      `No se pudo descargar ${filename} desde el origen de medios (HTTP ${response.status}).`,
+    );
   }
 
   const contentType = response.headers.get("content-type")?.split(";")[0].trim().toLowerCase();
@@ -81,7 +83,9 @@ for (const asset of manifest) {
     contentType &&
     !["video/mp4", "application/octet-stream", "binary/octet-stream"].includes(contentType)
   ) {
-    throw new Error(`Blob devolvió ${contentType} para ${filename}, se esperaba un MP4.`);
+    throw new Error(
+      `El origen de medios devolvió ${contentType} para ${filename}, se esperaba un MP4.`,
+    );
   }
 
   try {
@@ -91,7 +95,7 @@ for (const asset of manifest) {
       const header = Buffer.alloc(12);
       const { bytesRead } = await file.read(header, 0, header.length, 0);
       if (bytesRead < 12 || header.toString("ascii", 4, 8) !== "ftyp") {
-        throw new Error(`La respuesta de Blob para ${filename} no es un MP4 válido.`);
+        throw new Error(`La respuesta del origen de medios para ${filename} no es un MP4 válido.`);
       }
     } finally {
       await file.close();
@@ -102,5 +106,5 @@ for (const asset of manifest) {
     throw error;
   }
 
-  process.stdout.write(`Sincronizado ${filename} desde Blob.\n`);
+  process.stdout.write(`Sincronizado ${filename} desde el origen de medios.\n`);
 }

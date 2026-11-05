@@ -8,6 +8,8 @@ El despliegue usa el entorno `production-auto`, sin aprobación manual. `IDEATHO
 
 Vercel Blob devuelve HTTP 403 para los videos. Hasta trasladar esos medios a un almacén administrado junto con el proyecto, el workflow los sincroniza desde el dominio público actual `https://ideathon.adm-ucb.lat` antes de compilar. La página publicada debe seguir sirviendo los archivos de medios para que los siguientes builds puedan obtenerlos.
 
+Conservar una copia independiente de los videos para poder recuperarlos si la VPS deja de estar disponible. El proyecto `ideathon-2026` de Vercel utiliza el mismo origen temporal para sus compilaciones.
+
 ## Acceso y aislamiento del servidor
 
 El secreto SSH de Actions es una clave Ed25519 exclusiva para IDEATHON, con frase de paso. La entrada correspondiente en `authorized_keys` fuerza `/home/adminkaaiya/.local/bin/ideathon-release-entry` y deshabilita shell interactivo y forwarding. La rutina actualiza únicamente `ideathon-web`, espera su healthcheck y verifica el PDF, los rangos de video y HTTPS público. Si falla, restaura el valor anterior de `IDEATHON_IMAGE_TAG` y el contenedor previo. Usa el candado común para serializar despliegues de esta plataforma.
