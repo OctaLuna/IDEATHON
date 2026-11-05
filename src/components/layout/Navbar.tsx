@@ -1,4 +1,5 @@
 import { gsap, useGSAP } from "@/animations/gsap";
+import { LightbulbDoodle } from "@/components/decorative/DoodleSVGs";
 import { visibleNavigationLinks } from "@/config/navigation";
 import { useEventResourcesOpen } from "@/hooks/useEventResourcesOpen";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -168,18 +169,17 @@ export const Navbar: React.FC = () => {
           <Link
             to="/"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="shrink-0 flex items-center select-none"
+            className="shrink-0 flex items-center gap-2 sm:gap-2.5 select-none"
             aria-label="Ir al inicio de IDEATHON"
           >
-            <div className="flex items-center gap-2">
-              <span className="relative block aspect-[76/54] w-[clamp(70px,23vw,94px)] overflow-hidden">
-                <img
-                  src="/media/brand/ideathon-logo.png"
-                  alt=""
-                  className="absolute -left-[8%] -top-[13%] w-[112%] max-w-none"
-                />
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[var(--accent-blue)] border-2 border-[var(--border-ink)] flex items-center justify-center sticker-shadow group-hover:rotate-6 transition-transform duration-200 shrink-0">
+              <LightbulbDoodle size={22} color="var(--accent-yellow)" />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-display font-black text-xl sm:text-2xl tracking-tighter text-[var(--text-main)] leading-none">
+                IDEATHON<span className="text-[var(--accent-orange)]">.</span>
               </span>
-              <span className="whitespace-nowrap rounded-lg bg-[var(--accent-blue)] px-1.5 py-1 text-[9px] sm:text-[10px] font-mono tracking-wide font-bold text-white uppercase">
+              <span className="text-[10px] font-mono tracking-widest font-bold text-[var(--accent-blue-text)] uppercase">
                 UCB · LA PAZ
               </span>
             </div>
