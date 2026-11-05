@@ -59,3 +59,4 @@
 - Navegacion: retirar el foco de la barra superior y adaptar el ancho del logo a la pantalla; conservar el favicon. Playwright verifico logo, apertura y cierre del menu y ausencia de desbordes en 11 anchos de 280 a 1440 px, con ambos temas.
 - Identidad: colocar UCB · LA PAZ al lado del logo y comprobar con Playwright su posicion, el menu y los anchos de 280 a 1440 px en ambos temas.
 - Navegacion: integrar el logo con una etiqueta azul para UCB · LA PAZ, segun la propuesta elegida. Verificado con Playwright en ambos temas entre 280 y 1440 px y con npm run verify.
+- CI/CD: ante la suspension del almacen Vercel Blob, usar temporalmente la VPS como origen de los ocho videos para las compilaciones de GitHub Actions e ideathon-2026. La VPS sigue sirviendo los medios localmente.

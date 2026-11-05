@@ -19,3 +19,7 @@ Las variables de repositorio `IDEATHON_DEPLOY_HOST` e `IDEATHON_DEPLOY_USER` y l
 El despliegue del 4 de noviembre de 2026 fue aprobado en GitHub y comprob? la salud del servicio, el PDF y las respuestas por rango de los videos. El dominio conserva la ruta existente de Caddy hacia `ideathon-web:80`.
 
 El script conserva la configuraci?n anterior y trata de restaurar ?nicamente IDEATHON si fallan sus verificaciones. En el primer intento, una incompatibilidad de la comprobaci?n con BusyBox wget activ? el rollback; se corrigi? y se comprob? antes del despliegue exitoso. Si el rollback falla, requiere intervenci?n de infraestructura. Mantener disponible la imagen anterior y no ejecutar `docker compose down`, limpiezas globales ni operaciones sobre otros servicios.
+
+## Origen temporal de videos
+
+Mientras el almacen de Vercel Blob este suspendido, GitHub Actions y el proyecto Vercel `ideathon-2026` descargan los ocho videos desde `https://ideathon.adm-ucb.lat` durante sus compilaciones. Estas dependen de la disponibilidad de la VPS y vuelven a incluir los archivos en su propia imagen o build. Conservar una copia independiente de los videos para recuperacion. Al disponer de un almacen independiente, actualizar el origen en el workflow y la variable `MEDIA_BLOB_BASE_URL` de Vercel.
