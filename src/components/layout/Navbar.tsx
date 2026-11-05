@@ -168,14 +168,11 @@ export const Navbar: React.FC = () => {
           <Link
             to="/"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="shrink-0 flex items-center gap-2 sm:gap-2.5 select-none"
+            className="shrink-0 flex items-center select-none"
             aria-label="Ir al inicio de IDEATHON"
           >
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[var(--accent-blue)] border-2 border-[var(--border-ink)] flex items-center justify-center sticker-shadow group-hover:rotate-6 transition-transform duration-200 shrink-0">
-              <img src="/media/brand/foco-ideathon.svg" alt="" className="h-7 w-7" />
-            </div>
-            <div className="flex flex-col">
-              <span className="relative block h-[54px] w-[76px] overflow-hidden sm:h-[67px] sm:w-[94px]">
+            <div className="flex items-center gap-2">
+              <span className="relative block aspect-[76/54] w-[clamp(76px,24vw,94px)] overflow-hidden">
                 <img
                   src="/media/brand/ideathon-logo.png"
                   alt=""
