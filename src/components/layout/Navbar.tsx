@@ -1,5 +1,4 @@
 import { gsap, useGSAP } from "@/animations/gsap";
-import { LightbulbDoodle } from "@/components/decorative/DoodleSVGs";
 import { visibleNavigationLinks } from "@/config/navigation";
 import { useEventResourcesOpen } from "@/hooks/useEventResourcesOpen";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -173,11 +172,15 @@ export const Navbar: React.FC = () => {
             aria-label="Ir al inicio de IDEATHON"
           >
             <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[var(--accent-blue)] border-2 border-[var(--border-ink)] flex items-center justify-center sticker-shadow group-hover:rotate-6 transition-transform duration-200 shrink-0">
-              <LightbulbDoodle size={22} color="var(--accent-yellow)" />
+              <img src="/media/brand/foco-ideathon.svg" alt="" className="h-7 w-7" />
             </div>
             <div className="flex flex-col">
-              <span className="font-display font-black text-xl sm:text-2xl tracking-tighter text-[var(--text-main)] leading-none">
-                IDEATHON<span className="text-[var(--accent-orange)]">.</span>
+              <span className="relative block h-[54px] w-[76px] overflow-hidden sm:h-[67px] sm:w-[94px]">
+                <img
+                  src="/media/brand/ideathon-logo.png"
+                  alt=""
+                  className="absolute -left-[8%] -top-[13%] w-[112%] max-w-none"
+                />
               </span>
               <span className="text-[10px] font-mono tracking-widest font-bold text-[var(--accent-blue-text)] uppercase">
                 UCB · LA PAZ
