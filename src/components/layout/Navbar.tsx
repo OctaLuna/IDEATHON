@@ -172,14 +172,14 @@ export const Navbar: React.FC = () => {
             aria-label="Ir al inicio de IDEATHON"
           >
             <div className="flex items-center gap-2">
-              <span className="relative block aspect-[76/54] w-[clamp(76px,24vw,94px)] overflow-hidden">
+              <span className="relative block aspect-[76/54] w-[clamp(70px,23vw,94px)] overflow-hidden">
                 <img
                   src="/media/brand/ideathon-logo.png"
                   alt=""
                   className="absolute -left-[8%] -top-[13%] w-[112%] max-w-none"
                 />
               </span>
-              <span className="text-[10px] font-mono tracking-widest font-bold text-[var(--accent-blue-text)] uppercase">
+              <span className="whitespace-nowrap rounded-lg bg-[var(--accent-blue)] px-1.5 py-1 text-[9px] sm:text-[10px] font-mono tracking-wide font-bold text-white uppercase">
                 UCB · LA PAZ
               </span>
             </div>
