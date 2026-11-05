@@ -24,7 +24,8 @@ jobs:
       contents: read
       packages: write
     env:
-      MEDIA_BLOB_BASE_URL: https://lwv0jzj5c8tpqdyg.public.blob.vercel-storage.com
+      # The blob endpoint currently returns 403; reuse the public media already served by production.
+      MEDIA_BLOB_BASE_URL: https://ideathon.adm-ucb.lat
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
