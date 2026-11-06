@@ -1,7 +1,6 @@
 import { gsap, useGSAP } from "@/animations/gsap";
 import { LightbulbDoodle } from "@/components/decorative/DoodleSVGs";
 import { visibleNavigationLinks } from "@/config/navigation";
-import { useEventResourcesOpen } from "@/hooks/useEventResourcesOpen";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { useTheme } from "@/features/theme";
 import { ArrowUpRight, Calendar, Menu, Moon, Sun, X } from "lucide-react";
@@ -23,7 +22,7 @@ export const Navbar: React.FC = () => {
   const { contextSafe } = useGSAP({ scope: navContainerRef });
 
   // La navegacion se comparte con el footer y se controla desde config.
-  const navLinks = visibleNavigationLinks(useEventResourcesOpen());
+  const navLinks = visibleNavigationLinks();
 
   // En /, las anclas (#cronograma, #premios, etc.) NO cambian el link activo
   useEffect(() => {

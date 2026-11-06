@@ -6,13 +6,12 @@
 } from "@/components/decorative/DoodleSVGs";
 import { PROGRAM_DATA } from "@/config/event";
 import { visibleNavigationLinks } from "@/config/navigation";
-import { useEventResourcesOpen } from "@/hooks/useEventResourcesOpen";
 import { Building2, Mail, MapPin } from "lucide-react";
 import React from "react";
 import { Link } from "react-router-dom";
 
 export const Footer: React.FC = () => {
-  const navLinks = visibleNavigationLinks(useEventResourcesOpen());
+  const navLinks = visibleNavigationLinks();
 
   return (
     <footer className="relative bg-[var(--bg-surface)] text-[var(--text-main)] pt-16 pb-12 overflow-hidden border-t-4 border-[var(--accent-blue)]">

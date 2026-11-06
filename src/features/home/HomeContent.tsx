@@ -2,7 +2,6 @@
 import { RocketVehicleSVG, TapeBadge } from "@/components/decorative/DoodleSVGs";
 import { PROGRAM_DATA } from "@/config/event";
 import { REPORTS_VISIBLE } from "@/config/features";
-import { useEventResourcesOpen } from "@/hooks/useEventResourcesOpen";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import confetti from "canvas-confetti";
 import {
@@ -44,8 +43,7 @@ const anchorLinks = [
 ];
 
 export const HomeContent: React.FC = () => {
-  const resourcesOpen = useEventResourcesOpen();
-  const reportsVisible = REPORTS_VISIBLE && resourcesOpen;
+  const reportsVisible = REPORTS_VISIBLE;
   const prefersReducedMotion = useReducedMotion();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const headlineRef = useRef<HTMLHeadingElement | null>(null);
@@ -582,7 +580,7 @@ export const HomeContent: React.FC = () => {
                   Paz.
                 </p>
                 <span className="text-xs font-bold text-[var(--accent-blue-text)] flex items-center gap-1">
-                  Explorar biblioteca <ArrowRight className="w-3.5 h-3.5" />
+                  Ver reporte <ArrowRight className="w-3.5 h-3.5" />
                 </span>
               </Link>
             )}
@@ -1356,7 +1354,7 @@ export const HomeContent: React.FC = () => {
                 to="/reportes"
                 className="px-5 py-3 rounded-xl bg-white text-[#111111] font-display font-black text-xs sm:text-sm border-2 border-[var(--border-ink)] sticker-shadow hover:-translate-y-0.5 active:scale-95 transition-all"
               >
-                Revisar reportes
+                Revisar reporte
               </Link>
             )}
 

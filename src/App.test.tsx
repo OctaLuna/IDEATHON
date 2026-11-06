@@ -17,5 +17,14 @@ describe("application routes", () => {
     expect(
       await screen.findByRole("heading", { level: 1, name: /Reportes: los datos/i }),
     ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { level: 2, name: /Bolivia necesita trabajo digno/i }),
+    ).toBeInTheDocument();
+    const download = screen.getByRole("link", { name: /Descargar PDF/i });
+    expect(download).toHaveAttribute("href", "/media/docs/articulo-empleo-juvenil-2026.pdf");
+    expect(download).toHaveAttribute("download");
+    expect(screen.getByRole("button", { name: /Ampliar reporte$/i })).toBeInTheDocument();
+    expect(screen.getAllByRole("img", { name: /Vista previa de la/i })).toHaveLength(2);
+    expect(screen.queryByText(/Contenido de muestra/i)).not.toBeInTheDocument();
   });
 });

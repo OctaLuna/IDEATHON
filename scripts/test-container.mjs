@@ -16,6 +16,7 @@ for (const [path, status, type] of [
   ["/metodologia", 200, "text/html"],
   ["/videos", 200, "text/html"],
   ["/media/docs/guia-rapida-del-equipo.pdf", 200, "application/pdf"],
+  ["/media/docs/articulo-empleo-juvenil-2026.pdf", 200, "application/pdf"],
   ["/media/docs/archivo-inexistente.pdf", 404, ""],
   ["/media/videos/archivo-inexistente.mp4", 404, ""],
 ]) {
