@@ -6,24 +6,19 @@ import { useEventResourcesOpen } from "./useEventResourcesOpen";
 describe("event resources opening", () => {
   afterEach(() => vi.useRealTimers());
 
-  it("shows videos immediately and keeps reports hidden after 09:00 in Bolivia", () => {
+  it("shows reports and videos independently of the event clock", () => {
     vi.useFakeTimers();
     vi.setSystemTime(new Date("2026-11-06T08:59:59-04:00"));
     const { result } = renderHook(() => useEventResourcesOpen());
     expect(result.current).toBe(false);
-    expect(visibleNavigationLinks(result.current).map((link) => link.path)).not.toContain(
-      "/reportes",
+    expect(visibleNavigationLinks().map((link) => link.path)).toEqual(
+      expect.arrayContaining(["/reportes", "/videos"]),
     );
-    expect(visibleNavigationLinks(result.current).map((link) => link.path)).toContain("/videos");
-    expect(isResourceLinkVisible("/videos", result.current)).toBe(true);
-    expect(isResourceLinkVisible("/reportes", result.current)).toBe(false);
+    expect(isResourceLinkVisible("/reportes")).toBe(true);
+    expect(isResourceLinkVisible("/videos")).toBe(true);
     act(() => vi.advanceTimersByTime(1000));
     expect(result.current).toBe(true);
-    expect(visibleNavigationLinks(result.current).map((link) => link.path)).toContain("/videos");
-    expect(visibleNavigationLinks(result.current).map((link) => link.path)).not.toContain(
-      "/reportes",
-    );
-    expect(isResourceLinkVisible("/reportes", result.current)).toBe(false);
+    expect(isResourceLinkVisible("/reportes")).toBe(true);
   });
 
   it("rechecks the clock when a suspended tab regains focus", () => {

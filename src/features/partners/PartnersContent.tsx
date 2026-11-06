@@ -1,7 +1,6 @@
 import { gsap, ScrollTrigger, useGSAP } from "@/animations/gsap";
 import { TapeBadge } from "@/components/decorative/DoodleSVGs";
 import { isResourceLinkVisible } from "@/config/navigation";
-import { useEventResourcesOpen } from "@/hooks/useEventResourcesOpen";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import {
   AlertCircle,
@@ -17,7 +16,6 @@ import { Link } from "react-router-dom";
 import { ECOSYSTEM_FLOW_STEPS, PARTNERS_DATA } from "./data/companies";
 
 export const PartnersContent: React.FC = () => {
-  const resourcesOpen = useEventResourcesOpen();
   const prefersReducedMotion = useReducedMotion();
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -224,12 +222,10 @@ export const PartnersContent: React.FC = () => {
                       </p>
 
                       {partner.links &&
-                        partner.links.some((link) =>
-                          isResourceLinkVisible(link.url, resourcesOpen),
-                        ) && (
+                        partner.links.some((link) => isResourceLinkVisible(link.url)) && (
                           <div className="flex flex-wrap items-center gap-3 pt-2">
                             {partner.links
-                              .filter((link) => isResourceLinkVisible(link.url, resourcesOpen))
+                              .filter((link) => isResourceLinkVisible(link.url))
                               .map((lnk, li) => (
                                 <Link
                                   key={li}
