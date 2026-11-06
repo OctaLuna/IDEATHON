@@ -47,8 +47,8 @@ export const PARTNERS_DATA: Partner[] = [
       "Portal institucional: jubileobolivia.org.bo",
     ],
     contribution:
-      "Proporciona reportes y estadísticas de empleo juvenil que sirven como base para el diagnóstico inicial.",
-    links: [{ label: "Ver Reportes de Empleo", url: "/reportes" }],
+      "Proporciona un análisis de empleo juvenil que sirve como base para el diagnóstico inicial.",
+    links: [{ label: "Ver reporte de empleo", url: "/reportes" }],
     website: "https://jubileobolivia.org.bo",
     disclaimer: "Información referencial basada en fuentes institucionales oficiales.",
   },

@@ -20,7 +20,7 @@ for (const file of files) {
   const isBinary = content.subarray(0, Math.min(content.length, 8192)).includes(0);
   const isPublicRasterAsset = /^public\/.*\.(?:avif|gif|jpe?g|png|webp)$/i.test(file);
 
-  const isApprovedPdf = file === "public/media/docs/guia-rapida-del-equipo.pdf" && content.subarray(0, 5).toString("ascii") === "%PDF-";
+  const isApprovedPdf = ["public/media/docs/guia-rapida-del-equipo.pdf", "public/media/docs/articulo-empleo-juvenil-2026.pdf"].includes(file) && content.subarray(0, 5).toString("ascii") === "%PDF-";
 
   if (isBinary && !isPublicRasterAsset && !isApprovedPdf) errors.push(`${file}: unapproved binary files are not allowed`);
   if (content.length > maxBytes) errors.push(`${file}: ${content.length} bytes exceeds the 5 MiB limit`);
