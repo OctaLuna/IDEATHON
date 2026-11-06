@@ -1,6 +1,7 @@
 ﻿import { gsap, ScrollTrigger, useGSAP } from "@/animations/gsap";
 import { RocketVehicleSVG, TapeBadge } from "@/components/decorative/DoodleSVGs";
 import { PROGRAM_DATA } from "@/config/event";
+import { REPORTS_VISIBLE } from "@/config/features";
 import { useEventResourcesOpen } from "@/hooks/useEventResourcesOpen";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import confetti from "canvas-confetti";
@@ -44,6 +45,7 @@ const anchorLinks = [
 
 export const HomeContent: React.FC = () => {
   const resourcesOpen = useEventResourcesOpen();
+  const reportsVisible = REPORTS_VISIBLE && resourcesOpen;
   const prefersReducedMotion = useReducedMotion();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const headlineRef = useRef<HTMLHeadingElement | null>(null);
@@ -562,9 +564,9 @@ export const HomeContent: React.FC = () => {
           </div>
 
           <div
-            className={`grid grid-cols-1 sm:grid-cols-2 ${resourcesOpen ? "lg:grid-cols-3" : "lg:grid-cols-2"} gap-6 relative z-10`}
+            className={`grid grid-cols-1 sm:grid-cols-2 ${reportsVisible ? "lg:grid-cols-3" : "lg:grid-cols-2"} gap-6 relative z-10`}
           >
-            {resourcesOpen && (
+            {reportsVisible && (
               <Link
                 to="/reportes"
                 className="p-6 rounded-3xl bg-[var(--bg-surface)] border-3 border-[var(--border-ink)] sticker-shadow space-y-3 hover:-translate-y-1 transition-transform group"
@@ -1345,12 +1347,11 @@ export const HomeContent: React.FC = () => {
           </h2>
 
           <p className="text-sm sm:text-lg text-[var(--sky-soft)] max-w-2xl mx-auto leading-relaxed">
-            Revisa los reportes con datos reales y domina la metodología Lean Canvas para preparar
-            tu propuesta ante el jurado.
+            Domina la metodología Lean Canvas para preparar tu propuesta ante el jurado.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-            {resourcesOpen && (
+            {reportsVisible && (
               <Link
                 to="/reportes"
                 className="px-5 py-3 rounded-xl bg-white text-[#111111] font-display font-black text-xs sm:text-sm border-2 border-[var(--border-ink)] sticker-shadow hover:-translate-y-0.5 active:scale-95 transition-all"

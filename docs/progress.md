@@ -62,3 +62,7 @@
 - CI/CD: ante la suspension del almacen Vercel Blob, usar temporalmente la VPS como origen de los ocho videos para las compilaciones de GitHub Actions e ideathon-2026. La VPS sigue sirviendo los medios localmente.
 - Navegacion: restaurar la marca anterior con foco, texto IDEATHON y UCB - LA PAZ debajo, a solicitud del usuario; conservar el favicon y el origen temporal de medios.
 - Git: conciliar main con develop para preservar el despliegue automatico actual y el origen temporal de videos de la VPS antes del PR a main.
+
+## 2026-11-06
+
+- Recursos: habilitar Videos desde ahora y mantener ocultos los enlaces de Reportes hasta nueva indicacion, sin bloquear su ruta directa. Actualizar la portada y la metodologia para no dirigir a la seccion oculta. Playwright comprobo antes y despues de las 09:00, en 320, 768 y 1440 px; test:media verifico la reproduccion local.
