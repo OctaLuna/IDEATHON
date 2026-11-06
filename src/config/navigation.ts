@@ -1,4 +1,4 @@
-import { VIDEO_LIBRARY_ENABLED } from "./features";
+import { REPORTS_VISIBLE, VIDEO_LIBRARY_ENABLED } from "./features";
 
 export const SITE_ROUTES = {
   home: "/",
@@ -16,10 +16,12 @@ export const NAVIGATION_LINKS = [
   { label: "Socios", path: SITE_ROUTES.partners },
 ] as const;
 
-export function isEventResourcePath(path: string) {
-  return path === SITE_ROUTES.reports || path === SITE_ROUTES.videos;
+export function isResourceLinkVisible(path: string, resourcesOpen: boolean) {
+  if (path === SITE_ROUTES.reports) return REPORTS_VISIBLE && resourcesOpen;
+  if (path === SITE_ROUTES.videos) return VIDEO_LIBRARY_ENABLED;
+  return true;
 }
 
 export function visibleNavigationLinks(resourcesOpen: boolean) {
-  return NAVIGATION_LINKS.filter((link) => resourcesOpen || !isEventResourcePath(link.path));
+  return NAVIGATION_LINKS.filter((link) => isResourceLinkVisible(link.path, resourcesOpen));
 }
