@@ -1,6 +1,6 @@
 import { gsap, ScrollTrigger, useGSAP } from "@/animations/gsap";
 import { TapeBadge } from "@/components/decorative/DoodleSVGs";
-import { isEventResourcePath } from "@/config/navigation";
+import { isResourceLinkVisible } from "@/config/navigation";
 import { useEventResourcesOpen } from "@/hooks/useEventResourcesOpen";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import {
@@ -224,12 +224,12 @@ export const PartnersContent: React.FC = () => {
                       </p>
 
                       {partner.links &&
-                        partner.links.some(
-                          (link) => resourcesOpen || !isEventResourcePath(link.url),
+                        partner.links.some((link) =>
+                          isResourceLinkVisible(link.url, resourcesOpen),
                         ) && (
                           <div className="flex flex-wrap items-center gap-3 pt-2">
                             {partner.links
-                              .filter((link) => resourcesOpen || !isEventResourcePath(link.url))
+                              .filter((link) => isResourceLinkVisible(link.url, resourcesOpen))
                               .map((lnk, li) => (
                                 <Link
                                   key={li}
