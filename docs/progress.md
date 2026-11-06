@@ -66,3 +66,4 @@
 ## 2026-11-06
 
 - Recursos: habilitar Videos desde ahora y mantener ocultos los enlaces de Reportes hasta nueva indicacion, sin bloquear su ruta directa. Actualizar la portada y la metodologia para no dirigir a la seccion oculta. Playwright comprobo antes y despues de las 09:00, en 320, 768 y 1440 px; test:media verifico la reproduccion local.
+- Produccion: desplegados Videos visibles y Reportes ocultos; verificados antes y despues de las 09:00 en el sitio oficial, incluida la reproduccion. El primer intento se detuvo por espacio; se retiro solo una imagen IDEATHON antigua sin contenedores, recuperable desde GHCR, conservando la activa y la anterior. Tras el despliegue quedaron aproximadamente 1,8 GiB libres; solicitar revision de almacenamiento a infraestructura.
